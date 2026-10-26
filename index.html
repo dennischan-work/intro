@@ -1,0 +1,1158 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>陳浩賢 Dennis Chan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="陳浩賢 Dennis Chan｜創作者出身，把複雜需求轉成可交付成果。整合行銷、影音製作統籌、品牌合作、政府標案履約、流行音樂創作。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: 夜色城市天際線（溫哥華→香港→臺北）為底，網點疊層；作品與歷程用橫向「旅程」捲動串起三座城市。單一深色視覺。 */
+:root{
+  --night:#091422;      /* 頁面底色：深夜藍 */
+  --navy:#0f2238;       /* 區塊／卡片底 */
+  --ink:#e8eef3;        /* 主要文字 */
+  --mute:#93a7b8;       /* 次要文字 */
+  --line:rgba(232,238,243,.14);
+  --signal:#2fa6d1;     /* 唯一強調色：PDF 主頁的城市藍 */
+  --tri:rgba(232,238,243,.10);
+  --f-display:"Chakra Petch","Noto Sans TC",system-ui,sans-serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --f-hand:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif; /* 中文標題：粗黑積木字 */
+  --f-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --stk:1px 1px 0 var(--signal),2px 2px 0 var(--signal),3px 3px 0 var(--signal),4px 4px 0 var(--signal),5px 5px 0 var(--signal),6px 6px 0 var(--signal-deep);
+  --signal-deep:#14607d;
+  --gut:max(16px, env(safe-area-inset-left, 0px));
+  --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  --nav-h:56px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--night)}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.wrap{max-width:1180px;margin-inline:auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.dots{background-image:radial-gradient(rgba(47,166,209,.16) 1px,transparent 1.5px);background-size:6px 6px}
+
+/* ---------- 導覽 ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--night) 82%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--nav-h)}
+.brand{font-family:var(--f-display);font-weight:700;letter-spacing:.04em;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--signal);font-family:var(--f-body);font-weight:500;margin-left:6px;letter-spacing:.1em}
+.nav ul{display:flex;gap:clamp(12px,2.4vw,28px);list-style:none;margin:0;padding:0;font-size:14px;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a.l{text-decoration:none;color:var(--mute);white-space:nowrap;transition:color .2s}
+.nav a.l:hover,.nav a.l.on{color:var(--ink)}
+@media (max-width:720px){.brand span{display:none}.nav ul{font-size:13px;gap:14px}}
+
+/* ---------- 裝飾：鋸齒三角、外框星號 ---------- */
+.saw{height:52px;width:260px;background:linear-gradient(135deg,transparent 50%,var(--tri) 50%) 0 0/52px 52px repeat-x;opacity:.9}
+.star{position:absolute;pointer-events:none;stroke:rgba(232,238,243,.22);fill:none;stroke-width:1.2}
+
+/* ---------- 首屏 ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;min-height:min(88svh,820px);display:grid;align-items:center;padding-block:72px 120px}
+.hero-sky{position:absolute;inset:0;z-index:-2;background:url(assets/skyline.jpg) center bottom/cover no-repeat;transform:scale(1.06);animation:drift 30s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(9,20,34,.93) 0%,rgba(9,20,34,.72) 45%,rgba(9,20,34,.86) 82%,var(--night) 100%)}
+@keyframes drift{to{transform:scale(1.12) translateX(-2%)}}
+.hero .wrap{text-align:center;display:grid;justify-items:center;gap:22px}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(10px,2.4vw,28px)}
+.logos img{height:clamp(46px,9.5vw,118px);width:auto;mix-blend-mode:screen;opacity:.92}
+.logos img.zh{height:clamp(50px,10.4vw,128px)}
+.roles{font-family:var(--f-body);font-weight:900;font-size:clamp(18px,3.4vw,40px);letter-spacing:.06em;color:transparent;-webkit-text-stroke:1px var(--ink);text-wrap:balance;line-height:1.35;margin:0}
+.roles span{white-space:nowrap;display:inline-block}
+.roles i{font-style:normal;color:var(--signal);-webkit-text-stroke:0;margin-inline:.25em}
+.stk{font-family:var(--f-hand);font-weight:900;color:var(--ink);-webkit-text-stroke:.08em var(--night);paint-order:stroke fill;text-shadow:var(--stk);letter-spacing:.04em}
+.name-en{font-family:var(--f-display);font-weight:700;font-size:clamp(46px,10vw,120px);line-height:1;letter-spacing:.06em;color:var(--ink);-webkit-text-stroke:.05em var(--night);paint-order:stroke fill;text-shadow:var(--stk);display:inline-block;padding-right:6px}
+.name-zh{font-size:clamp(52px,11vw,132px);line-height:1;display:inline-block;padding-right:6px}
+.hand{font-family:var(--f-hand);font-weight:900;color:var(--ink);font-size:clamp(22px,3.4vw,38px);line-height:1.3;margin:6px 0 0;-webkit-text-stroke:.08em var(--night);paint-order:stroke fill;text-shadow:1px 1px 0 var(--signal),2px 2px 0 var(--signal),3px 3px 0 var(--signal),4px 4px 0 var(--signal-deep);letter-spacing:.04em}
+.hand small{font-family:var(--f-display)!important;font-weight:500;-webkit-text-stroke:0;text-shadow:none;color:var(--signal)}
+.hand small{display:block;font-size:.62em;opacity:.85;letter-spacing:.02em}
+.thesis{max-width:34em;color:var(--mute);margin:0;font-size:clamp(15px,1.6vw,17px)}
+.thesis b{display:block;color:var(--ink);font-weight:500;margin-bottom:4px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:10px;font-weight:500;text-decoration:none;font-size:15px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,transform .2s;font-family:inherit}
+.btn:hover{border-color:var(--signal);transform:translateY(-1px)}
+.btn.solid{background:var(--signal);border-color:var(--signal);color:#06121e}
+.btn.solid:hover{background:#4bb7de}
+.hero .saw{position:absolute;left:0;bottom:0}
+.hero .star{right:4%;top:6%;width:min(26vw,240px);animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.18s}.rise.d3{animation-delay:.28s}.rise.d4{animation-delay:.38s}
+@keyframes rise{from{transform:translateY(18px);opacity:.001}to{transform:none;opacity:1}}
+
+/* ---------- 區塊標題 ---------- */
+section{position:relative}
+.sec{padding-block:clamp(72px,10vw,120px)}
+.eyebrow{font-family:var(--f-mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:0 0 10px}
+.h2{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,5.2vw,58px);line-height:1.05;margin:0;color:transparent;-webkit-text-stroke:1px var(--ink);letter-spacing:.01em;text-wrap:balance}
+.h2-zh{font-family:var(--f-hand);font-weight:900;color:var(--ink);font-size:clamp(22px,3vw,34px);margin:16px 0 0;line-height:1.35;-webkit-text-stroke:.08em var(--night);paint-order:stroke fill;text-shadow:1px 1px 0 var(--signal),2px 2px 0 var(--signal),3px 3px 0 var(--signal),4px 4px 0 var(--signal-deep);letter-spacing:.03em;text-wrap:balance}
+.lead{color:var(--mute);max-width:40em;margin:18px 0 0}
+
+/* ---------- 關於 ---------- */
+.about{margin-top:40px}
+.about p{margin:0 0 1em}
+.about .q{font-family:var(--f-hand);font-weight:700;font-size:clamp(19px,2.2vw,22px);color:var(--ink);line-height:1.6;border-left:2px solid var(--signal);padding-left:18px;margin:8px 0 26px}
+.portrait{position:relative}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:4px;filter:saturate(.9)}
+.portrait figcaption{position:absolute;left:-1px;bottom:-1px;right:-1px;padding:30px 16px 12px;background:linear-gradient(transparent,rgba(9,20,34,.92));font-family:var(--f-display);font-weight:700;font-size:clamp(30px,4vw,46px);color:transparent;-webkit-text-stroke:1px var(--ink);line-height:1}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 24px;margin:28px 0 0}
+.facts div{min-width:0}
+@media (max-width:720px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.facts dt{font-size:12px;color:var(--mute);letter-spacing:.08em}
+.facts dd{margin:2px 0 0;font-weight:500;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.chips li{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--mute)}
+
+
+/* ---------- 方法 ---------- */
+.method{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+.m{background:var(--night);padding:clamp(22px,3vw,34px);display:grid;gap:10px;align-content:start;transition:background .3s}
+.m:hover{background:var(--navy)}
+.m h3{margin:0;font-size:clamp(19px,2vw,22px);font-weight:700;line-height:1.4}
+.m .k{font-family:var(--f-display);font-size:12px;letter-spacing:.2em;color:var(--signal)}
+.m p{margin:0;color:var(--mute)}
+.m .ex{font-size:14px;color:var(--ink);opacity:.85;border-top:1px dashed var(--line);padding-top:10px;margin-top:4px}
+@media (max-width:720px){.method{grid-template-columns:1fr}}
+
+/* ---------- 旅程時間軸 ---------- */
+#journey{background:var(--night)}
+.j-pin{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--nav-h));height:calc(100svh - var(--nav-h) - env(safe-area-inset-top,0px));overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;grid-template-columns:minmax(0,1fr)}
+.j-sky{position:absolute;left:0;bottom:0;height:85%;width:max(200vw,160svh);background:url(assets/skyline.jpg) left bottom/cover no-repeat;opacity:.55;will-change:transform;z-index:0;-webkit-mask-image:linear-gradient(transparent,#000 35%);mask-image:linear-gradient(transparent,#000 35%)}
+.j-pin::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--night) 0%,rgba(9,20,34,.55) 40%,rgba(9,20,34,.35) 70%,rgba(9,20,34,.9) 100%);z-index:0;pointer-events:none}
+.j-head,.j-bar{width:100%}
+.j-head{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;padding-top:clamp(20px,4vh,40px)}
+.j-city{font-family:var(--f-display);font-weight:700;font-size:clamp(34px,7vw,92px);line-height:.9;color:transparent;-webkit-text-stroke:1px var(--ink);margin:0;transition:opacity .35s}
+.j-city small{display:block;font-family:var(--f-hand);font-weight:900;-webkit-text-stroke:0;color:var(--signal);font-size:.3em;margin-top:10px;letter-spacing:.04em}
+.j-year{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,5vw,64px);color:var(--signal);font-variant-numeric:tabular-nums;line-height:1}
+.j-track{position:relative;z-index:2;display:flex;align-items:center;gap:22px;padding-left:var(--gut);padding-right:40vw;will-change:transform;width:max-content}
+.stop{width:min(330px,78vw);flex:none;background:rgba(15,34,56,.86);border:1px solid var(--line);border-radius:6px;padding:20px 20px 18px;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:flex;flex-direction:column;gap:8px;transition:border-color .3s,transform .3s}
+.stop.on{border-color:var(--signal);transform:translateY(-6px)}
+.stop .when{font-family:var(--f-display);font-weight:600;color:var(--signal);font-size:14px;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.stop h3{margin:0;font-size:19px;line-height:1.35}
+.stop .role{margin:0;color:var(--mute);font-size:14px}
+.stop ul{margin:4px 0 0;padding-left:1.1em;font-size:14px;line-height:1.65}
+.stop ul li{margin-bottom:4px}
+.stop .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.stop .tags span{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:1px 9px;color:var(--mute)}
+.gate{flex:none;width:min(300px,70vw);display:grid;gap:4px;align-content:center}
+.gate b{font-family:var(--f-display);font-size:clamp(40px,6vw,70px);line-height:.9;color:transparent;-webkit-text-stroke:1px var(--signal)}
+.gate span{font-family:var(--f-hand);font-weight:900;font-size:24px}
+.gate em{font-style:normal;color:var(--mute);font-size:14px}
+.j-intro{flex:none;width:min(340px,78vw);padding:24px 24px 22px;border:1px solid var(--line);border-radius:10px;background:rgba(9,20,34,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.j-intro .eyebrow{font-size:14px;color:var(--signal)}
+.j-intro p{margin:0;color:var(--ink);font-size:17px;line-height:1.7}
+.j-intro .hint{margin-top:16px;font-family:var(--f-display);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--signal);display:inline-flex;align-items:center;gap:8px}
+.j-intro .hint::after{content:"";width:28px;height:2px;background:var(--signal);animation:nudge 1.4s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(6px)}}
+.j-bar{position:relative;z-index:2;padding-block:0 clamp(16px,3vh,28px)}
+.j-rail{position:relative;height:2px;background:var(--line)}
+.j-fill{position:absolute;left:0;top:0;height:2px;width:0;background:var(--signal)}
+.walker{position:absolute;left:0;bottom:2px;transform:translateX(-50%);z-index:3;overflow:visible;image-rendering:pixelated;filter:drop-shadow(0 0 0 transparent)}
+.walker .fb{opacity:0}
+.walker.walking .wb{animation:bob .3s steps(2) infinite}
+.walker.walking .fa{animation:legA .3s steps(1) infinite}
+.walker.walking .fb{animation:legB .3s steps(1) infinite}
+.walker.back{transform:translateX(-50%) scaleX(-1)}
+@keyframes legA{0%{opacity:1}50%{opacity:0}}
+@keyframes legB{0%{opacity:0}50%{opacity:1}}
+@keyframes bob{0%{transform:none}50%{transform:translateY(-.5px)}}
+@media (prefers-reduced-motion:reduce){.walker{display:none}}
+.j-legend{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--mute);margin-top:8px;font-family:var(--f-display);letter-spacing:.12em}
+@media (prefers-reduced-motion:reduce){
+  #journey{height:auto!important}
+  .j-pin{position:relative;height:auto;top:0;overflow:visible}
+  .j-sky{display:none}
+  .j-track{flex-wrap:wrap;width:auto;transform:none!important;padding-right:var(--gut-r);padding-block:24px}
+  .j-bar{display:none}
+}
+
+/* ---------- 作品集 ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.filters button{font-family:inherit;font-size:14px;color:var(--mute);background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;transition:all .2s}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--night);border-color:var(--ink)}
+.filters button:hover{border-color:var(--signal);color:var(--ink)}
+.filters button[aria-pressed="true"]:hover{color:var(--night)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px;grid-auto-flow:dense}
+.card{position:relative;display:grid;grid-template-rows:auto 1fr;background:var(--navy);border:1px solid var(--line);border-radius:6px;overflow:hidden;text-align:left;color:inherit;font:inherit;padding:0;cursor:pointer;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--signal)}
+.card.wide{grid-column:span 2}
+.thumb{aspect-ratio:16/9;max-width:100%;position:relative;overflow:hidden;background:var(--night)}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .thumb img{transform:scale(1.04)}
+.ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:16px}
+.ph b{font-family:var(--f-display);font-size:clamp(26px,3vw,40px);line-height:1;color:transparent;-webkit-text-stroke:1px var(--ink);opacity:.8}
+.ph small{display:block;font-size:12px;color:var(--mute);margin-top:10px;letter-spacing:.1em}
+.badge{position:absolute;left:12px;top:12px;font-size:12px;background:rgba(9,20,34,.85);border:1px solid var(--line);padding:2px 10px;border-radius:999px}
+.badge.pitch{left:auto;right:12px;color:var(--signal);border-color:var(--signal)}
+.play{position:absolute;right:12px;bottom:12px;width:36px;height:36px;border-radius:50%;background:rgba(9,20,34,.8);display:grid;place-items:center;border:1px solid var(--line)}
+.play::after{content:"";border-left:10px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+.body{padding:16px 18px 18px;display:grid;gap:6px;align-content:start;min-width:0}
+.body .org{font-size:13px;color:var(--mute)}
+.body h3{margin:0;font-size:18px;line-height:1.4;text-wrap:balance}
+.body .role{font-size:14px;color:var(--signal)}
+.body .res{font-size:14px;margin:4px 0 0;color:var(--ink);opacity:.86}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}.card.wide{grid-column:auto}}
+
+
+/* ---------- 作品地圖 ---------- */
+.atlas{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:16px;margin-top:34px}
+.map{position:relative;aspect-ratio:16/9;max-width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--navy)}
+.stage{position:absolute;inset:0;background:url(assets/skyline.jpg) center/cover no-repeat;transform-origin:50% 50%;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+.stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,20,34,.55),rgba(9,20,34,.05) 45%,rgba(9,20,34,.45));pointer-events:none}
+.cityname{position:absolute;bottom:4%;transform:translateX(-50%);font-family:var(--f-display);font-weight:700;font-size:clamp(11px,1.3vw,15px);letter-spacing:.2em;color:var(--ink);opacity:.75;z-index:1}
+.origin{position:absolute;transform:translate(-50%,-50%) scale(calc(1 / var(--k)));transition:transform .9s;font-size:12px;padding:3px 10px;border:1px dashed rgba(232,238,243,.5);border-radius:999px;background:rgba(9,20,34,.6);z-index:1;white-space:nowrap}
+.stage{--k:1}
+.pin{position:absolute;transform:translate(-50%,-50%) scale(calc(1 / var(--k)));transition:transform .9s cubic-bezier(.3,.7,.2,1);z-index:2;display:flex;align-items:center;gap:6px;padding:0;border:0;background:none;cursor:pointer;color:var(--ink);font-family:inherit}
+.pin .n{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-mono);font-weight:700;font-size:13px;background:var(--ink);color:var(--night);border:2px solid var(--night);box-shadow:3px 3px 0 var(--signal);transition:transform .25s,background .25s}
+.pin .lb{font-size:12px;font-weight:700;white-space:nowrap;background:var(--ink);color:var(--night);padding:3px 8px;border-radius:4px;border:2px solid var(--night);box-shadow:3px 3px 0 var(--signal);opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s;pointer-events:none}
+.pin:hover .n,.pin.on .n,.pin.hl .n{transform:scale(1.15);background:var(--signal);color:var(--night)}
+.pin:hover .lb,.pin.on .lb,.pin.hl .lb,.map.labels .pin .lb{opacity:1;transform:none}
+.pin::before{content:"";position:absolute;left:15px;top:30px;width:2px;height:22px;background:linear-gradient(var(--ink),transparent);opacity:.6}
+.hello{position:absolute;left:16px;top:16px;max-width:320px;background:rgba(9,20,34,.88);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:4px;z-index:3;transition:opacity .3s}
+.hello .eyebrow{margin:0;font-size:11px}
+.hello b{font-size:17px;font-weight:900}
+.hello span{font-size:13px;color:var(--mute);line-height:1.6}
+.map.open .hello{opacity:0;pointer-events:none}
+.tools{position:absolute;right:12px;top:12px;display:flex;gap:6px;z-index:3}
+.tools button{font-family:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(9,20,34,.85);color:var(--ink);cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--ink);color:var(--night)}
+.drawer{position:absolute;left:12px;top:12px;bottom:12px;width:min(360px,48%);z-index:4;background:rgba(15,34,56,.97);border:1px solid var(--line);border-radius:8px;padding:20px;overflow:auto;display:grid;grid-auto-rows:max-content;gap:12px;align-content:start;animation:slidein .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes slidein{from{transform:translateX(-16px);opacity:.001}to{transform:none;opacity:1}}
+.drawer .x{position:absolute;right:12px;top:12px}
+.drawer .eyebrow{margin:0;font-size:11px}
+.drawer h3{margin:0;font-size:21px;line-height:1.35;font-weight:900;padding-right:36px;text-wrap:balance}
+.drawer .dq{margin:0;color:var(--mute);font-size:14px}
+.dstat{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-block:1px solid var(--line);padding-block:10px}
+.dstat b{font-family:var(--f-display);font-size:28px;color:var(--signal);line-height:1}
+.dstat span{font-size:13px;color:var(--mute)}
+.drawer h4{margin:4px 0 0;font-size:12px;letter-spacing:.16em;color:var(--signal);font-weight:500;font-family:var(--f-mono)}
+.dwork{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.dwork li{background:var(--night);padding:9px 12px;font-size:14px;display:flex;gap:8px}
+.dwork li i{font-style:normal;color:var(--signal)}
+.drawer .btn{justify-content:center}
+.x{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:20px;cursor:pointer;line-height:1}
+.idx{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--navy)}
+.idx-in{position:absolute;inset:0;overflow:auto;padding:16px}
+.idx .eyebrow{margin:0 0 4px;font-size:11px}
+.idx-h{margin:0 0 12px;font-size:18px;font-weight:900}
+.rows{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.row{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:4px 10px;align-items:baseline;padding:10px 8px;border-radius:6px;cursor:pointer;border:1px solid transparent;background:none;color:var(--ink);font:inherit;text-align:left;width:100%}
+.row:hover,.row.on{background:var(--night);border-color:var(--line)}
+.row.on{border-color:var(--signal)}
+.row .rn{font-family:var(--f-mono);color:var(--signal);font-size:13px;font-weight:700}
+.row .rt{font-weight:700;font-size:15px;line-height:1.4}
+.row .rm{grid-column:2;font-size:12px;color:var(--mute)}
+.row .ra{color:var(--mute);font-size:13px}
+.city-sep{font-family:var(--f-display);font-size:11px;letter-spacing:.2em;color:var(--mute);padding:10px 8px 4px;border-top:1px solid var(--line);margin-top:6px}
+.city-sep:first-child{border:0;margin:0;padding-top:0}
+@media (max-width:900px){
+  .atlas{grid-template-columns:1fr}
+  .idx-in{position:static}
+  .map{aspect-ratio:4/3}
+  .stage{background-size:auto 100%;background-position:62% center}
+  .hello{max-width:calc(100% - 32px);right:16px}
+  .hello span{display:none}
+  .drawer{position:fixed;left:0;right:0;bottom:0;top:auto;width:auto;max-height:76svh;border-radius:14px 14px 0 0;padding-bottom:max(20px,env(safe-area-inset-bottom,0px));padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));z-index:70;animation:sheet .35s cubic-bezier(.2,.7,.2,1)}
+  @keyframes sheet{from{transform:translateY(30px);opacity:.001}to{transform:none;opacity:1}}
+}
+
+/* ---------- 專案內頁 ---------- */
+.ftable{margin:0;border-top:1px solid var(--line)}
+.ftable div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 20px;padding:11px 2px;border-bottom:1px solid var(--line)}
+.ftable dt{color:var(--signal);font-size:14px}
+.ftable dd{margin:0;font-size:15px}
+@media (max-width:620px){.ftable div{grid-template-columns:1fr}}
+
+.mi.zoom{padding:0;cursor:zoom-in;width:100%;display:block;font:inherit}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(4,10,18,.92);display:grid;place-items:center;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
+.lb img{max-width:100%;max-height:calc(100svh - 64px);object-fit:contain;border-radius:4px}
+.lb .x{position:absolute;top:max(16px,env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));background:var(--navy)}
+
+body[data-view="project"] .hero, body[data-view="project"] main:not(#project){display:none}
+.card{text-decoration:none}
+.card .more{font-size:13px;color:var(--mute);margin-top:6px;transition:color .2s}
+.card:hover .more{color:var(--signal)}
+.pv{padding-block:28px 90px;min-height:70svh;animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+.crumb{display:flex;gap:10px;font-size:14px;color:var(--mute);margin-bottom:34px}
+.crumb a{text-decoration:none;color:var(--ink)}
+.crumb a:hover{color:var(--signal)}
+.p-head h1{font-size:clamp(28px,4.6vw,52px);line-height:1.2;margin:0;text-wrap:balance;font-weight:900;letter-spacing:.01em}
+.p-role{font-family:var(--f-hand);font-weight:700;color:var(--signal);font-size:clamp(19px,2.2vw,24px);margin:12px 0 0}
+.p-cover{position:relative;margin-top:32px;aspect-ratio:21/9;max-width:100%;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--navy)}
+.p-cover img{width:100%;height:100%;object-fit:cover}
+.p-cover .ph b{font-size:clamp(34px,6vw,76px)}
+.p-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:20px 0 0}
+.p-meta div{background:var(--night);padding:14px 16px;min-width:0}
+.p-meta dt{font-size:12px;color:var(--mute);letter-spacing:.08em}
+.p-meta dd{margin:2px 0 0;font-weight:500}
+@media (max-width:720px){.p-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.p-cover{aspect-ratio:16/9}}
+.p-body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:clamp(28px,5vw,64px);margin-top:48px;align-items:start}
+.p-side{position:sticky;top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 24px);display:grid;gap:18px}
+@media (max-width:880px){.p-body{grid-template-columns:1fr}.p-side{position:static;order:-1}}
+.p-main{display:grid;gap:44px;min-width:0}
+.p-sec h2{font-size:13px;letter-spacing:.18em;color:var(--signal);font-weight:500;margin:0 0 14px}
+.p-sec > p{margin:0;max-width:40em;font-size:17px}
+.work{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.w{background:var(--night);padding:18px 20px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:6px 24px;transition:background .25s}
+.w:hover{background:var(--navy)}
+.w h3{margin:0;font-size:16px;line-height:1.5}
+.w p{margin:0;color:var(--mute)}
+.w:hover p{color:var(--ink)}
+@media (max-width:620px){.w{grid-template-columns:1fr}}
+.call{margin:0;font-size:17px;line-height:1.85;border-left:2px solid var(--signal);padding:4px 0 4px 20px;max-width:40em}
+.kpi{border:1px solid var(--line);border-radius:6px;padding:22px 20px;display:grid;gap:6px;background:var(--navy)}
+.kpi b{font-family:var(--f-display);font-size:clamp(34px,4vw,46px);line-height:1;color:var(--signal);font-variant-numeric:tabular-nums}
+.kpi span{color:var(--mute);font-size:14px}
+.p-links{display:grid;gap:8px}
+.p-links h2{font-size:12px;letter-spacing:.16em;color:var(--mute);font-weight:500;margin:0}
+.p-links a{font-size:14px;text-decoration:none;border:1px solid var(--line);padding:8px 12px;border-radius:6px}
+.p-links a:hover{border-color:var(--signal)}
+.p-side .btn{justify-content:center}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:64px;border-top:1px solid var(--line);padding-top:24px}
+.pn a{text-decoration:none;display:grid;gap:4px;padding:16px;border:1px solid var(--line);border-radius:6px;min-width:0;transition:border-color .2s}
+.pn a:hover{border-color:var(--signal)}
+.pn .nx{text-align:right}
+.pn small{color:var(--mute);font-size:13px}
+.pn span{font-weight:700}
+@media (max-width:560px){.pn{grid-template-columns:1fr}.pn .nx{text-align:left}}
+.media{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.media a,.media figure{margin:0;display:grid;gap:6px;text-decoration:none;font-size:13px;color:var(--mute)}
+.media .mi{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:4px;overflow:hidden;background:var(--night);border:1px solid var(--line)}
+.media .mi img{width:100%;height:100%;object-fit:cover}
+.media a:hover .mi{border-color:var(--signal)}
+.media a:hover span{color:var(--ink)}
+.note{font-size:13px;color:var(--mute);border-top:1px dashed var(--line);padding-top:12px;margin:0}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{font-size:14px;border:1px solid var(--line);padding:6px 12px;border-radius:6px;text-decoration:none}
+.links a:hover{border-color:var(--signal)}
+
+/* ---------- 音樂作品 ---------- */
+.aimv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);border:1px solid var(--line);border-radius:6px;overflow:hidden;text-decoration:none;background:var(--navy);transition:border-color .3s}
+.aimv:hover{border-color:var(--signal)}
+.aimv{text-decoration:none}
+.aimv .ph{position:relative;inset:auto;aspect-ratio:16/9;max-width:100%}
+.aimv-t{padding:20px 22px;display:grid;gap:6px;align-content:center;min-width:0}
+.aimv-t .org{font-size:13px;color:var(--mute)}
+.aimv-t strong{font-size:20px}
+.aimv-t span{color:var(--mute);font-size:14px}
+.aimv-t .yt{color:var(--signal);font-size:14px;text-decoration:none}
+.aimv-t .yt:hover{text-decoration:underline}
+.aimv iframe{width:100%;aspect-ratio:16/9;max-width:100%;border:0;display:block;background:#000}
+.aimv .ph{text-decoration:none;color:var(--ink)}
+@media (max-width:620px){.aimv{grid-template-columns:1fr}}
+.sub{font-size:13px;letter-spacing:.16em;color:var(--signal);font-weight:500;margin:48px 0 14px}
+.cfwrap{margin-top:8px;display:grid;gap:14px;justify-items:center}
+.cf{position:relative;width:100%;height:clamp(250px,32vw,340px);perspective:1100px;transform-style:preserve-3d;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none}
+.cov{position:absolute;left:50%;top:46%;width:clamp(150px,20vw,230px);aspect-ratio:1;max-width:100%;border:1px solid rgba(232,238,243,.18);border-radius:3px;padding:14px;display:grid;grid-template-rows:auto 1fr auto;text-align:left;font-family:inherit;color:var(--ink);cursor:pointer;transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .4s;-webkit-box-reflect:below 6px linear-gradient(transparent 62%,rgba(255,255,255,.22));box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.cov .cy{font-family:var(--f-display);font-weight:700;font-size:13px;letter-spacing:.12em;opacity:.85}
+.cov b{align-self:center;font-weight:900;font-size:clamp(20px,2.4vw,28px);line-height:1.25;-webkit-text-stroke:.07em var(--night);paint-order:stroke fill;text-shadow:2px 2px 0 var(--signal),3px 3px 0 var(--signal-deep)}
+.cov .ca{font-size:12px;opacity:.85}
+.cov.v0{background:radial-gradient(rgba(232,238,243,.16) 1px,transparent 1.5px) 0 0/7px 7px,linear-gradient(150deg,#163a5c,#0b1d31)}
+.cov.v1{background:linear-gradient(135deg,transparent 50%,rgba(232,238,243,.08) 50%) 0 100%/34px 34px repeat-x,linear-gradient(160deg,#1f6f8f,#0f2f4a)}
+.cov.v2{background:repeating-linear-gradient(90deg,rgba(232,238,243,.06) 0 2px,transparent 2px 14px),linear-gradient(170deg,#24324a,#0d1626)}
+.cov.on{border-color:var(--signal)}
+.cov.has-img{padding:0;overflow:hidden;background:var(--navy)}
+.cov.has-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cov.has-img .cy{position:absolute;left:10px;top:10px;background:rgba(9,20,34,.8);padding:2px 8px;border-radius:3px;font-size:12px}
+.cf-info{text-align:center;display:grid;gap:2px;min-height:96px}
+.cf-info .y{font-family:var(--f-display);color:var(--signal);font-weight:700;letter-spacing:.14em;font-size:13px}
+.cf-info b{font-size:clamp(22px,3vw,30px);font-weight:900}
+.cf-info span{color:var(--mute);font-size:14px}
+.cf-info em{font-style:normal;color:var(--ink)}
+.cf-info small{font-size:14px;color:var(--ink);opacity:.85}
+.cf-ctrl{display:flex;align-items:center;gap:12px;width:min(420px,100%)}
+.cf-ctrl button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--navy);color:var(--ink);cursor:pointer;font-size:12px;flex:none}
+.cf-ctrl button:hover{border-color:var(--signal)}
+.cf-ctrl input{flex:1;min-width:0;accent-color:var(--signal)}
+.songs{border-top:1px solid var(--line);margin-top:26px}
+.song{width:100%;display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,.8fr) minmax(0,.7fr) minmax(0,1.6fr);gap:4px 20px;padding:12px 8px;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);font:inherit;text-align:left;cursor:pointer;align-items:baseline;transition:background .2s}
+.song:hover{background:rgba(47,166,209,.06)}
+.song.on{background:rgba(47,166,209,.12)}
+.song .y{font-family:var(--f-display);color:var(--signal);font-variant-numeric:tabular-nums}
+.song .t{font-weight:700}
+.song .a,.song .c{color:var(--mute);font-size:14px}
+.song .n{font-size:14px;color:var(--ink)}
+@media (max-width:900px){.song{grid-template-columns:52px minmax(0,1fr)}.song .a,.song .c,.song .n{grid-column:2}}
+.wall{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 26px;align-items:baseline}
+.wall li{font-weight:900;font-size:clamp(20px,2.6vw,32px);line-height:1.35;color:var(--mute);transition:color .2s}
+.wall li:hover{color:var(--ink)}
+.wall li.hi{color:var(--ink)}
+.wall.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:4px 20px}
+.wall.grid li{font-size:clamp(19px,2vw,26px);text-align:center}
+.wall.grid.sm li{font-size:clamp(16px,1.6vw,20px)}
+@media (max-width:620px){.wall.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.wall.sm li{font-size:clamp(16px,1.8vw,21px);font-weight:700}
+.wall .etc{color:var(--signal)!important;font-weight:500}
+.bgroups{display:grid;grid-template-columns:1fr;gap:4px}
+.bgroups .wall.grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));row-gap:12px}
+.bgroups .wall.grid.wide{grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr))}
+.wall li small{font-size:.7em;font-weight:500}
+@media (max-width:620px){.bgroups .wall.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.bgroups{grid-template-columns:1fr}}
+.press{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.press img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;border:1px solid var(--line);filter:saturate(.82) brightness(.9) contrast(1.02);transition:filter .5s}
+.press figure:hover img{filter:none}
+.press figure{margin:0;display:grid;gap:6px;font-size:13px;color:var(--mute)}
+@media (max-width:620px){.press{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- 聯絡 ---------- */
+.contact{overflow:hidden;isolation:isolate}
+.contact .bg{position:absolute;inset:0;z-index:-1;background:url(assets/skyline.jpg) center bottom/cover no-repeat;opacity:.35}
+.contact::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--night),rgba(9,20,34,.6) 60%,var(--night))}
+.contact .wrap{text-align:center;display:grid;justify-items:center;gap:20px}
+.big-hand{font-family:var(--f-hand);font-weight:900;color:var(--ink);font-size:clamp(34px,6.4vw,72px);line-height:1.2;margin:0;text-wrap:balance;-webkit-text-stroke:.08em var(--night);paint-order:stroke fill;text-shadow:var(--stk);letter-spacing:.03em}
+.big-hand small{display:block;font-size:.46em;margin-top:10px}
+.big-hand .ready{font-family:var(--f-display);font-weight:700;letter-spacing:.06em;-webkit-text-stroke:.05em var(--night)}
+.cbar{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:10px}
+.mail{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;background:var(--navy);border:1px solid var(--line);border-radius:10px;padding:10px 12px 10px 18px}
+.mail code{font-family:var(--f-display);font-size:clamp(15px,2vw,18px);user-select:all;word-break:break-all}
+.copy-ok{font-size:13px;color:var(--signal);min-height:1.4em}
+footer{border-top:1px solid var(--line);padding-block:22px;color:var(--mute);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+
+/* ---------- 捲動動態 ---------- */
+html.rv-on .rv{opacity:.001;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0) * 90ms)}
+html.rv-on .rv.in{opacity:1;transform:none}
+.method{counter-reset:step}
+.m{position:relative;counter-increment:step}
+.m .k::before{content:counter(step,decimal-leading-zero) "  ";color:var(--ink);opacity:.45}
+.m::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--signal);transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.3,.7,.2,1);transition-delay:calc(var(--d,0) * 260ms + .25s)}
+html.rv-on .method .m{opacity:.25;transition:opacity .7s,background .3s;transition-delay:calc(var(--d,0) * 260ms),0s}
+html.rv-on .method.in .m{opacity:1}
+.method.in .m::before,html:not(.rv-on) .m::before{transform:scaleX(1)}
+html.rv-on #work:not(.pins-in) .pin{opacity:0}
+#work.pins-in .pin{animation:pinfade .5s ease backwards;animation-delay:calc(var(--i) * 90ms + .2s)}
+#work.pins-in .pin .n{animation:pindrop .7s cubic-bezier(.3,1.5,.5,1) backwards;animation-delay:calc(var(--i) * 90ms + .2s)}
+@keyframes pinfade{from{opacity:0}to{opacity:1}}
+@keyframes pindrop{from{transform:translateY(-28px)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<nav class="nav" aria-label="主要導覽">
+  <div class="wrap">
+    <a class="brand" href="#top">DENNIS<span>陳浩賢</span></a>
+    <ul>
+      <li><a class="l" href="#about">關於</a></li>
+      <li><a class="l" href="#method">方法</a></li>
+      <li><a class="l" href="#journey">歷程</a></li>
+      <li><a class="l" href="#music">音樂</a></li>
+      <li><a class="l" href="#work">作品</a></li>
+      <li><a class="l" href="#artists">合作</a></li>
+      <li><a class="l" href="#contact">聯絡</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-sky" aria-hidden="true"></div>
+  <svg class="star" id="heroStar" viewBox="-110 -110 220 220" aria-hidden="true"><polygon></polygon></svg>
+  <div class="wrap">
+    <div class="logos rise" role="img" aria-label="陳浩賢 DENNIS">
+      <span class="stk name-zh">陳浩賢</span>
+      <span class="name-en">DENNIS</span>
+    </div>
+    <p class="roles rise d1"><span>整合行銷</span><i>/</i><span>影音製作統籌</span><i>/</i><span>品牌合作</span><i>/</i><span>音樂創作人</span></p>
+    <p class="hand rise d2">創新，總在熟悉之外誕生<small>Great things never came from comfort zones</small></p>
+    <p class="thesis rise d3"><b>創作者出身，把複雜需求轉成可交付成果。</b>在溫哥華、香港、臺北累積 20 年工作經歷，從寫歌、辦演出、唱片發行，走到品牌聯名、影音製作與政府標案履約。</p>
+    <div class="cta rise d4">
+      <a class="btn solid" href="#work">看作品集 <span aria-hidden="true">→</span></a>
+      <a class="btn" href="#journey">走一趟三城歷程</a>
+    </div>
+  </div>
+  <div class="saw" aria-hidden="true"></div>
+</header>
+
+<main>
+<section class="sec" id="about">
+  <div class="wrap">
+    <p class="eyebrow">About Dennis</p>
+    <h2 class="h2">Three Cities, One Thread</h2>
+    <p class="h2-zh">從溫哥華的多元文化，到香港的節奏，再到臺北的創意現場</p>
+    <dl class="facts facts-row">
+      <div><dt>學歷</dt><dd>UBC 經濟學系</dd></div>
+      <div><dt>音樂身分</dt><dd>CASH 作家會員（2006 起）</dd></div>
+      <div><dt>語言</dt><dd>中文・粵語・英文</dd></div>
+      <div><dt>生活城市</dt><dd>溫哥華・香港・臺北</dd></div>
+    </dl>
+    <div class="about">
+      <p class="q">我做決定有一個原則：沒有任何選項能保證最好。先把不能承受的結果逐一排除，再從可控的選項裡做決定。</p>
+      <p>我在加拿大 UBC 讀經濟，回到香港後成為 CASH 作家會員，替楊千嬅、周慧敏、鄭希怡等歌手作曲填詞。之後在 Backstage Live Restaurant 管過 400 多場演出，在 Frenzi Music 負責唱片發行與 A&amp;R，也在服裝廠管過產線、在琴行管過門市。</p>
+      <p>2022 年搬到臺北，從雄獅旅行社的 KOL 商務，走到代表娛樂的遊戲 × 餐飲 × 平台聯名，再走進方成事的政府標案與影音專案。</p>
+      <p>行業換了幾次，做的其實是同一件事：理解需求、找到解法，把想法一路推到能交付、能驗收。我能和創作者談內容、和品牌談條件、和製作團隊談做法；需要時，文字、視覺與影音也能自己處理。</p>
+      <ul class="chips" aria-label="專長">
+        <li>整合行銷與跨品牌合作</li><li>影音內容與製作統籌</li><li>KOL 商務化</li><li>政府標案履約與合約授權</li><li>音樂創作與發行</li><li>AI 研究與查核工作流</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec dots" id="method" style="background-color:var(--night)">
+  <div class="wrap">
+    <p class="eyebrow">How I Work</p>
+    <h2 class="h2">From Concept to Delivery</h2>
+    <p class="h2-zh">我不只是提案，更讓提案成真</p>
+    <div class="method">
+      <article class="m">
+        <span class="k">DECIDE</span>
+        <h3>先排除不能承受的結果</h3>
+        <p>結果未必完美，但不會失控。面對多個選項，先問「哪個問題現在不處理，影響會繼續擴大」，優先控制連鎖風險。</p>
+        <p class="ex">這個原則從 Backstage 處理演出現場開始，一直用到現在。</p>
+      </article>
+      <article class="m">
+        <span class="k">PLAN B · C</span>
+        <h3>帶著選項去找決策者</h3>
+        <p>接下專案先想好 Plan B、Plan C。遇到問題，把時程、成本與效果整理成可以比較的選項，而不是只把問題往上丟。</p>
+        <p class="ex">《永劫無間》聯名遇颱風，提出「維持成本」與「加少量預算趕工」兩案，活動沒有延期。</p>
+      </article>
+      <article class="m">
+        <span class="k">CONTRACT</span>
+        <h3>簽約前把權責寫清楚</h3>
+        <p>交付什麼、誰負責、權利歸誰、何時付款，事前寫清楚，不等出問題才回頭找條文。</p>
+        <p class="ex">《DEMO SAMPLER》約 18 首歌的詞曲權利分屬不同創作人與出版公司，逐一以英文合約處理授權。</p>
+      </article>
+      <article class="m">
+        <span class="k">SYSTEM</span>
+        <h3>把做過的事變成流程</h3>
+        <p>一次性的工作，整理成下一次可以直接用的流程、模板和工具，讓團隊交接不必從頭來。</p>
+        <p class="ex">雄獅的 KOL Sales Kit、青苗琴行的管理模板、代表娛樂的 Uber Eats 合作公版。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="journey" aria-label="三城工作歷程">
+  <div class="j-pin">
+    <div class="j-sky" aria-hidden="true"></div>
+    <div class="wrap j-head">
+      <h2 class="j-city" id="jCity">VANCOUVER<small>溫哥華</small></h2>
+      <div class="j-year" id="jYear" aria-live="off">2000</div>
+    </div>
+    <div class="j-track" id="jTrack"></div>
+    <div class="wrap j-bar">
+      <div class="j-rail"><div class="j-fill" id="jFill"></div><svg class="walker" id="jWalker" viewBox="0 0 12 15" width="36" height="45" shape-rendering="crispEdges" aria-hidden="true"><g class="wb"><rect x="4" y="0" width="1" height="1" style="fill:#6b4f3a"/><rect x="5" y="0" width="1" height="1" style="fill:#6b4f3a"/><rect x="6" y="0" width="1" height="1" style="fill:#6b4f3a"/><rect x="7" y="0" width="1" height="1" style="fill:#6b4f3a"/><rect x="3" y="1" width="1" height="1" style="fill:#6b4f3a"/><rect x="4" y="1" width="1" height="1" style="fill:#6b4f3a"/><rect x="5" y="1" width="1" height="1" style="fill:#6b4f3a"/><rect x="6" y="1" width="1" height="1" style="fill:#6b4f3a"/><rect x="7" y="1" width="1" height="1" style="fill:#6b4f3a"/><rect x="8" y="1" width="1" height="1" style="fill:#6b4f3a"/><rect x="3" y="2" width="1" height="1" style="fill:#6b4f3a"/><rect x="4" y="2" width="1" height="1" style="fill:#6b4f3a"/><rect x="5" y="2" width="1" height="1" style="fill:#f3c9a2"/><rect x="6" y="2" width="1" height="1" style="fill:#f3c9a2"/><rect x="7" y="2" width="1" height="1" style="fill:#f3c9a2"/><rect x="8" y="2" width="1" height="1" style="fill:#f3c9a2"/><rect x="3" y="3" width="1" height="1" style="fill:#6b4f3a"/><rect x="4" y="3" width="1" height="1" style="fill:#f3c9a2"/><rect x="5" y="3" width="1" height="1" style="fill:#f3c9a2"/><rect x="6" y="3" width="1" height="1" style="fill:#f3c9a2"/><rect x="7" y="3" width="1" height="1" style="fill:#0b1622"/><rect x="8" y="3" width="1" height="1" style="fill:#f3c9a2"/><rect x="3" y="4" width="1" height="1" style="fill:#6b4f3a"/><rect x="4" y="4" width="1" height="1" style="fill:#f3c9a2"/><rect x="5" y="4" width="1" height="1" style="fill:#f3c9a2"/><rect x="6" y="4" width="1" height="1" style="fill:#f3c9a2"/><rect x="7" y="4" width="1" height="1" style="fill:#f3c9a2"/><rect x="8" y="4" width="1" height="1" style="fill:#f3c9a2"/><rect x="4" y="5" width="1" height="1" style="fill:#f3c9a2"/><rect x="5" y="5" width="1" height="1" style="fill:#f3c9a2"/><rect x="6" y="5" width="1" height="1" style="fill:#f3c9a2"/><rect x="7" y="5" width="1" height="1" style="fill:#f3c9a2"/><rect x="2" y="6" width="1" height="1" style="fill:#f2b33d"/><rect x="3" y="6" width="1" height="1" style="fill:var(--signal)"/><rect x="4" y="6" width="1" height="1" style="fill:var(--signal)"/><rect x="5" y="6" width="1" height="1" style="fill:var(--signal)"/><rect x="6" y="6" width="1" height="1" style="fill:var(--signal)"/><rect x="7" y="6" width="1" height="1" style="fill:var(--signal)"/><rect x="8" y="6" width="1" height="1" style="fill:var(--signal)"/><rect x="1" y="7" width="1" height="1" style="fill:#f2b33d"/><rect x="2" y="7" width="1" height="1" style="fill:#f2b33d"/><rect x="3" y="7" width="1" height="1" style="fill:var(--signal)"/><rect x="4" y="7" width="1" height="1" style="fill:var(--signal)"/><rect x="5" y="7" width="1" height="1" style="fill:var(--signal)"/><rect x="6" y="7" width="1" height="1" style="fill:var(--signal)"/><rect x="7" y="7" width="1" height="1" style="fill:var(--signal)"/><rect x="8" y="7" width="1" height="1" style="fill:var(--signal)"/><rect x="9" y="7" width="1" height="1" style="fill:#f3c9a2"/><rect x="1" y="8" width="1" height="1" style="fill:#f2b33d"/><rect x="2" y="8" width="1" height="1" style="fill:#f2b33d"/><rect x="3" y="8" width="1" height="1" style="fill:var(--signal)"/><rect x="4" y="8" width="1" height="1" style="fill:var(--signal)"/><rect x="5" y="8" width="1" height="1" style="fill:var(--signal)"/><rect x="6" y="8" width="1" height="1" style="fill:var(--signal)"/><rect x="7" y="8" width="1" height="1" style="fill:var(--signal)"/><rect x="8" y="8" width="1" height="1" style="fill:var(--signal)"/><rect x="9" y="8" width="1" height="1" style="fill:#f3c9a2"/><rect x="2" y="9" width="1" height="1" style="fill:#f2b33d"/><rect x="3" y="9" width="1" height="1" style="fill:var(--signal)"/><rect x="4" y="9" width="1" height="1" style="fill:var(--signal)"/><rect x="5" y="9" width="1" height="1" style="fill:var(--signal)"/><rect x="6" y="9" width="1" height="1" style="fill:var(--signal)"/><rect x="7" y="9" width="1" height="1" style="fill:var(--signal)"/><rect x="3" y="10" width="1" height="1" style="fill:#e9eef4"/><rect x="4" y="10" width="1" height="1" style="fill:#e9eef4"/><rect x="5" y="10" width="1" height="1" style="fill:#e9eef4"/><rect x="6" y="10" width="1" height="1" style="fill:#e9eef4"/><rect x="7" y="10" width="1" height="1" style="fill:#e9eef4"/><rect x="8" y="10" width="1" height="1" style="fill:#e9eef4"/></g><g class="fa"><rect x="3" y="11" width="1" height="1" style="fill:#e9eef4"/><rect x="4" y="11" width="1" height="1" style="fill:#e9eef4"/><rect x="7" y="11" width="1" height="1" style="fill:#e9eef4"/><rect x="8" y="11" width="1" height="1" style="fill:#e9eef4"/><rect x="2" y="12" width="1" height="1" style="fill:#e9eef4"/><rect x="3" y="12" width="1" height="1" style="fill:#e9eef4"/><rect x="8" y="12" width="1" height="1" style="fill:#e9eef4"/><rect x="9" y="12" width="1" height="1" style="fill:#e9eef4"/><rect x="2" y="13" width="1" height="1" style="fill:#e9eef4"/><rect x="3" y="13" width="1" height="1" style="fill:#e9eef4"/><rect x="8" y="13" width="1" height="1" style="fill:#e9eef4"/><rect x="9" y="13" width="1" height="1" style="fill:#e9eef4"/><rect x="1" y="14" width="1" height="1" style="fill:#a9bccf"/><rect x="2" y="14" width="1" height="1" style="fill:#a9bccf"/><rect x="3" y="14" width="1" height="1" style="fill:#a9bccf"/><rect x="7" y="14" width="1" height="1" style="fill:#a9bccf"/><rect x="8" y="14" width="1" height="1" style="fill:#a9bccf"/><rect x="9" y="14" width="1" height="1" style="fill:#a9bccf"/></g><g class="fb"><rect x="4" y="11" width="1" height="1" style="fill:#e9eef4"/><rect x="5" y="11" width="1" height="1" style="fill:#e9eef4"/><rect x="6" y="11" width="1" height="1" style="fill:#e9eef4"/><rect x="7" y="11" width="1" height="1" style="fill:#e9eef4"/><rect x="4" y="12" width="1" height="1" style="fill:#e9eef4"/><rect x="5" y="12" width="1" height="1" style="fill:#e9eef4"/><rect x="6" y="12" width="1" height="1" style="fill:#e9eef4"/><rect x="7" y="12" width="1" height="1" style="fill:#e9eef4"/><rect x="4" y="13" width="1" height="1" style="fill:#e9eef4"/><rect x="5" y="13" width="1" height="1" style="fill:#e9eef4"/><rect x="6" y="13" width="1" height="1" style="fill:#e9eef4"/><rect x="7" y="13" width="1" height="1" style="fill:#e9eef4"/><rect x="3" y="14" width="1" height="1" style="fill:#a9bccf"/><rect x="4" y="14" width="1" height="1" style="fill:#a9bccf"/><rect x="5" y="14" width="1" height="1" style="fill:#a9bccf"/><rect x="6" y="14" width="1" height="1" style="fill:#a9bccf"/><rect x="7" y="14" width="1" height="1" style="fill:#a9bccf"/></g></svg></div>
+      <div class="j-legend"><span>VANCOUVER</span><span>HONG KONG</span><span>TAIPEI</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dots" id="music">
+  <div class="wrap">
+    <p class="eyebrow">Music</p>
+    <h2 class="h2">Songwriting Since 2006</h2>
+    <p class="h2-zh">創作讓我習慣看細節，先弄懂對方站在什麼位置</p>
+    <p class="lead">2006 年起為 CASH 作家會員，作曲、填詞至今。2022 年來臺後經營個人 YouTube 頻道，自行拍攝與剪輯。</p>
+    <h3 class="sub">音樂作品</h3>
+    <div class="cfwrap" id="cfWrap" aria-label="音樂作品，可左右滑動或用方向鍵選歌">
+      <div class="cf" id="cf"></div>
+      <div class="cf-info" id="cfInfo" aria-live="polite"></div>
+      <div class="cf-ctrl">
+        <button type="button" id="cfPrev" aria-label="上一首">◀</button>
+        <input type="range" id="cfRange" min="0" max="6" step="1" value="4" aria-label="選擇歌曲">
+        <button type="button" id="cfNext" aria-label="下一首">▶</button>
+      </div>
+    </div>
+    <div class="songs" id="songs"></div>
+    <div style="margin-top:18px"><a class="btn solid" href="https://zh.wikipedia.org/zh-tw/%E9%99%B3%E6%B5%A9%E8%B3%A2" target="_blank" rel="noopener">完整作品列表：陳浩賢－維基百科 <span aria-hidden="true">↗</span></a></div>
+    <h3 class="sub">AI 協作 MV</h3>
+    <div class="aimv" id="aimv">
+      <a class="ph dots" id="aimvMedia" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener" aria-label="在 YouTube 觀看 AI 協作 MV"><div><b>AI × MV</b><small>個人創作</small></div><span class="play" aria-hidden="true"></span></a>
+      <div class="aimv-t"><span class="org">個人創作・2022 年後</span><strong>AI 協作 MV</strong><span>自行創作音樂，結合生成式 AI 工具完成影像。作品說明待補。</span><a class="yt" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener">在 YouTube 觀看 ↗</a></div>
+    </div>
+    <h3 class="sub">媒體採訪與專題報導</h3>
+    <div class="press">
+      <figure><img src="assets/press-mr.jpg" alt="《MR》人物專訪內頁" loading="lazy"><figcaption>《MR》人物專訪〈At the starting point〉</figcaption></figure>
+      <figure><img src="assets/press-private-2.jpg" alt="《PRIVATE MAG》BRANDSTORY 專訪人像頁" loading="lazy"><figcaption>《PRIVATE MAG》BRANDSTORY</figcaption></figure>
+      <figure><img src="assets/press-private-1.jpg" alt="《PRIVATE MAG》專訪內文頁" loading="lazy"><figcaption>〈Dennis Chan 我的開始在這裏〉</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="wrap">
+    <p class="eyebrow">Selected Work</p>
+    <h2 class="h2">Where Brands Meet Stories</h2>
+    <p class="h2-zh">每一個專案，都是一次從靈感到實現的旅程</p>
+    <p class="lead">點地圖或清單打開專案摘要，再進到完整內頁，看我在裡面做了什麼、遇到什麼問題、怎麼判斷。團隊共同完成的部分，會標明我負責的範圍。</p>
+    <div class="atlas">
+      <div class="map" id="map">
+        <div class="stage" id="stage">
+          <span class="cityname" style="left:11%">VANCOUVER</span>
+          <span class="cityname" style="left:47%">HONG KONG</span>
+          <span class="cityname" style="left:82%">TAIPEI</span>
+          <span class="origin" style="left:12%;top:58%">起點・UBC 2000</span>
+          <div id="pins"></div>
+        </div>
+        <div class="hello" id="hello"><p class="eyebrow">HELLO, DENNIS / WORKS</p><b>每個編號是一個專案</b><span>依時間從香港排到臺北。點地圖上的編號或右側清單，看我在裡面做了什麼。</span></div>
+        <div class="tools"><button type="button" id="btnAll">全景</button><button type="button" id="btnLabel" aria-pressed="false">名牌</button></div>
+        <aside class="drawer" id="drawer" hidden aria-live="polite"></aside>
+      </div>
+      <div class="idx"><div class="idx-in">
+        <p class="eyebrow">THE PROJECT INDEX</p>
+        <h3 class="idx-h">11 個專案／2 座城市</h3>
+        <ol class="rows" id="rows"></ol>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dots" id="artists">
+  <div class="wrap">
+    <p class="eyebrow">Artists</p>
+    <h2 class="h2">Artists I've Worked With</h2>
+    <p class="h2-zh">合作過的歌手與音樂人</p>
+    <h3 class="sub">歌手</h3>
+    <ul class="wall grid"><li class="hi">At 17</li><li class="hi">G.E.M.</li><li>HotCha</li><li>Nowhere Boys</li><li class="hi">ØZI</li><li>PER SE</li><li>方炯鑌</li><li>方皓玟</li><li>王宗堯</li><li>王菀之</li><li>沈震軒</li><li>李倖倪</li><li>李逸朗</li><li>吳雨霏</li><li>吳浩康</li><li class="hi">岑寧兒</li><li class="hi">周慧敏</li><li>林一峰</li><li>雨僑</li><li>洪卓立</li><li class="hi">韋禮安</li><li>倫永亮</li><li>郭采潔</li><li>麥貝夷</li><li>麥浚龍</li><li>張敬軒</li><li class="hi">陳奕迅</li><li>楊千嬅</li><li>農夫</li><li>鄒文正</li><li>鄭希怡</li><li>蔣雅文</li><li>鄧小巧</li><li>黎曉陽</li><li>糖兄妹</li><li>鍾一憲</li><li>藍又時</li><li>藍奕邦</li><li>關心研</li></ul>
+    <h3 class="sub">詞曲創作人、監製與音樂人</h3>
+    <ul class="wall grid sm"><li>Adrian Chan</li><li>Christopher Chak</li><li>Edmund Tsang</li><li>Edward Chan</li><li class="hi">Eric Kwok</li><li>Gary Chan</li><li>方杰</li><li>方樹梁</li><li>伍仲衡</li><li>伍卓賢</li><li class="hi">伍樂城</li><li class="hi">林夕</li><li class="hi">金培達</li><li class="hi">姚謙</li><li>夏至</li><li>徐繼宗</li><li>張佳添</li><li>陳台證</li><li class="hi">陳奐仁</li><li>馮穎琪</li><li>舒文</li><li>蔡德才</li><li>謝國維</li></ul>
+    <p class="lead" style="margin-top:22px">在歌曲創作、演出統籌、唱片宣傳與內容合作中共事過的歌手與音樂人，名單未逐一列盡。</p>
+  </div>
+</section>
+
+<section class="sec" id="brands">
+  <div class="wrap">
+    <p class="eyebrow">Brands &amp; Partners</p>
+    <h2 class="h2">Brands &amp; Partners</h2>
+    <p class="h2-zh">合作過的品牌與廠商</p>
+    <div class="bgroups">
+      <div class="bg"><h3 class="sub">遊戲與娛樂</h3><ul class="wall grid sm"><li>Garena</li><li>艾肯娛樂</li><li>弈樂科技</li><li>華映娛樂</li><li>龍邑遊戲</li></ul></div><div class="bg"><h3 class="sub">品牌與通路</h3><ul class="wall grid sm"><li>55688</li><li>BOSSINI</li><li>CASETiFY</li><li>CSL</li><li>HMV</li><li>KYMCO 光陽</li><li>Maserati</li><li>NIKE</li><li>ROOTS（臺灣）</li><li>Uber Eats（臺灣）</li><li>ZALORA</li><li>百老匯</li><li>長灘飯店</li><li>洲際酒店集團（臺灣）</li><li>香港唱片</li><li>迷客夏</li><li>海港城</li><li>晨間廚房</li><li>雅比斯國際</li><li>傑森整合行銷</li></ul></div><div class="bg"><h3 class="sub">唱片、媒體與平台</h3><ul class="wall grid sm"><li>KKBOX</li><li>MOOV</li><li>Sony Music</li><li>Yahoo HK</li><li>百代唱片</li><li>東亞娛樂</li><li>金牌娛樂</li><li>英皇娛樂</li><li>香港電台</li><li>商業電台</li><li>華納音樂</li><li>新城電台</li><li>寰亞唱片</li><li>環球唱片</li></ul></div><div class="bg"><h3 class="sub">公部門、學校與觀光</h3><ul class="wall grid sm wide"><li>UNICEF</li><li>台灣好行</li><li>台灣糖業股份有限公司</li><li>社團法人國家生技醫療產業策進會</li><li>香港公開大學<small>（現香港都會大學）</small></li><li>香港旅遊發展局</li><li>香港浸會大學</li><li>原住民族委員會</li><li>桃園市政府新聞處</li><li>桃園市政府觀光旅遊局</li><li>國家發展委員會</li><li>勞動部勞動及職業安全衛生研究所</li><li>新竹市文化局</li><li>臺北市政府體育局</li></ul></div>
+    </div>
+    <p class="lead" style="margin-top:30px">在品牌聯名、提案與專案執行中共事過的品牌與單位，名單未逐一列盡。</p>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Next Chapter</p>
+    <p class="big-hand"><span class="ready">I am READY,</span><small>期待與你們團隊共創下一段故事</small></p>
+    <div class="mail">
+      <code id="email">dennischan.works@gmail.com</code>
+      <button class="btn" type="button" id="copyBtn">複製 Email</button>
+    </div>
+    <div class="copy-ok" id="copyOk" role="status"></div>
+  </div>
+</section>
+</main>
+<div class="lb" id="lb" hidden role="dialog" aria-label="圖片檢視"><img alt=""><button class="x" type="button" aria-label="關閉">×</button></div>
+<main id="project" class="pv" hidden aria-live="polite"></main>
+
+<footer><div class="wrap"><span>© 2026 陳浩賢 Dennis Chan</span><span>Vancouver · Hong Kong · Taipei</span></div></footer>
+
+
+<script>
+/* ===== 資料：工作歷程 ===== */
+const STOPS = [
+ {k:'intro'},
+ {k:'gate', city:'VANCOUVER', zh:'溫哥華', note:'2000–2004｜求學'},
+ {city:'VANCOUVER', y:2000, when:'2000/9–2004/4', org:'The University of British Columbia', role:'經濟學系 大學畢業', pts:['在溫哥華開始寫歌，參與華人學生會舞台劇與音樂劇創作','跨文化生活，培養中英雙語工作能力'], tags:['創作','跨文化']},
+ {k:'gate', city:'HONG KONG', zh:'香港', note:'2004–2022｜音樂、活動、營運'},
+ {city:'HONG KONG', y:2004, when:'2004–2005', org:'香港生產力促進局', role:'原創音樂製作及電腦音樂技術文憑', pts:['《熱戀，之後》獲「唱作情歌@海港城」最感動歌曲','2005 年獲馮穎琪賞識，簽約 Green Coffee 成為創作人'], tags:['創作']},
+ {city:'HONG KONG', y:2006, when:'2006 起・持續至今', org:'CASH 作家會員', role:'流行音樂創作人（作曲／填詞）', pts:['為楊千嬅、周慧敏、鄭希怡、鍾一憲等歌手創作','《宅女》填詞獲第 22 屆 CASH 流行曲創作大賽季軍'], tags:['創作']},
+ {city:'HONG KONG', y:2006, when:'2006/11–2008/7', org:'伯樂音樂學院', role:'課程發展專員', pts:['與香港公開大學合辦《音樂市場及管理學專業文憑》','撰寫的 3 類課程一次通過香港持續進修基金（CEF）審核','親自完成 1,500+ 份創作比賽作品初選'], tags:['課程制度','活動']},
+ {city:'HONG KONG', y:2008, when:'2008/8–2012/12', org:'Backstage Live Restaurant', role:'項目及專案經理', pts:['統籌 400+ 場小型、10+ 場大型音樂活動','G.E.M. 鄧紫棋、韋禮安、郭采潔等歌手香港演出窗口','主責 Battlestage 歌唱比賽、統籌《DEMO SAMPLER》合輯'], tags:['活動','營運','發行']},
+ {city:'HONG KONG', y:2013, when:'2013/3–2015/5', org:'Frenzi Music Ltd.', role:'市場營銷經理', pts:['統籌約 50 檔單曲、4 檔專輯的發行與宣傳','25 場實體音樂會，累計 10,000+ 人次','黎曉陽、鄧小巧等藝人 A&R 與宣傳'], tags:['發行行銷','A&R']},
+ {city:'HONG KONG', y:2015, when:'2015/6–2020/7', org:'四海發展有限公司', role:'營運經理／國外業務主管', pts:['推進自有品牌，親自做服裝設計與官網設計','建立官網、ZALORA、天貓與社群通路','因應中美關稅變動，參與開拓歐洲客戶','直接管理 25 人團隊，依工序難度調整計價'], tags:['營運管理','品牌設計','跨境業務']},
+ {city:'HONG KONG', y:2020, when:'2020/8–2022/5', org:'青苗琴行', role:'分店業務管理', pts:['疫情期間營業額進入集團 40+ 分店前 5 名','建立簽到、學費、師資薪酬等管理模板，其他分店沿用'], tags:['門市營運','流程']},
+ {k:'gate', city:'TAIPEI', zh:'臺北', note:'2022 起｜品牌、影音、標案'},
+ {city:'TAIPEI', y:2022, when:'2022/7–2023/1', org:'雄獅旅行社', role:'網紅經紀副理', pts:['管理 30+ 位簽約 KOL，重整 Sales Kit 與合作流程','把踩線團結合 KOL 內容，雙週拍攝成本約降 30%'], tags:['KOL','商務化']},
+ {city:'TAIPEI', y:2023, when:'2023/3–2026/3', org:'代表娛樂', role:'專案副理（整合行銷與品牌合作）', pts:['參與 3 檔 Uber Eats 遊戲 × 餐飲聯名','NFS × ØZI × Maserati，英文提案取得 6 輛車支援拍攝','台積電尾牙、長榮航空廣告等大型提案'], tags:['品牌整合','影音']},
+ {city:'TAIPEI', y:2026, when:'2026/5–2026/9', org:'方成事', role:'AE／專案業務（政府標案與影音專案）', pts:['主責 2026 臺北馬拉松年度影音案','處理公播、空拍申請、音樂與肖像授權及交付排程','主責 3 件政府標案提案，含 2027 台灣燈會'], tags:['標案履約','影音統籌']},
+ {k:'end'}
+];
+
+/* ===== 資料：作品集 ===== */
+const YT = id => 'https://www.youtube.com/watch?v=' + id;
+const CATS = {gov:'政府影音', brand:'品牌聯名', content:'內容影音', kol:'KOL 合作', music:'音樂產業'};
+const CASES = [
+ {id:'marathon', cat:'gov', wide:true, title:'2026 臺北馬拉松年度影音', org:'臺北市政府體育局', co:'方成事', year:'2026', role:'主責業務',
+  ph:'TAIPEI MARATHON', key:['約 14 萬次','30 秒金標籤宣傳片觀看'],
+  res:'30 秒金標籤宣傳片約 14 萬次觀看',
+  sum:'這不是單支影片，而是跨約半年履約期的系列影音案。WA 金標籤宣傳片、115 年短影音、歡樂早餐跑、小小北馬與年底賽事紀實同時推進，每支影片都要回應臺北馬拉松品牌、賽事資訊、機關審核與拍攝條件。我從 2026 年 5 月起逐步接手，成為全案主責業務。',
+  work:[
+   ['機關對接與意見轉譯','參與第一次工作會議並整理會議紀錄。把承辦在會議、LINE、現場提出的意見分成「要改腳本」「補送資料」「製作端注意」「待機關提供素材」幾類，避免一句回饋變成整支重做。'],
+   ['全年製作時程','多支影片時程互相重疊。依交付日反推機關確認、腳本定本、演員與場景道具、PPM、拍攝、A Copy 到 Final 的節點，外部條件一變就重排。'],
+   ['WA 金標籤宣傳片','跟著年度標語與敘事調整，處理演員、場景、服裝、競品 Logo 露出與雨備，拍攝後追 A Copy 到 Final 的修改與交付。'],
+   ['小小北馬備案','第二支短影音原本可能與其他單位合作。我先向承辦確認決策期限，同時預留小小北馬的腳本與檔期；合作確定不成立後，備案立刻啟動。'],
+   ['早餐跑影片','早餐市集資訊遲遲未齊，先依現有腳本啟動製作，把店家資訊集中到片尾字卡，避免字幕和畫面對不上。同時確認捷運電視等播放平台規格，一次規劃輸出版本。'],
+   ['行政與授權','空拍與公播申請、出演與音樂授權文件盤點、保險。影片 Final 不等於能結案，權利文件也要齊。']],
+  call:'活動識別素材、獎牌與號碼布延遲，正式拍攝排不進去。我先整理「補拍」「用既有素材」「剪輯替代」幾個方案，讓機關直接比較時程、成本與畫面效果，再決定怎麼走。',
+  out:'30 秒金標籤宣傳片發布於中華民國路跑協會官方頻道，約 14 萬次觀看。',
+  note:'影片由製作團隊拍攝與剪輯；我負責機關對接、專案管理與履約。',
+  media:[{yt:'Rlip2Mwh1fQ',label:'臺北馬拉松宣傳影片（一）'},{yt:'nyKOPemOSBU',label:'臺北馬拉松宣傳影片（二）'}],
+  links:[['臺北馬拉松官網','https://www.taipeicitymarathon.com/']]},
+
+ {id:'baonifa', cat:'brand', title:'《包你發》× 晨間廚房 × Uber Eats', org:'包你發／晨間廚房／Uber Eats', co:'代表娛樂', year:'2025', role:'獨立負責至結案',
+  img:'bnf-kv', key:['10,563 筆','廣告成交訂單'], res:'113.9 萬曝光、CTR 4.25%、10,563 筆成交訂單',
+  sum:'一邊是博弈題材手遊，一邊是客群橫跨各年齡層的連鎖早餐品牌，再加上外送平台。兩個品牌在形象與視覺語言上差很多。活動期間 2025 年 10 月 1 日至 31 日，消費指定炒泡麵可得刮刮卡，抽 iPhone 17 等獎項。這個案子由我一人負責到結案。',
+  work:[
+   ['三方需求協調','遊戲方、晨間廚房與 Uber Eats 對主視覺、品牌露出各有要求。我把這些要求整理成設計端能直接執行的條件。'],
+   ['主視覺延伸設計','親自處理延伸設計：Uber Eats 封面與結帳後廣告、A5 雙面桌卡、杯身、刮刮卡、門市布條，讓同一套概念貫穿線上線下。'],
+   ['素材與規範管理','向遊戲方取得主視覺原檔、拆分素材與文案；確認 Logo、代言人與晨間寶寶 2D／3D 角色的使用規範。餐點還沒有正式商品照時，標示素材成熟度，避免暫時照片被當成正式素材。'],
+   ['活動機制落地','刮刮卡正面承接主視覺，背面放序號與兌獎流程；桌卡一面主視覺、一面說明活動與兌換方式，讓門市消費者一看就懂。']],
+  call:'遊戲方擔心晨間寶寶 3D 風格與既有主視覺衝突。我沒有自己決定，而是回頭向晨間廚房確認可用版本、角色動作與品牌規範，再把答案交給設計端。',
+  out:'聯名商家封面達 113.9 萬曝光、4.84 萬點擊、CTR 4.25%，帶來 10,563 筆廣告成交訂單。',
+  media:[{img:'bnf-kv',label:'聯名主視覺'},{img:'bnf-poster',label:'門市海報'},{img:'bnf-scratch',label:'刮刮卡正反面'},{img:'bnf-store',label:'門市布條實景'}],
+  links:[['工商時報報導','https://www.ctee.com.tw/news/20251001701703-431207']]},
+
+ {id:'nfs', cat:'content', title:'Need for Speed × ØZI × Maserati', org:'Garena《極速快感：集結》', co:'代表娛樂', year:'2024', role:'內容策略、英文提案、訪談與花絮',
+  img:'nfs-mv', yt:true, key:['6 輛','Maserati 支援拍攝'], res:'取得 6 輛 Maserati 支援拍攝，系列影音 17 萬+ 觀看',
+  sum:'遊戲上市宣傳，要讓賽車遊戲、藝人與豪華車品牌在同一支內容裡成立。ØZI 擔任音樂大使，主題曲〈HEAT〉MV 於 2024 年 11 月 28 日發布，Maserati 擔任贊助。',
+  work:[
+   ['提案與選角','依賽車遊戲、Maserati 車款與 rap／trap 音樂調性，提出多位藝人人選，最後選定 ØZI。用現成素材剪出概念 demo，幫客戶理解提案方向。'],
+   ['內容策略與腳本初稿','參與合作切角與內容策略，撰寫 MV 腳本初稿與敘事主軸；協助 ØZI 團隊與 Garena 對接音樂與歌詞的詮釋方向。'],
+   ['品牌資源談判','以英文 PowerPoint 向 Maserati 海外總公司說明臺灣市場曝光價值，取得 6 輛不同型號車款支援拍攝。'],
+   ['訪談與幕後花絮','主導 ØZI 訪談與花絮的訪綱、團隊安排與 brief。後製遇到多輪修改時，先自己做剪輯方向示意或字卡給客戶確認，再交給剪輯師完成，減少返工。'],
+   ['拍攝與交付','拍攝前溝通、現場進度控管，交付 MV、訪談、花絮與 30 秒預告等系列內容。']],
+  call:'拍攝要多台豪華車款，一般租借難以取得。英文提案談的是臺灣市場能交換什麼曝光資源：國際遊戲 IP、藝人、導演的組合，而不是單向請求贊助。',
+  out:'取得 6 輛不同型號車款支援 MV 拍攝；系列影音累計 17 萬+ 觀看。',
+  note:'ØZI 後來決定自行製作歌曲並使用自己的拍攝團隊，MV 正式劇本由導演重新提出。我負責的是前期提案、品牌資源，以及訪談與花絮內容。Maserati 合作由老闆人脈協助啟動。',
+  media:[{yt:'hL6yW3AJ4Og',img:'nfs-mv',label:'HEAT (for 極速快感：集結)'},{yt:'lB7g4qYfvuk',img:'nfs-interview',label:'極速快感｜ØZI 訪談'},{yt:'iMjz3AbvyV8',img:'nfs-bts',label:'極速快感｜HEAT MV 花絮'}]},
+
+ {id:'naraka', cat:'brand', title:'《永劫無間》× Uber Eats × 晨間廚房', org:'艾肯娛樂／Uber Eats／晨間廚房', co:'代表娛樂', year:'2024', role:'合作提案、跨方協調、上線交付',
+  ph:'NARAKA × UBER EATS', key:['379 家','門市如期上線'], res:'379 家門市如期上線，330 萬+ 曝光',
+  sum:'《永劫無間》三週年聯名。Uber Eats 指定餐點可得「密堡券」抽 MSI 電競主機，活動期間 7 月 27 日至 8 月 23 日，另有買一送一優惠。',
+  work:[
+   ['合作提案','前一檔《天諭》聯名完成後，同集團團隊希望延續 Uber Eats 異業合作。三週年要擴大受眾，我提出從手搖飲延伸到早餐店，參與晨間廚房的接洽、提案與合作模式設計。'],
+   ['線上導流線下','平台合作之外，另爭取 2 場店內實體活動（各 100 人）與 KOL、直播主、Coser 合作。'],
+   ['物料與上線','協調遊戲方、Uber Eats、餐飲品牌與供應商的視覺規格、印刷、物流與門市上線需求。']],
+  call:'颱風長時間影響臺東，晨間廚房總部數日無法正常作業，颱風一過活動就要開跑。我先與印刷商確認：只要把刮刮卡與包材交期提早約 2 天就能保住時程。接著向老闆提出兩個選項：維持成本、承擔延誤風險，或增加少量預算、換取趕工保障。公司選擇後者，活動沒有延期。',
+  out:'200 萬份包材、30 萬張刮刮卡、379 家門市如期上線（團隊共同完成）；依平台結案數據，330 萬+ 曝光、10 萬+ 點擊、CTR 約 3.1%。',
+  note:'成本最終決策在公司；我負責議價、整理選項，並同步晨間廚房能提前處理的條件。',
+  media:[],
+  links:[['艾肯娛樂新聞稿','https://www.icantw.com/news/news_ican/58115.html']]},
+
+ {id:'oncehuman', cat:'content', pitch:true, title:'Once Human 廣告提案與 AI Demo', org:'《Once Human／七日世界》', co:'代表娛樂', year:'2024–2025', role:'創意切角、腳本、AI 預視覺',
+  img:'oh-1', yt:true, key:['3 支','AI 預視覺 Demo'], res:'用生成式 AI 把腳本先「拍」出來',
+  sum:'遊戲廣告提案。異變世界與笑點高度依賴畫面，單靠文字很難判斷哪條路線成立；正式拍攝前，又不可能每個方向都做完整製作。',
+  work:[
+   ['拆解世界觀','先整理遊戲賣點與異變世界觀，再找臺灣觀眾熟悉的文化與社群語境。'],
+   ['多條創意切角','《都是「變」說的？！台灣都市異變傳說》：讓 KOL 進入廢墟調查異變事件，用都市怪談、手機沒電、自拍多出異變體等在地笑點包裝。另一條是「末日後，AI 還是不放過你」的黑色幽默，以及代言人求生、實機混剪等切角，讓客戶比較不同廣告語言。'],
+   ['AI 預視覺','用生成式 AI 先把角色、場景、異變生物與鏡頭氣氛做成 Demo 影片。'],
+   ['執行拆解','把腳本轉成拍攝規格、素材需求與執行節點。']],
+  call:'AI 不用來取代創意判斷，而是把決策提前到低成本原型階段：笑點畫面成不成立、異變世界看不看得懂，提案時就能看見。',
+  out:'完成多路線提案與 3 支 AI Demo 影片。',
+  note:'提案階段作品，最終是否進入正式製作待補充。',
+  media:[{yt:'UsqQQvtP1Rg',img:'oh-1',label:'絕境求生：廢土重生'},{yt:'p6vV6d1w5Xc',img:'oh-2',label:'THE SURVIVOR'},{yt:'fAH-6AO8xh4',img:'oh-3',label:'異變體超愛美，逼我幫牠拍 IG 照！'}],
+  links:[['Once Human《廢墟探險隊》劇本提案（PDF）','https://drive.google.com/file/d/1fADyycJSTUyNAamozqleMGi_0JuV9Ghp/view?usp=sharing']]},
+
+ {id:'hayung', cat:'kol', title:'法國台客 × 電影《哈勇家》', org:'華映娛樂', co:'雄獅旅行社', year:'2022', role:'合作企劃、內容策略、製作協調',
+  img:'kol-hayung', yt:true, key:['18,000+','合作影片首週觀看'], res:'合作影片首週 18,000+ 觀看',
+  sum:'旗下 KOL 法國台客（馮韋元）為電影《哈勇家》製作宣傳影片，帶觀眾到部落體驗 24 小時。',
+  work:[
+   ['定義目標','承接合作邀約後主動定義合作目標與內容策略，鎖定跨文化受眾。'],
+   ['敘事主軸','把 key message 轉成影片敘事主軸，規劃影片結構與節奏。'],
+   ['發布與導流','規劃發布節點與 CTA，協調社群與媒體曝光排程。'],
+   ['製作控管','負責方案與預算規劃，統籌廠商與內容窗口，控管拍攝流程、時程與交付品質。']],
+  out:'合作影片上線首週 18,000+ 觀看（依平台數據）。',
+  media:[{yt:'yeUqTDZsPhM',img:'kol-hayung',label:'24 小時在部落：第一次吃傳統的早餐'}]},
+
+ {id:'lion', cat:'kol', title:'雄獅 KOL 商務化', org:'《老外在幹嘛》等旗下頻道', co:'雄獅旅行社', year:'2022–2023', role:'KOL 商務、頻道營運、品牌合作',
+  img:'kol-band', yt:true, key:['約 30%','雙週拍攝成本降幅'], res:'雙週拍攝成本約降 30%',
+  sum:'團隊原本約 5 人，主管離職後縮到 2 至 3 人。人手不足，還要同時維持頻道內容產出、創作者的合作機會與部門收入。',
+  work:[
+   ['KOL 資源整理','整理 30+ 位簽約 KOL 的定位、受眾與商務條件，重整原本不完整的 Sales Kit。'],
+   ['合作流程','建立從需求配對、報價審核、內容 brief、製作到結案的合作流程。'],
+   ['踩線團合作方案','提出把旅行社既有的踩線團交給 KOL 製作內容，透過 KOL 個人平台與公司平台雙重曝光，包裝成可對外銷售的合作方案。'],
+   ['品牌合作執行','國際管樂節、原民會、Roots 等品牌與單位合作內容。']],
+  out:'導入後雙週拍攝成本約降 30%；依入職前後部門周報，半年內合作案數約翻倍、部門毛利約成長 50%。',
+  media:[{yt:'G5qQKRJuEc4',img:'kol-band',label:'國際管樂節合作案'},{yt:'645eXpjrH_E',img:'kol-indigenous',label:'原民會合作案'},{href:'https://www.instagram.com/p/ChrvkXEP0BW/',img:'kol-roots',label:'Roots 品牌合作案（Instagram）'}]},
+
+ {id:'lai', cat:'music', title:'黎曉陽：從比賽參賽者到創作歌手', org:'Frenzi Music', co:'Frenzi Music', year:'2013–2015', role:'A&R、宣傳、跨界合作',
+  img:'lai-cd', key:['最佳粵語新人','華語音樂傳媒大獎'], res:'獲華語音樂傳媒大獎最佳粵語新人',
+  sum:'黎曉陽原是 Backstage 主辦 Battlestage 歌唱比賽的參賽者，簽約 Frenzi Music 後，以「街頭自彈自唱到正式發片」的成長路線建立創作歌手定位。',
+  work:[
+   ['藝人定位','不把他包裝成一開始就成熟的明星，而是讓市場看見一個街頭表演者如何一步步成為能正式發片的創作歌手。'],
+   ['A&R','擔任 EP《天行者》與專輯《上上下下左右左右 BA Start》A&R，參與創作方向討論，協助 Demo 歌詞與 MV 拍攝溝通。'],
+   ['社群與媒體','他當時不熟悉社群經營，協助規劃發文方向；電台宣傳前與他準備訪問內容。'],
+   ['跨界合作','洽談並協調他主演的微電影《女神·搖滾·珍寶珠》。']],
+  call:'首支主打並非他本人創作，與創作歌手定位出現落差。判斷他自己寫的《撐著》更能回應當時的社會情緒，建議改派為電台主打（2014 年 10 月）。',
+  out:'專輯獲第十六屆華語音樂傳媒大獎最佳粵語新人；微電影獲「創+作」支援計劃最佳微電影製作大獎銅獎。',
+  note:'獎項屬藝人與作品成果；我的貢獻在 A&R、宣傳與合作洽談。',
+  media:[{img:'lai-cd',label:'《Cope With Life》內頁 credits'}]},
+
+ {id:'demo', cat:'music', title:'《DEMO SAMPLER》原創合輯', org:'Backstage／Green Coffee', co:'Backstage Live Restaurant', year:'2009', role:'協助統籌、A&R 與宣傳',
+  img:'demo-poster-wide', key:['20,000 張','首批及追加完售'], res:'首批及追加共 20,000 張完售',
+  sum:'收錄 18 首 2007–2008 年度熱播歌曲的原裝 Demo，由創作班底親自演繹，讓聽眾聽見歌曲正式出版前的樣子，例如倫永亮、Eric Kwok、藍奕邦、方皓玟、農夫、張佳添、徐繼宗等人的 Demo。這個合輯延續 Green Coffee 既有的 Demo Project，我入職後協助統籌，負責 A&R 協調、授權與宣傳；專輯也收錄了我包辦曲、詞、編曲與監製的 Demo《冷宮》。',
+  work:[
+   ['曲目企劃','串聯 20+ 位音樂人，選曲時考慮整張專輯的組合，避免同一歌手或創作者過度重複。'],
+   ['授權與合約','約 18 首歌的詞曲權利分屬不同創作人與出版公司，逐一以英文合約處理授權、credits 與 mechanical licence。'],
+   ['發行與平台','由東亞唱片發行，處理實體與數位發行；延續 Yahoo Hong Kong 合作，爭取免費主 Banner 與相關版位。'],
+   ['Yahoo! 宣傳影音','安排音樂人訪問與拍攝，提供 Yahoo! 宣傳用的影音素材。'],
+   ['電台宣傳','安排叱咤 903 電台訪問。'],
+   ['收錄作品《冷宮》','除了統籌工作，我也以創作人身分參與：《冷宮》的作曲、作詞、編曲與監製都由我負責。'],
+   ['發佈音樂會','大碟附入場券，2009 年 5 月 14 日於 Backstage 舉辦「Real People．Raw Music Talk」，由資深音樂人解構 Demo 創作；200+ 人到場。']],
+  call:'出版前約兩天才發現歌詞與部分 credit 印刷錯誤，已來不及重印。因為原本的視覺偏 raw，我提出把修正用的貼紙做成設計的一部分，讓補救和原設計共存。',
+  out:'首批 10,000 張 3 個月內售罄，追加 10,000 張亦完售；Yahoo Hong Kong 累積 1,000 萬+ impressions。',
+  media:[{img:'demo-poster',fit:true,label:'合輯宣傳海報'},{img:'demo-credits',fit:true,label:'內頁 credits：Marketing & Promotion／A&R Coordination'},{img:'demo-cd',label:'合輯實體 CD'}]},
+
+ {id:'battlestage', cat:'music', title:'《海港城 BATTLESTAGE 歌唱大賽》', org:'海港城 × Backstage × 東亞唱片', co:'Backstage Live Restaurant', year:'2009', role:'專案主責',
+  img:'bs-winners-wide', yt:true, key:['1,000+ 人','報名參賽'], res:'1,000+ 人報名，前三名其後均正式出道',
+  sum:'2009 年由海港城、Backstage Live Restaurant 主辦，東亞唱片協辦的歌唱比賽，口號是「音樂人發掘音樂人」。1,000+ 人報名，經試音與在 Backstage 舉行的多輪初賽，選出 12 個決賽單位，2009 年 9 月 9 日在海港城海運大廈 Atrium II 舉行總決賽；勝出者可獲東亞唱片歌星合約，並由專業音樂人製作單曲。6 月 23 日在同一場地舉行發布記者會，主禮嘉賓包括王菀之、盧凱彤、林二汶、藍奕邦、彭穎琛、伍仲衡、馮穎琪、徐繼宗、謝國維等；決賽評判為郭啟華、盧凱彤、柳重言、Edward Chan、藍奕邦、伍仲衡，由叱咤 903 主持謝茜嘉主持。人手有限，老闆馮穎琪主導評判與嘉賓邀約，並分擔部分合作夥伴溝通；從報名到決賽現場的整體執行由我主責。',
+  work:[
+   ['報名與賽制','撰寫報名表與參賽條款（個人或小組合唱，年齡與國籍不限），規劃試音、多輪初賽到總決賽的賽制，處理 1,000+ 名報名者的參賽查詢。'],
+   ['評判與嘉賓','評判與嘉賓邀約由馮穎琪主導；我負責與東亞娛樂洽談人選、協調檔期，並對接歌手王菀之，以及音樂人伍仲衡、Edward Chan、Edmund Tsang。'],
+   ['合作夥伴總窗口','擔任海港城、東亞唱片、藝人經紀人與唱片公司的總窗口，並撰寫贊助品牌合作提案。'],
+   ['發布記者會','與海港城窗口對齊新聞稿，撰寫記者會 rundown 與講稿，對接設計與製作單位確認舞台與背板，並與藝人經紀人、合作夥伴同步主視覺。'],
+   ['宣傳規劃','規劃線上線下宣傳與宣傳物；活動獲報章資訊版、《Take me Home》、《Pd!》等報導。'],
+   ['決賽者培訓','主動洽談到決賽者造型照拍攝資源；安排 12 個決賽單位的網台訪談、造型拍攝與賽前訓練，並向參賽者 brief 決賽流程。'],
+   ['綵排與現場控場','編寫決賽 rundown 與新聞稿，統籌綵排，當天負責現場控場。'],
+   ['賽後銜接','比賽後為得獎者安排唱片公司試音（最後未推出單曲）。亞軍黎曉陽在比賽中認識，賽後安排他進修，之後在 Frenzi Music 正式出道，由我擔任 A&R。']],
+  call:'從報名表、參賽者查詢、多輪賽事到決賽綵排，每個環節都有變數，而 Live 沒有 second take。我會先把後備方案準備好：音檔一律備多份，參賽者遲到就即時調整流程，讓節目照常進行。',
+  out:'前三名其後都正式出道：冠軍黃劍文於 2016 年以個人名義出道；亞軍黎曉陽經賽後進修，於 2014 年以創作歌手身分在 Frenzi Music 出道，推出首張 CD Single《天行者》；季軍許靖韻於 2013 年簽約英皇娛樂。',
+  media:[{img:'bs-poster',fit:true,label:'比賽海報'},{yt:'b9S0U3HwyvE',img:'ev-battlestage',label:'《Battlestage》宣傳影片'},{img:'bs-winners',label:'09.09.09 決賽得獎者'},{img:'bs-final-group',label:'決賽大合照'},{img:'bs-presscon',label:'發布記者會'},{img:'bs-backdrop',fit:true,label:'決賽背板設計（16 × 8 呎）'},{img:'bs-stage',fit:true,label:'記者會舞台與背板規劃（16 × 10 呎）'},{img:'bs-news-0714',fit:true,label:'報章報導（2009.07.14）'},{img:'bs-takemehome',fit:true,label:'《Take me Home》報導（2009.07.10）'},{img:'bs-pd',fit:true,label:'《Pd!》活動報導'},{img:'bs-shoot05',fit:true,label:'雜誌專題報導'}],
+  links:[['Backstage Live HK YouTube 頻道：比賽紀錄影片','https://www.youtube.com/@BackstageLiveHK/videos']]},
+
+ {id:'composer', cat:'music', title:'Yahoo! Music × 伯樂音樂學院｜尋找音樂人創作大賽', org:'Yahoo! Music × 伯樂音樂學院', co:'伯樂音樂學院', year:'2008', role:'主責統籌',
+  img:'composer-wide', yt:true, key:['1,500+ 份','參賽作品親自初選'], res:'主責統籌，從合作洽談、賽制、獎項到宣傳影片',
+  sum:'2008 年 5 月起徵件、6 月 9 日截止，由 Yahoo! Music 與伯樂音樂學院合辦的流行音樂創作比賽，分歌曲組與歌詞組。比賽把參賽和 Yahoo! 的網誌平台綁在一起：參賽者要在個人網誌以不少於 100 字說明創作概念，歌詞組作品也直接發表在網誌上。我當時在伯樂負責課程發展，這個比賽由我主責統籌，從與 Yahoo! 的合作洽談、賽制與獎項，到評審、初選、宣傳與參賽者溝通。',
+  table:{title:'賽制與獎項', rows:[
+   ['歌曲組','原創歌曲，須有人聲旋律（不限語言或歌詞內容），長度不少於 3 分鐘，MP3 格式、小於 5MB；以電郵提交，並在網誌說明創作概念。'],
+   ['歌詞組','從大會提供的 3 首指定旋律中選 1 首，填上全新中文（粵語或國語）或英文歌詞，作品發表於個人網誌。'],
+   ['提交上限','每人每組最多 3 件作品，超過時以最先提交的 3 件評審；每件作品各填一份報名表。'],
+   ['截止','2008 年 6 月 9 日晚上 11 時 59 分'],
+   ['評審','歌曲組：伍樂城、謝國維、Gary Chan｜歌詞組：林夕、方杰、馮穎琪'],
+   ['冠軍','立方昇音樂製作有限公司合約、HK$15,000 伯樂音樂學院獎學金，作品由吳雨霏演繹'],
+   ['亞軍','立方昇音樂製作有限公司合約、HK$10,000 伯樂音樂學院獎學金'],
+   ['季軍','立方昇音樂製作有限公司合約、HK$5,000 伯樂音樂學院獎學金'],
+   ['網友最喜愛作品大獎','HK$3,000 伯樂音樂學院獎學金']]},
+  work:[
+   ['合作洽談','代表伯樂與 Yahoo! Music 洽談合作，確定活動專頁、網誌參賽機制與平台宣傳資源的安排。'],
+   ['賽制與條款','釐定兩個組別的參賽規則、作品格式與數量上限、截止時間與條款細則，設計「電郵或網誌提交＋網誌創作概念＋報名表」的參賽流程。'],
+   ['獎項規劃','規劃冠、亞、季軍與網友最喜愛作品大獎，整合立方昇音樂製作合約、伯樂獎學金，以及由吳雨霏演繹冠軍作品等獎勵。'],
+   ['評審統籌','協調歌曲組伍樂城、謝國維、Gary Chan 與歌詞組林夕、方杰、馮穎琪六位評審的評審流程與時程。'],
+   ['作品初選','親自完成 1,500+ 份參賽作品的第一輪篩選。歌詞組逐份檢查完整性、押韻與合音，以及常見的填詞問題，再把入圍作品交給正式評審。'],
+   ['宣傳影片','從規劃、擬定訪綱、拍攝到後製，獨力完成比賽宣傳影片。'],
+   ['平台曝光','爭取 Yahoo Hong Kong 首頁 Banner 免付費曝光，並向香港網上論壇平台 Uwants.com 爭取 Banner 版位。'],
+   ['參賽者溝通','處理報名、作品提交與參賽者查詢。']],
+  out:'收到 1,500+ 份參賽作品，累計 1,000 萬+ 平台曝光（依平台數據）。歌曲組冠軍作品《比愛情簡單》（作曲：覃嘉健／作詞：江威）如獎項承諾由吳雨霏演唱，並成為她專輯《Simpler Than Love》（新歌＋精選）的同名歌曲。歌詞組季軍曾紀諾憑《安息禮拜》與伍樂城簽下 5 年詞曲版權約，其後成為職業填詞人，為容祖兒、Twins、陳柏宇等歌手填詞；澳門樂團 Real-Us 以英文原創《Drive》入圍歌曲組決賽，後改寫為中文版《界限》，收錄於合輯《回問》。歌詞組的初選工作讓馮穎琪看到我在創作以外的處理方式與邏輯，之後主動邀請我加入 Backstage。',
+  media:[{img:'composer-poster',fit:true,label:'比賽海報'},{yt:'mB0m-7RMEow',img:'ev-composer',label:'《尋找音樂人大賽》宣傳影片（規劃、訪綱、拍攝與後製）'},{yt:'0PsxFhbzGvo',label:'《尋找音樂人創作大賽》頒獎禮：吳雨霏演唱冠軍作品《比愛情簡單》'}],
+  links:[['Uwants 論壇活動公告（2008.05.08）','https://www.uwants.com/viewthread.php?tid=6228188&nomobile=1'],['粵語協會論壇參賽辦法轉貼（2008.06.07）','https://bbs.cantonese.asia/thread-10539-1-1.html']]}
+];
+
+const SONGS = [
+ ['2004','熱戀，之後','糖兄妹','作曲、填詞','「唱作情歌@海港城」最感動歌曲；後由糖兄妹演唱'],
+ ['2006','當玫瑰遇上真愛','鄭希怡','作曲','新城勁爆流行榜、TVB 勁歌金榜冠軍'],
+ ['2008','嬅麗緣','楊千嬅','作曲、共同填詞','以歌手歷年歌名與情感意象交織敘事'],
+ ['2010','宅女','陳皓心','填詞','第 22 屆 CASH 流行曲創作大賽季軍'],
+ ['2011','盆栽','周慧敏','填詞','《Deep V.25 周慧敏》演唱會主題曲；903 專業推介最高第 2、RTHK 中文歌曲龍虎榜第 8'],
+ ['2012','天生不對','鍾一憲、麥貝夷','作曲、填詞','TVB 勁歌金榜冠軍，上榜 4 週'],
+ ['2014','埋頭苦愛','雨僑、王宗堯','共同填詞','電影《喜愛夜蒲 3》點題曲・2014 新城勁爆合唱歌曲']
+];
+
+/* ===== 工具 ===== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* 外框星號 */
+(function star(){
+  const w = 26, L = 100, pts = [];
+  for (let k = 0; k < 6; k++) {
+    const t = k * Math.PI / 3, c = Math.cos(t), s = Math.sin(t);
+    const P = (x, y) => [x * c - y * s, x * s + y * c];
+    pts.push(P(L, -w/2), P(L, w/2));
+    const a = t + Math.PI / 6; pts.push([w * Math.cos(a), w * Math.sin(a)]);
+  }
+  $('#heroStar polygon').setAttribute('points', pts.map(p => p.map(v => v.toFixed(1)).join(',')).join(' '));
+})();
+
+/* ===== 旅程 ===== */
+const track = $('#jTrack');
+track.innerHTML = STOPS.map(s => {
+  if (s.k === 'intro') return `<div class="j-intro"><p class="eyebrow">Journey</p><p>一條路線，三座城市。往下捲動，時間軸會帶你從溫哥華走到臺北。</p><p class="hint">SCROLL →</p></div>`;
+  if (s.k === 'end') return `<div class="gate"><b>NEXT</b><span>下一站</span><em>音樂與作品在下方</em><a class="btn" href="#music" style="justify-self:start;margin-top:10px">繼續看 ↓</a></div>`;
+  if (s.k === 'gate') return `<div class="gate" data-city="${s.city}"><b>${s.city}</b><span>${s.zh}</span><em>${s.note}</em></div>`;
+  return `<article class="stop" data-city="${s.city}" data-y="${s.y}">
+    <span class="when">${esc(s.when)}</span><h3>${esc(s.org)}</h3><p class="role">${esc(s.role)}</p>
+    <ul>${s.pts.map(p => `<li>${esc(p)}</li>`).join('')}</ul>
+    <div class="tags">${s.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div></article>`;
+}).join('');
+
+const CITY_ZH = {VANCOUVER:'溫哥華','HONG KONG':'香港',TAIPEI:'臺北'};
+const sec = $('#journey'), pin = sec.querySelector('.j-pin'), sky = sec.querySelector('.j-sky');
+let dist = 0, curCity = 'VANCOUVER', ticking = false;
+function equalStops(){
+  const stops = [...track.querySelectorAll('.stop')];
+  stops.forEach(el => el.style.height = '');
+  const h = Math.max(...stops.map(el => el.offsetHeight));
+  stops.forEach(el => el.style.height = h + 'px');
+}
+function layout(){
+  equalStops();
+  if (reduce) return;
+  dist = Math.max(0, track.scrollWidth - innerWidth);
+  sec.style.height = (pin.offsetHeight + dist) + 'px';
+  update();
+}
+let lastP = null, walkT;
+function update(){
+  ticking = false;
+  const r = sec.getBoundingClientRect();
+  const navH = 56;
+  const p = dist ? Math.min(1, Math.max(0, (navH - r.top) / dist)) : 0;
+  track.style.transform = `translate3d(${-p * dist}px,0,0)`;
+  const skyMove = Math.max(0, sky.offsetWidth - innerWidth);
+  sky.style.transform = `translate3d(${-p * skyMove}px,0,0)`;
+  $('#jFill').style.width = (p * 100) + '%';
+  const wk = $('#jWalker');
+  if (wk){ wk.style.left = (p * 100) + '%';
+    if (lastP !== null && Math.abs(p - lastP) > 0.0005){ wk.classList.toggle('back', p < lastP); wk.classList.add('walking'); clearTimeout(walkT); walkT = setTimeout(() => wk.classList.remove('walking'), 220); }
+    lastP = p; }
+  const mid = innerWidth * 0.45; let best = null, bd = 1e9;
+  track.querySelectorAll('.stop,.gate[data-city]').forEach(el => {
+    const b = el.getBoundingClientRect(); const d = Math.abs(b.left + b.width/2 - mid);
+    if (d < bd) { bd = d; best = el; }
+  });
+  track.querySelectorAll('.stop').forEach(el => el.classList.toggle('on', el === best));
+  if (best) {
+    const c = best.dataset.city;
+    if (c !== curCity) { curCity = c; $('#jCity').innerHTML = `${c}<small>${CITY_ZH[c]}</small>`; }
+    if (best.dataset.y) $('#jYear').textContent = best.dataset.y;
+    else if (best.classList.contains('gate')) $('#jYear').textContent = {VANCOUVER:2000,'HONG KONG':2004,TAIPEI:2022}[c];
+  }
+}
+addEventListener('scroll', () => { if (!ticking && !reduce) { ticking = true; requestAnimationFrame(update); } }, {passive:true});
+addEventListener('resize', layout);
+addEventListener('load', layout);
+if (document.fonts) document.fonts.ready.then(layout);
+layout();
+
+/* ===== 作品地圖 ===== */
+const ORDER = ['composer','demo','battlestage','lai','hayung','lion','naraka','nfs','oncehuman','baonifa','marathon'];
+CASES.sort((a,b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
+const POS = {composer:[34,60],battlestage:[40,47],demo:[48,63],lai:[56,41],hayung:[66,60],lion:[70,46],naraka:[75,32],nfs:[83,40],oncehuman:[87,57],baonifa:[94,45],marathon:[92,27]};
+const SHORT = {composer:'尋找音樂人創作大賽',battlestage:'海港城 BATTLESTAGE',demo:'DEMO SAMPLER',lai:'黎曉陽新人發展',hayung:'法國台客 × 哈勇家',lion:'雄獅 KOL 商務化',naraka:'永劫無間 × Uber Eats',nfs:'NFS × ØZI × Maserati',oncehuman:'Once Human 提案',baonifa:'包你發 × 晨間廚房',marathon:'2026 臺北馬拉松'};
+const CITY_OF = id => ORDER.indexOf(id) < 4 ? 'HONG KONG' : 'TAIPEI';
+const NUM = id => String(ORDER.indexOf(id) + 1).padStart(2, '0');
+const CIRC = '①②③④⑤⑥⑦⑧';
+const mapEl = $('#map'), stage = $('#stage'), drawer = $('#drawer');
+$('#pins').innerHTML = CASES.map(c => `<button class="pin" type="button" data-id="${c.id}" style="--i:${ORDER.indexOf(c.id)};left:${POS[c.id][0]}%;top:${POS[c.id][1]}%" aria-label="${NUM(c.id)} ${esc(c.title)}"><span class="n">${NUM(c.id)}</span><span class="lb">${esc(SHORT[c.id])}</span></button>`).join('');
+let lastCity = '';
+$('#rows').innerHTML = CASES.map(c => {
+  const city = CITY_OF(c.id); const sep = city !== lastCity ? `<li class="city-sep">${city}</li>` : ''; lastCity = city;
+  return `${sep}<li><button class="row" type="button" data-id="${c.id}"><span class="rn">${NUM(c.id)}</span><span class="rt">${esc(c.title)}</span><span class="ra">↗</span><span class="rm">${esc(c.co)}・${esc(c.year)}・${CATS[c.cat]}${c.pitch ? '・提案' : ''}</span></button></li>`;
+}).join('');
+function selectCase(id){
+  const c = CASES.find(x => x.id === id); if (!c) return;
+  const [x, y] = POS[id];
+  const k = innerWidth > 900 ? 1.7 : 1.5;
+  const W = mapEl.clientWidth, H = mapEl.clientHeight, wide = innerWidth > 900;
+  const tx = ((wide ? 0.7 : 0.5) - x / 100) * W, ty = ((wide ? 0.5 : 0.4) - y / 100) * H * 0.7;
+  stage.style.transformOrigin = `${x}% ${y}%`;
+  stage.style.transform = `translate(${tx}px,${ty}px) scale(${k})`; stage.style.setProperty('--k', k);
+  mapEl.classList.add('open');
+  document.querySelectorAll('.pin,.row').forEach(el => el.classList.toggle('on', el.dataset.id === id));
+  drawer.innerHTML = `<button class="x" type="button" aria-label="關閉" data-close>×</button>
+    <p class="eyebrow">PROJECT ${NUM(id)} · ${CATS[c.cat]}${c.pitch ? '・提案' : ''}</p>
+    <h3>${esc(c.title)}</h3>
+    <p class="dq">${esc(c.co)}・${esc(c.year)}｜${esc(c.role)}</p>
+    <div class="dstat"><b>${esc(c.key[0])}</b><span>${esc(c.key[1])}</span></div>
+    <h4>我做了什麼</h4>
+    <ol class="dwork">${c.work.map(([t], i) => `<li><i>${CIRC[i]}</i>${esc(t)}</li>`).join('')}</ol>
+    <a class="btn solid" href="#p-${id}">看完整專案內頁 →</a>`;
+  drawer.hidden = false; countUp(drawer);
+  const row = document.querySelector(`.row[data-id="${id}"]`);
+  if (row && innerWidth > 900) row.scrollIntoView({block:'nearest', behavior:'smooth'});
+}
+function closeCase(){
+  stage.style.transform = ''; stage.style.setProperty('--k', 1);
+  mapEl.classList.remove('open');
+  drawer.hidden = true;
+  document.querySelectorAll('.pin,.row').forEach(el => el.classList.remove('on'));
+}
+$('#pins').addEventListener('click', e => { const p = e.target.closest('.pin'); if (p) selectCase(p.dataset.id); });
+$('#rows').addEventListener('click', e => { const r = e.target.closest('.row'); if (r) selectCase(r.dataset.id); });
+$('#rows').addEventListener('mouseover', e => { const r = e.target.closest('.row'); document.querySelectorAll('.pin').forEach(p => p.classList.toggle('hl', !!r && p.dataset.id === r.dataset.id)); });
+$('#rows').addEventListener('mouseleave', () => document.querySelectorAll('.pin').forEach(p => p.classList.remove('hl')));
+drawer.addEventListener('click', e => { if (e.target.closest('[data-close]')) closeCase(); });
+$('#btnAll').addEventListener('click', closeCase);
+$('#btnLabel').addEventListener('click', e => { const on = e.currentTarget.getAttribute('aria-pressed') !== 'true'; e.currentTarget.setAttribute('aria-pressed', on); mapEl.classList.toggle('labels', on); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !drawer.hidden) closeCase(); });
+
+/* ===== 專案內頁 ===== */
+const pv = $('#project');
+const BASE_TITLE = document.title;
+function mediaHTML(m){
+  const inner = m.img ? `<img src="assets/${m.img}.jpg" alt="" loading="lazy"${m.fit ? ' style="object-fit:contain"' : ''}>` : `<div class="ph dots"><div><b>VIDEO</b><small>封面待補</small></div></div>`;
+  const href = m.yt ? YT(m.yt) : m.href;
+  const play = m.yt ? '<span class="play" aria-hidden="true"></span>' : '';
+  return href ? `<a href="${href}" target="_blank" rel="noopener"><div class="mi">${inner}${play}</div><span>${esc(m.label)} ↗</span></a>`
+              : `<figure><button class="mi zoom" type="button" data-src="assets/${m.img}.jpg" aria-label="放大檢視：${esc(m.label)}">${inner}</button><figcaption>${esc(m.label)}</figcaption></figure>`;
+}
+function showProject(id){
+  const i = CASES.findIndex(x => x.id === id), c = CASES[i];
+  const prev = CASES[(i - 1 + CASES.length) % CASES.length], next = CASES[(i + 1) % CASES.length];
+  const cover = c.img ? `<img src="assets/${c.img}.jpg" alt="${esc(c.title)} 主視覺">` : `<div class="ph dots"><div><b>${esc(c.ph)}</b><small>影像素材待補</small></div></div>`;
+  pv.innerHTML = `
+  <div class="wrap">
+    <nav class="crumb" aria-label="麵包屑"><a href="#work">← 作品集</a><span>/</span><span>${CATS[c.cat]}${c.pitch ? '・提案' : ''}</span></nav>
+    <header class="p-head">
+      <p class="eyebrow">${esc(c.co)}・${esc(c.year)}</p>
+      <h1>${esc(c.title)}</h1>
+      <p class="p-role">${esc(c.role)}</p>
+    </header>
+    <div class="p-cover">${cover}</div>
+    <dl class="p-meta">
+      <div><dt>客戶／單位</dt><dd>${esc(c.org)}</dd></div>
+      <div><dt>任職公司</dt><dd>${esc(c.co)}</dd></div>
+      <div><dt>年份</dt><dd>${esc(c.year)}</dd></div>
+      <div><dt>我的角色</dt><dd>${esc(c.role)}</dd></div>
+    </dl>
+    <div class="p-body">
+      <article class="p-main">
+        <section class="p-sec"><h2>專案背景</h2><p>${esc(c.sum)}</p></section>
+        ${c.table ? `<section class="p-sec"><h2>${esc(c.table.title)}</h2><dl class="ftable">${c.table.rows.map(([k,v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></section>` : ''}
+        <section class="p-sec"><h2>我做了什麼</h2>
+          <div class="work">${c.work.map(([t,d]) => `<div class="w"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
+        </section>
+        ${c.call ? `<section class="p-sec"><h2>關鍵判斷</h2><blockquote class="call">${esc(c.call)}</blockquote></section>` : ''}
+        <section class="p-sec"><h2>成果</h2><p>${esc(c.out)}</p></section>
+        ${c.media.length ? `<section class="p-sec"><h2>${c.media.some(m => m.yt) ? '影片與素材' : '作品素材'}</h2><div class="media">${c.media.map(mediaHTML).join('')}</div></section>` : ''}
+        ${c.note ? `<p class="note">${esc(c.note)}</p>` : ''}
+      </article>
+      <aside class="p-side">
+        <div class="kpi"><b>${esc(c.key[0])}</b><span>${esc(c.key[1])}</span></div>
+        ${c.links ? `<div class="p-links"><h2>延伸閱讀</h2>${c.links.map(([t,u]) => `<a href="${u}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div>` : ''}
+        <a class="btn" href="#work">返回作品集</a>
+      </aside>
+    </div>
+    <nav class="pn" aria-label="其他專案">
+      <a href="#p-${prev.id}"><small>← 上一個專案</small><span>${esc(prev.title)}</span></a>
+      <a href="#p-${next.id}" class="nx"><small>下一個專案 →</small><span>${esc(next.title)}</span></a>
+    </nav>
+  </div>`; countUp(pv);
+  document.body.dataset.view = 'project';
+  pv.hidden = false;
+  document.title = c.title + '｜陳浩賢 Dennis Chan';
+  links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#work'));
+  scrollTo(0, 0);
+}
+function route(){
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (h.startsWith('p-') && CASES.some(c => c.id === h.slice(2))) { showProject(h.slice(2)); return; }
+  const wasProject = document.body.dataset.view === 'project';
+  document.body.dataset.view = 'home';
+  pv.hidden = true;
+  document.title = BASE_TITLE;
+  if (wasProject) {
+    layout();
+    const el = h && document.getElementById(h);
+    if (el) el.scrollIntoView({behavior:'instant'}); else scrollTo(0, 0);
+  }
+}
+addEventListener('hashchange', route);
+
+/* 圖片放大 */
+const lb = $('#lb');
+pv.addEventListener('click', e => { const z = e.target.closest('.zoom'); if (!z) return; lb.querySelector('img').src = z.dataset.src; lb.hidden = false; });
+lb.addEventListener('click', () => { lb.hidden = true; });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden) lb.hidden = true; });
+
+
+/* ===== 音樂 ===== */
+/* Cover Flow */
+const cf = $('#cf'), cfRange = $('#cfRange');
+let cfCur = 4;
+const COVERS = ['2004','2006','2008','2010','2011','2012','2014'];
+cf.innerHTML = SONGS.map(([y,t,a], i) => COVERS.includes(y)
+  ? `<button class="cov has-img" type="button" data-i="${i}" aria-label="${y}《${esc(t)}》${esc(a)}"><img src="assets/covers/${y}.jpg" alt="" draggable="false"><span class="cy">${y}</span></button>`
+  : `<button class="cov v${i % 3}" type="button" data-i="${i}" aria-label="${y}《${esc(t)}》${esc(a)}"><span class="cy">${y}</span><b>${esc(t)}</b><span class="ca">${esc(a)}</span></button>`).join('');
+$('#songs').innerHTML = SONGS.map(([y,t,a,r,n], i) => `<button class="song" type="button" data-i="${i}"><span class="y">${y}</span><span class="t">《${esc(t)}》</span><span class="a">${esc(a)}</span><span class="c">${esc(r)}</span><span class="n">${esc(n)}</span></button>`).join('');
+cfRange.max = SONGS.length - 1;
+function cfGo(i){
+  cfCur = Math.max(0, Math.min(SONGS.length - 1, i));
+  const narrow = innerWidth < 620, gap = narrow ? 46 : 78, push = narrow ? 70 : 140;
+  cf.querySelectorAll('.cov').forEach((el, k) => {
+    const d = k - cfCur, ad = Math.abs(d);
+    el.style.transform = d === 0 ? 'translate(-50%,-50%) translateZ(90px)' :
+      `translate(-50%,-50%) translateX(${d * gap + Math.sign(d) * push}px) rotateY(${d < 0 ? 58 : -58}deg)`;
+    el.style.zIndex = 50 - ad;
+    el.style.opacity = ad > 4 ? 0 : 1;
+    el.classList.toggle('on', d === 0);
+    el.tabIndex = d === 0 ? 0 : -1;
+  });
+  const [y,t,a,r,n] = SONGS[cfCur];
+  $('#cfInfo').innerHTML = `<span class="y">${y}</span><b>《${esc(t)}》</b><span>${esc(a)}｜<em>${esc(r)}</em></span><small>${esc(n)}</small>`;
+  $('#songs').querySelectorAll('.song').forEach((el, k) => el.classList.toggle('on', k === cfCur));
+  cfRange.value = cfCur;
+}
+cf.addEventListener('click', e => { const c = e.target.closest('.cov'); if (c && !cfDragged) cfGo(+c.dataset.i); });
+$('#songs').addEventListener('click', e => { const c = e.target.closest('.song'); if (c) cfGo(+c.dataset.i); });
+cfRange.addEventListener('input', () => cfGo(+cfRange.value));
+$('#cfPrev').addEventListener('click', () => cfGo(cfCur - 1));
+$('#cfNext').addEventListener('click', () => cfGo(cfCur + 1));
+$('#cfWrap').addEventListener('keydown', e => { if (e.key === 'ArrowLeft') { cfGo(cfCur - 1); e.preventDefault(); } if (e.key === 'ArrowRight') { cfGo(cfCur + 1); e.preventDefault(); } });
+let cfX = null, cfDragged = false;
+cf.addEventListener('pointerdown', e => { cfX = e.clientX; cfDragged = false; });
+addEventListener('pointermove', e => { if (cfX === null) return; const dx = e.clientX - cfX; if (Math.abs(dx) > 50) { cfGo(cfCur + (dx < 0 ? 1 : -1)); cfX = e.clientX; cfDragged = true; } });
+addEventListener('pointerup', () => { cfX = null; setTimeout(() => cfDragged = false, 0); });
+cf.addEventListener('wheel', e => { if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > 20) { e.preventDefault(); cfGo(cfCur + (e.deltaX > 0 ? 1 : -1)); } }, {passive:false});
+cfGo(cfCur);
+
+
+/* AI 協作 MV：放在自己的網域（https）時改為頁內播放；預覽頁與本機檔案維持外連 */
+(function(){
+  const host = location.hostname;
+  const canEmbed = location.protocol === 'https:' && !/claude|anthropic|claudeusercontent/.test(host);
+  if (!canEmbed) return;
+  const f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/3v3X4XvAKmM?rel=0';
+  f.title = 'AI 協作 MV';
+  f.loading = 'lazy';
+  f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  f.allowFullscreen = true;
+  f.referrerPolicy = 'strict-origin-when-cross-origin';
+  $('#aimvMedia').replaceWith(f);
+})();
+
+/* ===== 複製 Email ===== */
+$('#copyBtn').addEventListener('click', () => {
+  const t = $('#email').textContent, ok = $('#copyOk');
+  const sel = () => { const r = document.createRange(); r.selectNodeContents($('#email')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); ok.textContent = '已選取，請按 ⌘C／Ctrl+C 複製'; };
+  try { navigator.clipboard.writeText(t).then(() => ok.textContent = '已複製 Email', sel); } catch (e) { sel(); }
+});
+
+/* ===== 導覽高亮 ===== */
+const links = [...document.querySelectorAll('.nav a.l')];
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id));
+}), {rootMargin:'-45% 0px -50% 0px'});
+['about','method','journey','music','work','artists','brands','contact'].forEach(id => io.observe(document.getElementById(id)));
+/* ---------- 捲動動態 ---------- */
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function countUp(scope){
+  if (RM) return;
+  scope.querySelectorAll('.kpi b,.dstat b').forEach(b => {
+    const m = b.textContent.match(/^([\d,]+)(.*)$/s); if (!m) return;
+    const end = +m[1].replace(/,/g,''), rest = m[2], comma = m[1].includes(','), t0 = performance.now(), dur = 1100;
+    const fmt = n => comma ? n.toLocaleString('en-US') : String(n);
+    const tick = t => { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      b.textContent = fmt(Math.round(end * e)) + rest; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  });
+}
+if (!RM && 'IntersectionObserver' in window){
+  document.documentElement.classList.add('rv-on');
+  ['#about .eyebrow,#about .h2,#about .h2-zh','#about .facts > div','#about .about > p,#about .chips',
+   '#method .eyebrow,#method .h2,#method .h2-zh',
+   '#music .eyebrow,#music .h2,#music .h2-zh','#work .eyebrow,#work .h2,#work .h2-zh',
+   '#artists .eyebrow,#artists .h2,#artists .h2-zh','#artists .wrap > :not(.eyebrow):not(.h2):not(.h2-zh)',
+   '#brands .eyebrow,#brands .h2,#brands .h2-zh','#brands .bg',
+   '#contact .eyebrow,#contact .h2,#contact .h2-zh'
+  ].forEach(sel => document.querySelectorAll(sel).forEach((el, i) => { el.classList.add('rv'); el.style.setProperty('--d', Math.min(i, 6)); }));
+  document.querySelectorAll('#method .m').forEach((el, i) => el.style.setProperty('--d', i));
+  const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } }), {rootMargin:'0px 0px -10% 0px'});
+  document.querySelectorAll('.rv,#method .method').forEach(el => ro.observe(el));
+  const wo = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ $('#work').classList.add('pins-in'); wo.disconnect(); } }), {threshold:.2});
+  wo.observe($('#map') || $('#work'));
+}
+route();
+</script>
+
+</body></html>
