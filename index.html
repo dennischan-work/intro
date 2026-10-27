@@ -389,15 +389,6 @@ body[data-view="project"] .hero, body[data-view="project"] main:not(#project){di
 .cf-ctrl button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--navy);color:var(--ink);cursor:pointer;font-size:12px;flex:none}
 .cf-ctrl button:hover{border-color:var(--signal)}
 .cf-ctrl input{flex:1;min-width:0;accent-color:var(--signal)}
-.songs{border-top:1px solid var(--line);margin-top:26px}
-.song{width:100%;display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,.8fr) minmax(0,.7fr) minmax(0,1.6fr);gap:4px 20px;padding:12px 8px;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);font:inherit;text-align:left;cursor:pointer;align-items:baseline;transition:background .2s}
-.song:hover{background:rgba(47,166,209,.06)}
-.song.on{background:rgba(47,166,209,.12)}
-.song .y{font-family:var(--f-display);color:var(--signal);font-variant-numeric:tabular-nums}
-.song .t{font-weight:700}
-.song .a,.song .c{color:var(--mute);font-size:14px}
-.song .n{font-size:14px;color:var(--ink)}
-@media (max-width:900px){.song{grid-template-columns:52px minmax(0,1fr)}.song .a,.song .c,.song .n{grid-column:2}}
 .wall{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 26px;align-items:baseline}
 .wall li{font-weight:900;font-size:clamp(20px,2.6vw,32px);line-height:1.35;color:var(--mute);transition:color .2s}
 .wall li:hover{color:var(--ink)}
@@ -577,8 +568,7 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
         <button type="button" id="cfNext" aria-label="下一首">▶</button>
       </div>
     </div>
-    <div class="songs" id="songs"></div>
-    <div style="margin-top:18px"><a class="btn solid" href="https://zh.wikipedia.org/zh-tw/%E9%99%B3%E6%B5%A9%E8%B3%A2" target="_blank" rel="noopener">完整作品列表：陳浩賢－維基百科 <span aria-hidden="true">↗</span></a></div>
+    <div style="margin-top:22px;text-align:center"><a class="btn solid" href="https://zh.wikipedia.org/zh-tw/%E9%99%B3%E6%B5%A9%E8%B3%A2" target="_blank" rel="noopener">完整作品列表：陳浩賢－維基百科 <span aria-hidden="true">↗</span></a></div>
     <h3 class="sub">媒體採訪與專題報導</h3>
     <div class="press">
       <figure><img src="assets/press-mr.jpg" alt="《MR》人物專訪內頁" loading="lazy"><figcaption>《MR》人物專訪〈At the starting point〉</figcaption></figure>
@@ -1083,7 +1073,6 @@ const COVERS = ['2004','2006','2008','2010','2011','2012','2014'];
 cf.innerHTML = SONGS.map(([y,t,a], i) => COVERS.includes(y)
   ? `<button class="cov has-img" type="button" data-i="${i}" aria-label="${y}《${esc(t)}》${esc(a)}"><img src="assets/covers/${y}.jpg" alt="" draggable="false"><span class="cy">${y}</span></button>`
   : `<button class="cov v${i % 3}" type="button" data-i="${i}" aria-label="${y}《${esc(t)}》${esc(a)}"><span class="cy">${y}</span><b>${esc(t)}</b><span class="ca">${esc(a)}</span></button>`).join('');
-$('#songs').innerHTML = SONGS.map(([y,t,a,r,n], i) => `<button class="song" type="button" data-i="${i}"><span class="y">${y}</span><span class="t">《${esc(t)}》</span><span class="a">${esc(a)}</span><span class="c">${esc(r)}</span><span class="n">${esc(n)}</span></button>`).join('');
 cfRange.max = SONGS.length - 1;
 function cfGo(i){
   cfCur = Math.max(0, Math.min(SONGS.length - 1, i));
@@ -1099,11 +1088,9 @@ function cfGo(i){
   });
   const [y,t,a,r,n] = SONGS[cfCur];
   $('#cfInfo').innerHTML = `<span class="y">${y}</span><b>《${esc(t)}》</b><span>${esc(a)}｜<em>${esc(r)}</em></span><small>${esc(n)}</small>`;
-  $('#songs').querySelectorAll('.song').forEach((el, k) => el.classList.toggle('on', k === cfCur));
   cfRange.value = cfCur;
 }
 cf.addEventListener('click', e => { const c = e.target.closest('.cov'); if (c && !cfDragged) cfGo(+c.dataset.i); });
-$('#songs').addEventListener('click', e => { const c = e.target.closest('.song'); if (c) cfGo(+c.dataset.i); });
 cfRange.addEventListener('input', () => cfGo(+cfRange.value));
 $('#cfPrev').addEventListener('click', () => cfGo(cfCur - 1));
 $('#cfNext').addEventListener('click', () => cfGo(cfCur + 1));
