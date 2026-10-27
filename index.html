@@ -3,6 +3,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#091422">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="陳浩賢 Dennis Chan">
+<meta property="og:description" content="創作者出身，把複雜需求轉成可交付成果。整合行銷、影音製作統籌、品牌合作、音樂創作。">
+<meta property="og:url" content="https://dennischan-work.github.io/intro/index.html">
+<meta property="og:image" content="https://dennischan-work.github.io/intro/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <title>陳浩賢 Dennis Chan</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="陳浩賢 Dennis Chan｜創作者出身，把複雜需求轉成可交付成果。整合行銷、影音製作統籌、品牌合作、政府標案履約、流行音樂創作。">
@@ -117,7 +128,8 @@ section{position:relative}
 .method{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
 .m{background:var(--night);padding:clamp(22px,3vw,34px);display:grid;gap:10px;align-content:start;transition:background .3s}
 .m:hover{background:var(--navy)}
-.m.wide{grid-column:1/-1}
+.m .ex a{color:var(--signal);text-decoration:none;border-bottom:1px solid rgba(47,166,209,.4)}
+.m .ex a:hover{border-bottom-color:var(--signal)}
 .m h3{margin:0;font-size:clamp(19px,2vw,22px);font-weight:700;line-height:1.4}
 .m .k{font-family:var(--f-display);font-size:12px;letter-spacing:.2em;color:var(--signal)}
 .m p{margin:0;color:var(--mute)}
@@ -503,6 +515,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .vt .mi .ph{position:absolute;inset:0}
 .ytth{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 
+.p-sub{margin:10px 0 0;font-size:clamp(17px,2vw,21px);color:var(--ink);opacity:.8}
 .call-t{font-size:17px;margin:18px 0 8px}.call-t:first-of-type{margin-top:0}
 .vp{position:fixed;inset:0;z-index:200;background:rgba(3,8,15,.88);display:grid;place-items:center;padding:16px}
 .vp[hidden]{display:none}
@@ -612,34 +625,28 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
     <p class="h2-zh">我不只是提案，更讓提案成真</p>
     <div class="method">
       <article class="m">
-        <span class="k">DECIDE</span>
-        <h3>先排除不能承受的結果</h3>
-        <p>接下專案後，先確認哪些條件一旦延誤，就會影響後續製作或上線。面對多個選項，先問「哪個問題現在不處理，影響會繼續擴大」，優先處理會擴大的問題。</p>
-        <p class="ex">這個原則從 Backstage 處理演出現場開始，一直用到現在。</p>
+        <span class="k">CONTEXT</span>
+        <h3>先看情境，再找切入點</h3>
+        <p>先理解受眾、品牌定位與當下的社會氣氛，再判斷內容適合怎麼說、合作適合怎麼做。</p>
+        <p class="ex">例如建議<a href="#p-lai">黎曉陽</a>以音樂回應 ALS 冰桶挑戰，並協助填詞，讓他用自己的專長參與話題。</p>
       </article>
       <article class="m">
-        <span class="k">PLAN B · C</span>
-        <h3>帶著選項去找決策者</h3>
-        <p>接下專案先想好 Plan B、Plan C。遇到問題，把時程、成本與效果整理成可以比較的選項，而不是只把問題往上丟。</p>
-        <p class="ex">《永劫無間》聯名遇颱風，提出「維持成本」與「加少量預算趕工」兩案，活動沒有延期。</p>
+        <span class="k">DECIDE</span>
+        <h3>把風險變成可比較的選項</h3>
+        <p>先找出會影響後續製作或上線的條件，再把時程、成本與效果整理成可比較的方案，讓決策能及時往前走。</p>
+        <p class="ex"><a href="#p-naraka">《永劫無間》聯名</a>遇颱風，我確認趕工條件與追加成本，提出兩案供公司決策，活動最終沒有延期。</p>
       </article>
       <article class="m">
         <span class="k">CONTRACT</span>
-        <h3>簽約前把權責寫清楚</h3>
-        <p>交付什麼、誰負責、權利歸誰、何時付款，事前寫清楚，不等出問題才回頭找條文。</p>
-        <p class="ex">《DEMO SAMPLER》約 18 首歌的詞曲權利分屬不同創作人與出版公司，逐一以英文合約處理授權。</p>
+        <h3>把合作條件說清楚</h3>
+        <p>交付什麼、誰負責、素材如何使用、何時付款，合作前確認清楚，執行時才有共同依據。</p>
+        <p class="ex"><a href="#p-demo">《DEMO SAMPLER》</a>約 18 首歌的詞曲權利分屬不同創作者與出版公司，我逐一以英文合約處理授權。</p>
       </article>
       <article class="m">
         <span class="k">SYSTEM</span>
-        <h3>把做過的事變成流程</h3>
-        <p>一次性的工作，整理成下一次可以直接用的流程、模板和工具，讓團隊交接不必從頭來。</p>
-        <p class="ex">雄獅的 KOL Sales Kit、青苗琴行的管理模板、代表娛樂的 Uber Eats 合作公版。</p>
-      </article>
-      <article class="m wide">
-        <span class="k">CONTEXT</span>
-        <h3>留意身邊正在發生的事</h3>
-        <p>大家當下在討論什麼、社會氣氛往哪裡走，都會影響內容怎麼被接收。我會先看清楚這些，再判斷藝人或品牌能用什麼方式參與，而不是只照原本的宣傳計畫走。</p>
-        <p class="ex">黎曉陽以音樂回應 ALS 冰桶挑戰，並改派《撐著》回應當時的社會氣氛；《哈勇家》從部落體驗延伸到外國人的觀影討論。</p>
+        <h3>把經驗整理成下次能用的流程</h3>
+        <p>將重複工作整理成流程、模板與工具，讓下一次執行及團隊交接都有依據。</p>
+        <p class="ex">包括<a href="#p-lion">雄獅 KOL Sales Kit</a>、青苗琴行管理模板，以及代表娛樂的 Uber Eats 合作公版。</p>
       </article>
     </div>
   </div>
@@ -874,7 +881,7 @@ const CASES = [
   media:[{yt:'Rlip2Mwh1fQ',label:'臺北馬拉松宣傳影片（一）'},{yt:'nyKOPemOSBU',label:'臺北馬拉松宣傳影片（二）'}],
   links:[['臺北馬拉松官網','https://www.taipeicitymarathon.com/']]},
 
- {id:'baonifa', cat:'brand', title:'《包你發》× 晨間廚房 × Uber Eats：獨立主責的跨品牌聯名專案', org:'包你發／晨間廚房／Uber Eats', co:'代表娛樂', year:'2025', role:'專案主責、雙品牌主要溝通窗口、主視覺延伸設計、平台與門市素材整合、執行交付至結案', period:'2025 年 7 月籌備，活動 10 月 1–31 日',
+ {id:'baonifa', cat:'brand', title:'《包你發》× 晨間廚房 × Uber Eats', sub:'獨立主責的跨品牌聯名專案', org:'包你發／晨間廚房／Uber Eats', co:'代表娛樂', year:'2025', role:'專案主責、雙品牌主要溝通窗口、主視覺延伸設計、平台與門市素材整合、執行交付至結案', period:'2025 年 7 月籌備，活動 10 月 1–31 日',
   img:'bnf-kv', key:['10,563 筆','廣告成交訂單'], res:'113.9 萬曝光、CTR 4.25%、10,563 筆成交訂單',
   sum:'《包你發》與晨間廚房、Uber Eats 合作，把遊戲品牌帶進早餐門市與外送平台。活動期間 2025 年 10 月 1 日至 31 日，消費者購買指定炒泡麵可得聯名刮刮卡，除即刮獎項外，也能登錄序號參加 iPhone 17 等加碼抽獎。遊戲品牌與早餐品牌的受眾、角色形象和視覺語言差很多，合作要同時處理品牌規範、活動資訊、平台素材與門市物料。我是本案主要執行窗口，由我獨立對接包你發與晨間廚房，推進到結案。',
   call:'遊戲方擔心晨間寶寶的 3D 風格與既有主視覺衝突。我先向晨間廚房確認可用的角色版本、動作與 Logo 規範，再依明確條件調整延伸設計，在遊戲角色、代言人、餐飲品牌角色與商品之間安排視覺層次，讓雙方確認的是能延伸到平台、包材與門市的可執行版本。',
@@ -904,7 +911,7 @@ const CASES = [
    ['拍攝與交付','拍攝前溝通、現場進度控管，交付 MV、訪談、花絮與 30 秒預告等系列內容。']],
   media:[{yt:'hL6yW3AJ4Og',img:'nfs-mv',label:'HEAT (for 極速快感：集結)'},{yt:'lB7g4qYfvuk',img:'nfs-interview',label:'極速快感｜ØZI 訪談'},{yt:'iMjz3AbvyV8',img:'nfs-bts',label:'極速快感｜HEAT MV 花絮'}]},
 
- {id:'naraka', cat:'brand', title:'《永劫無間》× Uber Eats × 晨間廚房：跨品牌聯名與線下活動執行', org:'艾肯娛樂／Uber Eats／晨間廚房', co:'代表娛樂', year:'2024', role:'合作提案與洽談、三方協調、供應商與印刷物流、實體活動規劃與現場執行', period:'2024 年 7–9 月',
+ {id:'naraka', cat:'brand', title:'《永劫無間》× Uber Eats × 晨間廚房', sub:'跨品牌聯名與線下活動執行', org:'艾肯娛樂／Uber Eats／晨間廚房', co:'代表娛樂', year:'2024', role:'合作提案與洽談、三方協調、供應商與印刷物流、實體活動規劃與現場執行', period:'2024 年 7–9 月',
   img:'nk-kv', key:['379 家','門市上線'], res:'379 家門市上線，330 萬+ 曝光',
   sum:'《永劫無間》三週年希望透過異業合作接觸更多受眾。延續前一檔《天諭》× 迷客夏的合作經驗，我提出把餐飲合作從手搖飲延伸到早餐店，參與晨間廚房的接洽與提案。本案結合遊戲、外送平台與連鎖餐飲，包含平台聯名優惠、聯名包材、刮刮卡與門市物料，以及兩場實體活動，各波段依不同時程推進；依官方活動頁，購買期間為 7 月 27 日至 8 月 31 日，消費可得「密堡券」序號，登錄抽 MSI 電競主機。',
   scope:[['聯名包材','約 200 萬份'],['刮刮卡','30 萬張'],['門市上線','379 家'],['實體活動','2 場，每場以約 100 人規模規劃，結合 KOL、直播主與 Coser']],
@@ -937,7 +944,7 @@ const CASES = [
   media:[{yt:'UsqQQvtP1Rg',img:'oh-1',label:'絕境求生：廢土重生'},{yt:'p6vV6d1w5Xc',img:'oh-2',label:'THE SURVIVOR'},{yt:'fAH-6AO8xh4',img:'oh-3',label:'異變體超愛美，逼我幫牠拍 IG 照！'}],
   links:[['Once Human《廢墟探險隊》劇本提案（PDF，由我撰寫）','https://drive.google.com/file/d/1fADyycJSTUyNAamozqleMGi_0JuV9Ghp/view?usp=sharing']]},
 
- {id:'hayung', cat:'kol', title:'法國台客 × 電影《哈勇家》：從部落體驗延伸到觀影宣傳', org:'華映娛樂', co:'雄獅旅行社', year:'2022', role:'合作企劃、片商與創作者對接、追加 KOL 洽談', period:'2022 年 10–11 月',
+ {id:'hayung', cat:'kol', title:'法國台客 × 電影《哈勇家》', sub:'從部落體驗延伸到觀影宣傳', org:'華映娛樂', co:'雄獅旅行社', year:'2022', role:'合作企劃、片商與創作者對接、追加 KOL 洽談', period:'2022 年 10–11 月',
   img:'kol-hayung', yt:true, key:['1 → 7 位','參與宣傳的 KOL'], res:'合作從 1 位 KOL 擴大到 7 位',
   sum:'華映娛樂為電影《哈勇家》宣傳，邀請雄獅旗下創作者法國台客（馮韋元）合作，拍攝他進入泰雅族部落、和家庭一起生活 24 小時的影片，讓觀眾從日常互動認識電影的文化與生活背景。',
   call:'片商原本只找一位創作者，宣傳入口只有一支生活體驗影片。我主動提出增加預算，邀請其他 KOL 參與宣傳與試映擴散，讓電影透過不同創作者的視角被討論；也洽談法國台客再拍一支觀影影片，從外國人的觀影反應切入，談選舉、家庭關係與文化差異，和原本的部落體驗形成不同的宣傳入口。',
@@ -949,7 +956,7 @@ const CASES = [
    ['延伸觀影內容','主動洽談法國台客再拍一支觀影影片，用他身為外國人的觀影反應，補上生活體驗影片之外的宣傳形式；我也在片中擔任受訪者之一。']],
   media:[{yt:'yeUqTDZsPhM',img:'kol-hayung',label:'24 小時在部落：第一次吃傳統的早餐'},{yt:'mgE_B_svsl0',label:'法國台客：外國人看台灣原住民電影《哈勇家》'}]},
 
- {id:'lion', cat:'kol', title:'雄獅 KOL 商務與頻道營運：把創作者與旅遊資源變成合作方案', org:'《老外在幹嘛》等旗下頻道', co:'雄獅旅行社', year:'2022–2023', role:'KOL 商務、合作流程、協助頻道經營、品牌提案與執行協調', period:'2022 年 7 月至 2023 年 1 月',
+ {id:'lion', cat:'kol', title:'雄獅 KOL 商務與頻道營運', sub:'把創作者與旅遊資源變成合作方案', org:'《老外在幹嘛》等旗下頻道', co:'雄獅旅行社', year:'2022–2023', role:'KOL 商務、合作流程、協助頻道經營、品牌提案與執行協調', period:'2022 年 7 月至 2023 年 1 月',
   img:'kol-indigenous', yt:true, key:['約 30%','雙週拍攝成本下降'], res:'踩線團結合 KOL 內容，雙週拍攝成本約降 30%',
   sum:'在雄獅旅行社擔任網紅經紀副理，負責旗下 30+ 位簽約 KOL 的商務合作，並協助經營《老外在幹嘛》YouTube 頻道，工作橫跨創作者媒合、客戶提案、內容 brief、製作協調與結案。原本約 5 人的團隊，在主管離職後縮到 2 至 3 人，後期主要由我和一位同事承接；人手減少，頻道仍要持續更新，客戶合作與部門收入也要維持。',
   call:'人手縮編後，自製節目很難每一兩週就產出一集。旅行社本來就有大量踩線團，我提出把踩線團交給 KOL 拍攝，用行程資源交換內容產出，再透過 KOL 個人平台與公司平台一起曝光，包裝成可以對外銷售的合作方案。團隊不必每次從零籌備節目，創作者也多了工作與曝光機會。',
@@ -962,7 +969,7 @@ const CASES = [
    ['品牌合作','參與國際管樂節、原住民族委員會、Roots 等合作內容；《哈勇家》合作由 1 位 KOL 擴大到 7 位，詳見獨立案例。']],
   media:[{yt:'G5qQKRJuEc4',img:'kol-band',label:'國際管樂節合作案'},{yt:'645eXpjrH_E',img:'kol-indigenous',label:'原民會合作案'},{href:'https://www.instagram.com/p/ChrvkXEP0BW/',img:'kol-roots',label:'Roots 品牌合作案（Instagram）'},{img:'lion-dance-bts',label:'「你好，香港」舞蹈拍攝紀錄｜我負責 KOL 拍攝安排'},{img:'lion-dance',label:'「你好，香港」舞蹈拍攝現場'}]},
 
- {id:'lai', cat:'music', title:'黎曉陽新人發展：從街頭表演到發片與內容經營', org:'Frenzi Music', co:'Frenzi Music', year:'2013–2015', role:'新人定位、行銷宣傳、YouTube 頻道經營',
+ {id:'lai', cat:'music', title:'黎曉陽新人發展', sub:'從街頭表演到發片與內容經營', org:'Frenzi Music', co:'Frenzi Music', year:'2013–2015', role:'新人定位、行銷宣傳、YouTube 頻道經營',
   img:'lai-hmv', yt:true, key:['《撐著》','改派為電台主打'], res:'建議改派自創曲《撐著》為電台主打',
   sum:'我在 Battlestage 歌唱比賽認識黎曉陽，他是那屆亞軍，會自彈自唱，有在香港街頭 busking 的經驗。簽約 Frenzi Music 後，我與老闆共同討論他的新人定位：從街頭自彈自唱的普通人出發，讓觀眾看見他一步步走上舞台、正式發片。我負責他的行銷宣傳，建立並經營他的 YouTube 頻道，也參與創作方向的討論。',
   call:'他的首支主打並非本人創作，和市場對「創作歌手」的期待出現落差，引起部分負面觀感。2014 年，我判斷由他作曲的《撐著》更能回應當時的社會氣氛，也更符合創作歌手的定位，因此建議改派為電台主打，2014 年 10 月派台。',
@@ -995,7 +1002,8 @@ const CASES = [
 
  {id:'battlestage', cat:'music', title:'《海港城 BATTLESTAGE 歌唱大賽》', org:'海港城 × Backstage × 東亞唱片', co:'Backstage Live Restaurant', year:'2009', role:'專案主責',
   img:'bs-winners-wide', yt:true, key:['1,000+ 人','報名參賽'], res:'1,000+ 人報名，前三名其後均正式出道',
-  sum:'2009 年由海港城、Backstage Live Restaurant 主辦，東亞唱片協辦的歌唱比賽，口號是「音樂人發掘音樂人」。1,000+ 人報名，經試音與在 Backstage 舉行的多輪初賽，選出 12 個決賽單位，2009 年 9 月 9 日在海港城海運大廈 Atrium II 舉行總決賽；勝出者可獲東亞唱片歌星合約，並由專業音樂人製作單曲。6 月 23 日在同一場地舉行發布記者會，主禮嘉賓包括王菀之、盧凱彤、林二汶、藍奕邦、彭穎琛、伍仲衡、馮穎琪、徐繼宗、謝國維等；決賽評判為郭啟華、盧凱彤、柳重言、Edward Chan、藍奕邦、伍仲衡，由叱咤 903 主持謝茜嘉主持。人手有限，老闆馮穎琪主導評判與嘉賓邀約，並分擔部分合作夥伴溝通；從報名到決賽現場的整體執行由我主責。',
+  sum:'2009 年由海港城、Backstage Live Restaurant 主辦，東亞唱片協辦的歌唱比賽，口號是「音樂人發掘音樂人」，勝出者可獲東亞唱片歌星合約。1,000+ 人報名，經多輪初賽選出 12 個決賽單位。人手有限，老闆馮穎琪主導評判與嘉賓邀約，並分擔部分合作夥伴溝通；從報名到決賽現場的整體執行由我主責。',
+  table:{title:'活動細節', rows:[['賽制','試音與在 Backstage 舉行的多輪初賽，選出 12 個決賽單位'],['發布記者會','2009 年 6 月 23 日，海港城海運大廈 Atrium II；主禮嘉賓包括王菀之、盧凱彤、林二汶、藍奕邦、彭穎琛、伍仲衡、馮穎琪、徐繼宗、謝國維等'],['總決賽','2009 年 9 月 9 日，海港城海運大廈 Atrium II'],['決賽評判','郭啟華、盧凱彤、柳重言、Edward Chan、藍奕邦、伍仲衡'],['主持','叱咤 903 主持謝茜嘉'],['獎項','勝出者可獲東亞唱片歌星合約，並由專業音樂人製作單曲']]},
   work:[
    ['報名與賽制','撰寫報名表與參賽條款（個人或小組合唱，年齡與國籍不限），規劃試音、多輪初賽到總決賽的賽制，處理 1,000+ 名報名者的參賽查詢。'],
    ['評判與嘉賓','評判與嘉賓邀約由馮穎琪主導；我負責與東亞娛樂洽談人選、協調檔期，並對接歌手王菀之，以及音樂人伍仲衡、Edward Chan、Edmund Tsang。'],
@@ -1199,7 +1207,7 @@ function showProject(id){
     <nav class="crumb" aria-label="麵包屑"><a href="${back}">← ${backT}</a><span>/</span><span>${CATS[c.cat]}${c.pitch ? '・提案' : ''}</span></nav>
     <header class="p-head">
       <p class="eyebrow">${esc(c.co)}・${esc(c.year)}</p>
-      <h1>${esc(c.title)}</h1>
+      <h1>${esc(c.title)}</h1>${c.sub ? `<p class="p-sub">${esc(c.sub)}</p>` : ''}
       <p class="p-role">${esc(c.role)}</p>${c.flag ? `<p class="p-flag">${esc(c.flag)}</p>` : ''}
     </header>
     <div class="p-cover">${cover}</div>
