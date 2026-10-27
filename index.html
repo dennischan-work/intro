@@ -498,6 +498,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media (max-width:900px){.aip{grid-template-columns:1fr}.ap-wide{grid-template-columns:1fr}}
 /* ---------- 影片播放視窗 ---------- */
 .media .mi{position:relative}
+.vt .mi .ph{position:absolute;inset:0}
 .ytth{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 
 .vp{position:fixed;inset:0;z-index:200;background:rgba(3,8,15,.88);display:grid;place-items:center;padding:16px}
@@ -729,7 +730,7 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
         </div>
       </article>
       <article class="ap ap-wide">
-        <div class="ap-vids1"><a class="aimv-ph dots" id="aimvMedia" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener" data-yt="3v3X4XvAKmM" data-title="《血》MV" aria-label="播放《血》MV"><b>《血》</b><span class="play" aria-hidden="true"></span></a></div>
+        <div class="ap-vids"><a class="vt" id="aimvMedia" data-yt="3v3X4XvAKmM" data-title="《血》MV" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener"><div class="mi"><div class="ph dots"><div><b>《血》</b></div></div><img class="ytth" src="https://i.ytimg.com/vi/3v3X4XvAKmM/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="play" aria-hidden="true"></span></div><span>《血》MV</span></a></div>
         <div class="ap-t">
         <p class="ap-k">個人創作・音樂與影像</p>
         <h3>《血》｜音樂與 AI 影像創作</h3>
