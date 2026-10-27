@@ -169,9 +169,10 @@ section{position:relative}
 .walker{cursor:pointer;outline:none}
 .walker:focus-visible{outline:2px dashed var(--signal);outline-offset:3px}
 .wbub{position:absolute;bottom:54px;left:0;transform:translateX(-50%) translateY(6px);background:var(--ink);color:var(--night);font-size:14px;font-weight:700;line-height:1.5;padding:8px 12px;border-radius:4px;border:2px solid var(--night);box-shadow:3px 3px 0 var(--signal);white-space:nowrap;max-width:min(320px,80vw);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:4}
-.wbub::after{content:"";position:absolute;left:50%;bottom:-8px;width:10px;height:10px;background:var(--ink);border-right:2px solid var(--night);border-bottom:2px solid var(--night);transform:translateX(-50%) rotate(45deg)}
+.wbub::after{content:"";position:absolute;left:var(--ax,50%);bottom:-8px;width:10px;height:10px;background:var(--ink);border-right:2px solid var(--night);border-bottom:2px solid var(--night);transform:translateX(-50%) rotate(45deg)}
 .wbub.show{opacity:1;transform:translateX(-50%)}
 .wbub.hint{font-size:12px;padding:4px 8px}
+.wbub{white-space:normal!important;width:max-content;max-width:min(300px,78vw);text-align:left}
 .waver{display:inline-block;vertical-align:-.12em;margin-left:.25em;opacity:0;transform:translateX(-60px)}
 .waver .w2,.waver .lg2{opacity:0}
 .contact.arrive .waver{opacity:1;transform:none;transition:transform 1.2s steps(10),opacity .3s}
@@ -1047,7 +1048,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ===== 旅程 ===== */
 const track = $('#jTrack');
 track.innerHTML = STOPS.map(s => {
-  if (s.k === 'intro') return `<div class="j-intro"><p class="eyebrow">Journey</p><p>一條路線，三座城市。往下捲動，時間軸會帶你從溫哥華走到臺北。</p><p class="hint">SCROLL →</p></div>`;
+  if (s.k === 'intro') return `<div class="j-intro"><p class="eyebrow">Journey</p><p>三座城市，職涯路線有點不按導航。往下捲，看看我是怎麼一路走到臺北的。</p><p class="hint">SCROLL →</p></div>`;
   if (s.k === 'end') return `<div class="gate"><b>NEXT</b><span>下一站</span><em>音樂與作品在下方</em><a class="btn" href="#music" style="justify-self:start;margin-top:10px">繼續看 ↓</a></div>`;
   if (s.k === 'gate') return `<div class="gate" data-city="${s.city}"><b>${s.city}</b><span>${s.zh}</span><em>${s.note}</em></div>`;
   return `<article class="stop" data-city="${s.city}" data-y="${s.y}">
@@ -1376,15 +1377,21 @@ if (!RM && 'IntersectionObserver' in window){
   wo.observe($('#map') || $('#work'));
 }
 /* ---------- 像素小人彩蛋 ---------- */
-const WLINES = [[2003,'在 UBC 讀經濟，課餘寫歌、做舞台劇。'],[2005,'《熱戀，之後》拿到最感動歌曲，簽約 Green Coffee！'],[2007,'白天寫課程，晚上寫歌。'],[2008,'1,500+ 份參賽作品，正在逐份初選……'],[2009,'Battlestage 籌備中，電話響不停。'],[2012,'今晚 Backstage 有演出，先去控場。'],[2014,'黎曉陽的新歌，準備派台了。'],[2019,'在廠裡盯產線，也在畫自家品牌的衣服。'],[2021,'月底帳做成模板，就不用每次重算。'],[2022,'搬到臺北了！先從 KOL 商務開始。'],[2025,'Uber Eats × 遊戲聯名，又一檔要上線。'],[2099,'把機關意見整理成修改清單。下一站：你們團隊？']];
+const WLINES = [[2003,'主修經濟，課餘寫歌。興趣還沒打算放過我。'],[2005,'寫的歌得獎了，還簽了約。興趣開始有正事要做。'],[2007,'白天寫課程，晚上寫歌。靈感不夠，先加點技能。'],[2008,'1,500+ 份作品等我初選。耳朵：今天也不下班？'],[2009,'辦 Battlestage。參賽者等上台，我等所有人準時到。'],[2012,'台上安可，台下看錶。兩邊我都懂。'],[2014,'以前等自己的歌被聽見，現在幫別人的歌找耳朵。'],[2019,'從音樂圈走進服裝廠。這次真的換「製作」單位了。'],[2021,'重複的工作做成模板。能少重做一次，就算贏。'],[2022,'臺北新地圖開啟。工作技能有帶，路還不太認得。'],[2025,'遊戲配早餐？先別問，聯名企劃我寫給你看。'],[2099,'創意要過稿，授權要拿到。這支片才真的能交。']];
 (() => {
   const wk = $('#jWalker'), bub = $('#wBub'); if (!wk || !bub) return;
   let t;
-  const say = (txt, hint) => { bub.textContent = txt; bub.classList.toggle('hint', !!hint); bub.style.left = wk.style.left || '0%'; bub.classList.add('show'); clearTimeout(t); t = setTimeout(() => bub.classList.remove('show'), hint ? 2200 : 3200); };
+  const place = () => {
+    const rail = wk.parentElement, rw = rail.clientWidth, x = (parseFloat(wk.style.left) || 0) / 100 * rw, bw = bub.offsetWidth;
+    const cx = Math.min(Math.max(x, bw / 2 + 4), rw - bw / 2 - 4);
+    bub.style.left = cx + 'px'; bub.style.setProperty('--ax', (x - cx + bw / 2) + 'px');
+  };
+  const say = (txt, hint, ms) => { bub.textContent = txt; bub.classList.toggle('hint', !!hint); bub.classList.add('show'); place(); clearTimeout(t); t = setTimeout(() => bub.classList.remove('show'), ms || (hint ? 2200 : 3600)); };
+  let endSaid = false;
   const talk = () => { const y = parseInt($('#jYear').textContent, 10) || 2000; say((WLINES.find(([u]) => y <= u) || WLINES[WLINES.length-1])[1]); };
   wk.addEventListener('click', talk);
   wk.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); talk(); } });
-  new MutationObserver(() => { if (bub.classList.contains('show')) bub.style.left = wk.style.left; }).observe(wk, {attributes:true, attributeFilter:['style']});
+  new MutationObserver(() => { if (bub.classList.contains('show')) place(); if (!endSaid && (parseFloat(wk.style.left) || 0) >= 98.5){ endSaid = true; say('下一站還沒填。你們有缺人嗎？', false, 4200); } }).observe(wk, {attributes:true, attributeFilter:['style']});
   if ('IntersectionObserver' in window){
     const ho = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ setTimeout(() => say('點我看看', true), 900); ho.disconnect(); } }), {threshold:.5});
     ho.observe($('#journey'));
