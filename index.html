@@ -1109,7 +1109,7 @@ layout();
 const ORDER = ['composer','demo','battlestage','lai','hayung','lion','naraka','nfs','baonifa','marathon'];
 CASES.sort((a,b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
 const LIST = CASES.filter(c => ORDER.includes(c.id));
-const POS = {composer:[34,60],battlestage:[40,47],demo:[48,63],lai:[56,41],hayung:[66,60],lion:[70,46],naraka:[75,32],nfs:[83,40],oncehuman:[87,57],baonifa:[94,45],marathon:[92,27]};
+const POS = {composer:[34,60],battlestage:[40,47],demo:[48,63],lai:[56,41],hayung:[66,60],lion:[70,46],naraka:[75,32],nfs:[83,40],oncehuman:[87,57],baonifa:[88,55],marathon:[94,33]};
 const SHORT = {composer:'尋找音樂人創作大賽',battlestage:'海港城 BATTLESTAGE',demo:'DEMO SAMPLER',lai:'黎曉陽新人發展',hayung:'法國台客 × 哈勇家',lion:'雄獅 KOL 商務化',naraka:'永劫無間 × Uber Eats',nfs:'NFS × ØZI × Maserati',oncehuman:'Once Human 提案',baonifa:'包你發 × 晨間廚房',marathon:'2026 臺北馬拉松'};
 const CITY_OF = id => ORDER.indexOf(id) < 4 ? 'HONG KONG' : 'TAIPEI';
 const NUM = id => String(ORDER.indexOf(id) + 1).padStart(2, '0');
