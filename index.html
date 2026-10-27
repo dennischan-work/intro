@@ -1388,12 +1388,19 @@ const WLINES = [[2003,'主修經濟，課餘寫歌。興趣還沒打算放過我
   };
   const say = (txt, hint, ms) => { bub.textContent = txt; bub.classList.toggle('hint', !!hint); bub.classList.add('show'); place(); clearTimeout(t); t = setTimeout(() => bub.classList.remove('show'), ms || (hint ? 2200 : 3600)); };
   let endSaid = false;
-  const talk = () => { const y = parseInt($('#jYear').textContent, 10) || 2000; say((WLINES.find(([u]) => y <= u) || WLINES[WLINES.length-1])[1]); };
+  const idxOf = () => { const y = parseInt($('#jYear').textContent, 10) || 2000; const k = WLINES.findIndex(([u]) => y <= u); return k < 0 ? WLINES.length - 1 : k; };
+  const talk = () => say(WLINES[idxOf()][1]);
+  /* 走到新的年份區段時自動冒一句：停下約半秒才說，每段只說一次 */
+  const said = new Set(); let autoT;
+  new MutationObserver(() => {
+    clearTimeout(autoT);
+    autoT = setTimeout(() => { const k = idxOf(); if (said.has(k) || endSaid) return; said.add(k); say(WLINES[k][1]); }, 550);
+  }).observe($('#jYear'), {childList:true, characterData:true, subtree:true});
   wk.addEventListener('click', talk);
   wk.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); talk(); } });
   new MutationObserver(() => { if (bub.classList.contains('show')) place(); if (!endSaid && (parseFloat(wk.style.left) || 0) >= 98.5){ endSaid = true; say('下一站還沒填。你們有缺人嗎？', false, 4200); } }).observe(wk, {attributes:true, attributeFilter:['style']});
   if ('IntersectionObserver' in window){
-    const ho = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ setTimeout(() => say('點我看看', true), 900); ho.disconnect(); } }), {threshold:.5});
+    const ho = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ setTimeout(() => { if (!said.has(idxOf())){ said.add(idxOf()); say(WLINES[idxOf()][1]); } }, 900); ho.disconnect(); } }), {threshold:.5});
     ho.observe($('#journey'));
     const co = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ $('#contact').classList.add('arrive'); co.disconnect(); } }), {threshold:.35});
     co.observe($('#contact'));
