@@ -72,11 +72,11 @@ img{max-width:100%;display:block}
 .stk{font-family:var(--f-hand);font-weight:900;color:var(--ink);-webkit-text-stroke:.08em var(--night);paint-order:stroke fill;text-shadow:var(--stk);letter-spacing:.04em}
 .name-en{font-family:var(--f-display);font-weight:700;font-size:clamp(46px,10vw,120px);line-height:1;letter-spacing:.06em;color:var(--ink);-webkit-text-stroke:.05em var(--night);paint-order:stroke fill;text-shadow:var(--stk);display:inline-block;padding-right:6px}
 .name-zh{font-size:clamp(52px,11vw,132px);line-height:1;display:inline-block;padding-right:6px}
-.hand{font-family:var(--f-hand);font-weight:900;color:var(--ink);font-size:clamp(22px,3.4vw,38px);line-height:1.3;margin:6px 0 0;-webkit-text-stroke:.08em var(--night);paint-order:stroke fill;text-shadow:1px 1px 0 var(--signal),2px 2px 0 var(--signal),3px 3px 0 var(--signal),4px 4px 0 var(--signal-deep);letter-spacing:.04em}
+.hand{font-family:var(--f-hand);font-weight:900;color:var(--ink);font-size:clamp(20px,2.8vw,32px);line-height:1.3;margin:6px 0 0;-webkit-text-stroke:.08em var(--night);paint-order:stroke fill;text-shadow:1px 1px 0 var(--signal),2px 2px 0 var(--signal),3px 3px 0 var(--signal),4px 4px 0 var(--signal-deep);letter-spacing:.04em}
 .hand small{font-family:var(--f-display)!important;font-weight:500;-webkit-text-stroke:0;text-shadow:none;color:var(--signal)}
 .hand small{display:block;font-size:.62em;opacity:.85;letter-spacing:.02em}
 .thesis{max-width:34em;color:var(--mute);margin:0;font-size:clamp(15px,1.6vw,17px)}
-.thesis b{display:block;color:var(--ink);font-weight:500;margin-bottom:4px}
+.thesis b{display:block;color:var(--ink);font-weight:700;font-size:clamp(19px,2.2vw,24px);line-height:1.45;margin-bottom:8px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:6px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:10px;font-weight:500;text-decoration:none;font-size:15px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,transform .2s;font-family:inherit}
 .btn:hover{border-color:var(--signal);transform:translateY(-1px)}
@@ -282,6 +282,9 @@ section{position:relative}
 }
 
 /* ---------- 專案內頁 ---------- */
+.p-rl{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;margin:0}
+.p-rl span{color:var(--mute);font-size:15px}
+.p-sec .note{margin-top:10px}
 .ftable{margin:0;border-top:1px solid var(--line)}
 .ftable div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 20px;padding:11px 2px;border-bottom:1px solid var(--line)}
 .ftable dt{color:var(--signal);font-size:14px}
@@ -427,6 +430,98 @@ footer{border-top:1px solid var(--line);padding-block:22px;color:var(--mute);fon
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
 
+
+/* ---------- 代表作品 ---------- */
+.feat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.fp{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--navy);color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s;min-width:0}
+.fp:hover,.fp:focus-visible{border-color:var(--signal);transform:translateY(-3px)}
+.fp:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.fp-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0b1a2b}
+.fp-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fx-fade img{opacity:0;transition:opacity 1.6s ease}
+.fx-fade img.on{opacity:1}
+.fx-tilt img{transform-origin:50% 55%}
+.feat.in .fx-tilt img{animation:tilt 9s ease-in-out infinite alternate}
+@keyframes tilt{from{transform:rotate(-2.5deg) scale(1.04)}to{transform:rotate(2.5deg) scale(1.08)}}
+.feat.in .fx-pan img,.feat.in .fx-pan .tm-bg{animation:pan 16s ease-in-out infinite alternate}
+@keyframes pan{from{transform:scale(1.08) translateX(-3%)}to{transform:scale(1.16) translateX(3%)}}
+.fp-tm .tm-bg{position:absolute;inset:0;background:url(assets/skyline.jpg) 96% 70%/auto 150% no-repeat;opacity:.75}
+.fp-tm .tm-t{position:absolute;left:0;right:0;bottom:14%;text-align:center;font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.2vw,28px);letter-spacing:.06em;color:transparent;-webkit-text-stroke:1px var(--ink);line-height:1.05}
+.fp-b{display:flex;flex-direction:column;gap:8px;padding:18px 18px 20px;flex:1}
+.fp-m{margin:0;font-size:12px;color:var(--mute);letter-spacing:.04em}
+.fp h3{margin:0;font-size:18px;line-height:1.4}
+.fp-d{margin:0;color:var(--mute);font-size:14px;line-height:1.7;flex:1}
+.fp-r{margin:4px 0 0;font-size:13px;color:var(--mute);border-top:1px solid var(--line);padding-top:10px}
+.fp-r b{display:block;font-family:var(--f-display);font-size:24px;color:var(--signal);line-height:1.15}
+.fp-go{font-weight:700;color:var(--signal);font-size:14px}
+.feat-ctl{display:none;justify-content:flex-end;gap:8px;margin-top:12px}
+.feat-ctl button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--navy);color:var(--ink);font-size:18px;cursor:pointer}
+.feat-ctl button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+@media (max-width:1100px){.feat{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){
+  .feat{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-16px;padding:0 16px 6px;scrollbar-width:none}
+  .feat::-webkit-scrollbar{display:none}
+  .fp{flex:0 0 80%;scroll-snap-align:start}
+  .feat-ctl{display:flex}
+}
+/* ---------- AI in Practice ---------- */
+.aip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+.ap{border:1px solid var(--line);border-radius:10px;background:var(--navy);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.ap-wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px}
+.ap-k{margin:0;font-family:var(--f-display);font-size:12px;letter-spacing:.14em;color:var(--signal)}
+.ap h3{margin:0;font-size:20px;line-height:1.4}
+.ap p{margin:0;color:var(--mute);font-size:15px;line-height:1.75}
+.ap-flag{display:inline-block;align-self:flex-start;font-size:13px!important;color:var(--ink)!important;border:1px solid var(--signal);border-radius:4px;padding:4px 10px}
+.ap dl{margin:0;display:grid;gap:10px}
+.ap dt{font-size:13px;color:var(--signal);font-weight:700}
+.ap dd{margin:2px 0 0;color:var(--mute);font-size:15px;line-height:1.75}
+.ap-go{font-weight:700;color:var(--signal);text-decoration:none;font-size:14px;margin-top:auto}
+.ap-t{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ap-vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-content:start}
+.ap-full{grid-column:1/-1}
+.ap-vids1{align-self:start}
+.ap-vids .vt:first-child{grid-column:1/-1}
+.vt{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--mute);font-size:13px;min-width:0}
+.vt .mi{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#0b1a2b;border:1px solid var(--line)}
+.vt .mi img{width:100%;height:100%;object-fit:cover;display:block}
+.vt iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:6px;display:block;background:#000}
+.vt:hover .mi{border-color:var(--signal)}
+.ap .aimv-ph{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;border:1px solid var(--line);display:grid;place-items:center;text-decoration:none;color:var(--ink)}
+.ap .aimv-ph b{font-family:var(--f-display);font-size:34px;color:transparent;-webkit-text-stroke:1px var(--ink)}
+.ap iframe.mv{width:100%;aspect-ratio:16/9;border:0;border-radius:6px;background:#000}
+.lyr{margin-top:4px}
+.lyr summary{cursor:pointer;color:var(--signal);font-weight:700;font-size:14px}
+.lyr-b{margin-top:12px;max-height:340px;overflow:auto;padding-right:6px;border-left:2px solid var(--line);padding-left:14px}
+.lyr-b p{margin:0 0 12px;font-size:14px!important;line-height:1.8!important;color:var(--ink)!important}
+.lyr-b .lyr-c{color:var(--mute)!important;font-size:12px!important}
+.ap-tools{margin:20px 0 0;color:var(--mute);font-size:13px}
+@media (max-width:900px){.aip{grid-template-columns:1fr}.ap-wide{grid-template-columns:1fr}}
+/* ---------- 影片播放視窗 ---------- */
+.media .mi{position:relative}
+.ytth{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+.vp{position:fixed;inset:0;z-index:200;background:rgba(3,8,15,.88);display:grid;place-items:center;padding:16px}
+.vp[hidden]{display:none}
+.vp-box{position:relative;width:min(1100px,100%);display:grid;gap:10px}
+.vp-frame iframe{width:100%;aspect-ratio:16/9;max-height:calc(100svh - 120px);border:0;border-radius:8px;background:#000;display:block}
+.vp-x{position:absolute;right:0;top:-46px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--navy);color:var(--ink);font-size:16px;cursor:pointer}
+.vp-x:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.vp-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--mute)}
+.vp-yt{color:var(--signal)}
+html.vp-open{overflow:hidden}
+/* ---------- 專案內頁補充 ---------- */
+.p-scope{margin:12px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.p-scope div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:4px 16px;padding:10px 2px;border-bottom:1px solid var(--line)}
+.p-scope dt{color:var(--signal);font-size:14px}
+.p-scope dd{margin:0;font-size:15px;color:var(--mute)}
+@media (max-width:620px){.p-scope div{grid-template-columns:1fr}}
+details.p-more summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:12px}
+details.p-more summary::-webkit-details-marker{display:none}
+details.p-more summary h2{margin:0}
+details.p-more summary span{font-size:13px;color:var(--signal)}
+details.p-more[open] summary span::after{content:"（收合）"}
+details.p-more .ftable{margin-top:14px}
+.p-flag{display:inline-block;margin:10px 0 0;font-size:14px;color:var(--ink);border:1px solid var(--signal);border-radius:4px;padding:4px 10px}
 /* ---------- 捲動動態 ---------- */
 html.rv-on .rv{opacity:.001;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0) * 90ms)}
 html.rv-on .rv.in{opacity:1;transform:none}
@@ -454,6 +549,7 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
       <li><a class="l" href="#journey">歷程</a></li>
       <li><a class="l" href="#music">音樂</a></li>
       <li><a class="l" href="#work">作品</a></li>
+      <li><a class="l" href="#ai">AI</a></li>
       <li><a class="l" href="#artists">合作</a></li>
       <li><a class="l" href="#contact">聯絡</a></li>
     </ul>
@@ -469,11 +565,12 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
       <span class="name-en">DENNIS</span>
     </div>
     <p class="roles rise d1"><span>整合行銷</span><i>/</i><span>影音製作統籌</span><i>/</i><span>品牌合作</span><i>/</i><span>音樂創作人</span></p>
-    <p class="hand rise d2">創新，總在熟悉之外誕生<small>Great things never came from comfort zones</small></p>
-    <p class="thesis rise d3"><b>創作者出身，把複雜需求轉成可交付成果。</b>在溫哥華、香港、臺北累積 20 年工作經歷，從寫歌、辦演出、唱片發行，走到品牌聯名、影音製作與政府標案履約。</p>
+    <p class="thesis rise d2"><b>創作者出身，把複雜需求轉成可交付成果。</b>在溫哥華、香港、臺北累積 20 年工作經歷，從寫歌、辦演出、唱片發行，走到品牌聯名、影音製作與政府標案履約。</p>
+    <p class="hand rise d3">創新，總在熟悉之外誕生<small>Great things never came from comfort zones</small></p>
     <div class="cta rise d4">
       <a class="btn solid" href="#work">看作品集 <span aria-hidden="true">→</span></a>
       <a class="btn" href="#journey">走一趟三城歷程</a>
+      <a class="btn" href="#ai">看 AI 實際應用</a>
     </div>
   </div>
   <div class="saw" aria-hidden="true"></div>
@@ -512,7 +609,7 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
       <article class="m">
         <span class="k">DECIDE</span>
         <h3>先排除不能承受的結果</h3>
-        <p>結果未必完美，但不會失控。面對多個選項，先問「哪個問題現在不處理，影響會繼續擴大」，優先控制連鎖風險。</p>
+        <p>接下專案後，先確認哪些條件一旦延誤，就會影響後續製作或上線。面對多個選項，先問「哪個問題現在不處理，影響會繼續擴大」，優先處理會擴大的問題。</p>
         <p class="ex">這個原則從 Backstage 處理演出現場開始，一直用到現在。</p>
       </article>
       <article class="m">
@@ -575,11 +672,6 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
       <figure><img src="assets/press-private-2.jpg" alt="《PRIVATE MAG》BRANDSTORY 專訪人像頁" loading="lazy"><figcaption>《PRIVATE MAG》BRANDSTORY</figcaption></figure>
       <figure><img src="assets/press-private-1.jpg" alt="《PRIVATE MAG》專訪內文頁" loading="lazy"><figcaption>〈Dennis Chan 我的開始在這裏〉</figcaption></figure>
     </div>
-    <h3 class="sub">AI 協作 MV</h3>
-    <div class="aimv" id="aimv">
-      <a class="ph dots" id="aimvMedia" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener" aria-label="在 YouTube 觀看 AI 協作 MV"><div><b>AI × MV</b><small>個人創作</small></div><span class="play" aria-hidden="true"></span></a>
-      <div class="aimv-t"><span class="org">個人創作・2022 年後</span><strong>AI 協作 MV</strong><span>自行創作音樂，結合生成式 AI 工具完成影像。作品說明待補。</span><a class="yt" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener">在 YouTube 觀看 ↗</a></div>
-    </div>
   </div>
 </section>
 
@@ -604,10 +696,76 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
       </div>
       <div class="idx"><div class="idx-in">
         <p class="eyebrow">THE PROJECT INDEX</p>
-        <h3 class="idx-h">11 個專案／2 座城市</h3>
+        <h3 class="idx-h">10 個專案／2 座城市</h3>
         <ol class="rows" id="rows"></ol>
       </div></div>
     </div>
+  </div>
+</section>
+
+<section class="sec" id="ai">
+  <div class="wrap">
+    <p class="eyebrow">Working with AI</p>
+    <h2 class="h2">AI in Practice</h2>
+    <p class="h2-zh">從提案、影音到工作流程</p>
+    <p class="lead">以下是我實際用 AI 完成的工作，每項標明要解決的問題、我負責的部分與產出。</p>
+    <div class="aip">
+      <article class="ap ap-wide">
+        <div class="ap-vids">
+          <a class="vt" data-yt="UsqQQvtP1Rg" href="https://youtu.be/UsqQQvtP1Rg" target="_blank" rel="noopener"><div class="mi"><img src="assets/oh-1.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></div><span>絕境求生：廢土重生</span></a>
+          <a class="vt" data-yt="p6vV6d1w5Xc" href="https://youtu.be/p6vV6d1w5Xc" target="_blank" rel="noopener"><div class="mi"><img src="assets/oh-2.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></div><span>THE SURVIVOR</span></a>
+          <a class="vt" data-yt="fAH-6AO8xh4" href="https://youtu.be/fAH-6AO8xh4" target="_blank" rel="noopener"><div class="mi"><img src="assets/oh-3.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></div><span>異變體超愛美，逼我幫牠拍 IG 照！</span></a>
+        </div>
+        <div class="ap-t">
+          <p class="ap-k">商業提案・AI 預視覺</p>
+          <h3>Once Human｜廣告創意提案與 AI 預視覺</h3>
+          <p class="ap-flag">未獲採用的提案作品；影片為 AI 預視覺，不是正式廣告。</p>
+          <dl>
+            <div><dt>要解決的問題</dt><dd>異變世界和笑點高度依賴畫面，只看腳本很難判斷哪條路線成立；正式拍攝前，又不可能每個方向都完整製作。</dd></div>
+            <div><dt>我負責</dt><dd>拆解遊戲世界觀，發展多條創意路線，並撰寫《廢墟探險隊》劇本提案；用生成式 AI 把角色、場景、異變生物與鏡頭氣氛先做成 Demo，再把腳本拆成拍攝規格與執行節點。</dd></div>
+            <div><dt>產出</dt><dd>多路線廣告提案、《廢墟探險隊》劇本提案、分鏡圖素材與 3 支 AI 預視覺 Demo。</dd></div>
+          </dl>
+          <a class="ap-go" href="#p-oncehuman">查看創意與製作說明 →</a>
+        </div>
+      </article>
+      <article class="ap ap-wide">
+        <div class="ap-vids1"><a class="aimv-ph dots" id="aimvMedia" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener" aria-label="在 YouTube 觀看《血》MV"><b>《血》</b><span class="play" aria-hidden="true"></span></a></div>
+        <div class="ap-t">
+        <p class="ap-k">個人創作・音樂與影像</p>
+        <h3>《血》｜音樂與 AI 影像創作</h3>
+        <dl>
+          <div><dt>創作構想</dt><dd>「若靈魂被換了內容，血究竟犯了什麼，才讓我們活得像個旁觀者？」很多病來自血。這首歌想寫的不是病的生理痛苦，而是病讓一個人變得像另一個人：陌生的自己、陌生的環境，明明還活著，卻離最初的自己越來越遠。我希望聽眾透過這首歌明白，面對一個病人，心理上的支持有多重要。</dd></div>
+          <div><dt>我的製作與 AI 協作</dt><dd>歌詞由我撰寫，歌曲以 Suno 製作；生成後由我剪輯人聲、重新編排段落，再用 Logic Pro 完成混音與母帶後製。概念、腳本與視覺導演由我負責，畫面素材以 Nano Banana 2 與 Veo 3.1 生成，最後由我用 Final Cut Pro 剪輯與後製。</dd></div>
+          <div><dt>完成作品</dt><dd>2026 年 4 月完成的完整 MV。</dd></div>
+        </dl>
+        <details class="lyr"><summary>看歌詞與製作名單</summary>
+          <div class="lyr-b"><p>血液究竟犯了什麼錯才讓我活得如兩個我<br>明明流著相同的脈搏醒來卻像住在不同角落<br>鏡子縱然投影舊輪廓卻對不上那些年的生活</p><p>若我還有原來的呼吸 為何活得卻像旁觀自己<br>若我還在原來的身體 為何靈魂卻像搬離原地</p><p>同一副臉孔 被換了內容<br>靈魂像被迫困在平行時空<br>無奈走進陌生人群之中身心再痛<br>也痛不過從此變成與眾不同<br>名字沒改動 初衷卻落空<br>連快樂都像是別人的從容<br>提起昨天只剩一片空洞<br>此刻才懂 原來連普通都不再普通</p><p>時間究竟留下了什麼才讓記憶比現實單薄<br>明明心裡只剩下落寞開口卻像說著誰的快樂<br>白晝縱然照見舊線索卻拾不回那些年的下落</p><p>若我還有原來的呼吸 為何活得卻像旁觀自己<br>若我還在原來的身體 為何靈魂卻像搬離原地</p><p>（副歌）</p><p>脈搏只是動 心又為誰跳動</p><p>（副歌）</p><p>原來連普通 都不再普通</p>
+            <p class="lyr-c">Lyrics by Dennis<br>Music Produced with Suno<br>Vocal Editing, Re-arrangement, Mixing &amp; Mastering by Dennis<br>Concept, Screenplay &amp; Visual Direction by Dennis<br>AI Visual Assets Generated with Nano Banana 2 and Veo 3.1<br>Edited &amp; Post-Produced by Dennis</p>
+          </div>
+        </details>
+        <a class="ap-go" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener">在 YouTube 觀看 ↗</a>
+        </div>
+      </article>
+      <article class="ap">
+        <p class="ap-k">日常工作流程</p>
+        <h3>專案管理、田調與檔案整理</h3>
+        <p>AI 是我每天工作的一部分，用來處理重複、耗時的整理工作；判斷與查核仍由我負責。</p>
+        <dl>
+          <div><dt>專案管理</dt><dd>用專案管理工作台追蹤手上各個專案的進度。</dd></div>
+          <div><dt>田調與資料整理</dt><dd>用 ChatGPT、Claude、Google AI Studio、NotebookLM 搜尋資料、整理長文件、還原會議與聊天紀錄、建立研究架構。對外使用的關鍵事實與數字，回查原始來源。</dd></div>
+          <div><dt>檔案整理</dt><dd>整理舊電腦與雲端檔案時，先由 AI 初步分類，我再依固定的資料夾架構細分後歸檔。</dd></div>
+        </dl>
+      </article>
+      <article class="ap">
+        <p class="ap-k">網站與互動</p>
+        <h3>個人網站</h3>
+        <dl>
+          <div><dt>構想</dt><dd>主要是為了與時並進，覺得一份履歷不一定要用簡報形式來呈現。可以結合 AI 的運用，透過網頁的個人簡介，以建立個人品牌為出發點，不只把我定位成音樂人。以溫哥華、香港、臺北三座城市串起跨產業的經歷；視覺沿用我簡報的深藍、網點與三城天際線；每個案例都能點進內頁，看清楚我做了什麼，團隊成果標明分工。</dd></div>
+          <div><dt>製作與 AI 協作</dt><dd>我規劃內容架構及資料規則，並提出視覺與互動需求，例如唱片滑動選歌、作品地圖、沿進度線走動的像素小人；Claude 依需求撰寫程式。我逐版瀏覽、回報問題並要求修改，上線後在手機上發現排版跑掉，也是這樣修正。</dd></div>
+        </dl>
+      </article>
+    </div>
+    <p class="ap-tools">實際使用過的 AI 工具：ChatGPT、Claude、Google AI Studio、NotebookLM、Notion、Suno、Nano Banana 2、Veo 3.1。</p>
   </div>
 </section>
 
@@ -672,7 +830,7 @@ const STOPS = [
  {k:'gate', city:'TAIPEI', zh:'臺北', note:'2022 起｜品牌、影音、標案'},
  {city:'TAIPEI', y:2022, when:'2022/7–2023/1', org:'雄獅旅行社', role:'網紅經紀副理', pts:['管理 30+ 位簽約 KOL，重整 Sales Kit 與合作流程','把踩線團結合 KOL 內容，雙週拍攝成本約降 30%'], tags:['KOL','商務化']},
  {city:'TAIPEI', y:2023, when:'2023/3–2026/3', org:'代表娛樂', role:'專案副理（整合行銷與品牌合作）', pts:['參與 3 檔 Uber Eats 遊戲 × 餐飲聯名','NFS × ØZI × Maserati，英文提案取得 6 輛車支援拍攝','台積電尾牙、長榮航空廣告等大型提案'], tags:['品牌整合','影音']},
- {city:'TAIPEI', y:2026, when:'2026/5–2026/9', org:'方成事', role:'AE／專案業務（政府標案與影音專案）', pts:['主責 2026 臺北馬拉松年度影音案','處理公播、空拍申請、音樂與肖像授權及交付排程','主責 3 件政府標案提案，含 2027 台灣燈會'], tags:['標案履約','影音統籌']},
+ {city:'TAIPEI', y:2026, when:'2026/5–2026/9', org:'方成事', role:'AE／專案業務（政府標案與影音專案）', pts:['2026 臺北馬拉松年度影音案：機關對接與專案管理','處理公播、空拍申請、音樂與肖像授權及交付排程','主責 3 件政府標案提案，含 2027 台灣燈會'], tags:['標案履約','影音統籌']},
  {k:'end'}
 ];
 
@@ -680,110 +838,124 @@ const STOPS = [
 const YT = id => 'https://www.youtube.com/watch?v=' + id;
 const CATS = {gov:'政府影音', brand:'品牌聯名', content:'內容影音', kol:'KOL 合作', music:'音樂產業'};
 const CASES = [
- {id:'marathon', cat:'gov', wide:true, title:'2026 臺北馬拉松年度影音', org:'臺北市政府體育局', co:'方成事', year:'2026', role:'主責業務',
-  ph:'TAIPEI MARATHON', key:['約 14 萬次','30 秒金標籤宣傳片觀看'],
-  res:'30 秒金標籤宣傳片約 14 萬次觀看',
-  sum:'這不是單支影片，而是跨約半年履約期的系列影音案。WA 金標籤宣傳片、115 年短影音、歡樂早餐跑、小小北馬與年底賽事紀實同時推進，每支影片都要回應臺北馬拉松品牌、賽事資訊、機關審核與拍攝條件。我從 2026 年 5 月起逐步接手，成為全案主責業務。',
+ {id:'marathon', cat:'gov', wide:true, title:'2026 臺北馬拉松年度影音', org:'臺北市政府體育局', co:'方成事', year:'2026', role:'專案主責（AE／專案業務）', period:'2026 年 5 月至 9 月',
+  ph:'TAIPEI MARATHON', key:['約 14 萬次','30 秒 WA 金標籤宣傳片觀看'], res:'30 秒金標籤宣傳片約 14 萬次觀看',
+  sum:'臺北市政府體育局的年度影音採購案，履約期約半年，包含 WA 金標籤宣傳片、115 年短影音、早餐跑影片、活動系列宣傳片，以及 12 月賽事紀實與結案。各支影片時程互相重疊，又都要回應臺北馬拉松品牌、賽事資訊、機關審核與拍攝條件。我在 5 月加入，參與第一次工作會議並整理會議紀錄，之後成為本案主責，9 月離任。',
+  scope:[
+   ['專案全年範圍','WA 金標籤宣傳片、115 年短影音、早餐跑影片、活動系列宣傳片、12 月賽事紀實、結案報告與硬碟。'],
+   ['我任內負責','機關對接與會議紀錄、全年製作時程、腳本與版本送審、PPM、拍攝協調、播放規格、授權文件與空拍申請前置。'],
+   ['離任後進行','12 月正式賽事拍攝、紀實影片與結案在我離任後進行，不列入我的成果。']],
+  call:'第二支短影音原本可能與運動部合作，對方遲遲沒有確定。我先向承辦確認影片定位與最晚決策日，同時預留小小北馬的腳本與拍攝檔期，並在期限前先寫好備案腳本。運動部確認不參與後，團隊直接啟動小小北馬，不必從頭發想。',
+  out:'任內完成交付 WA 金標籤宣傳片（30 秒，發布於中華民國路跑協會官方頻道，約 14 萬次觀看）與早餐跑影片（含各平台格式版本）；小小北馬與活動系列宣傳片完成 PPM 與拍攝前置，並完成 12 月賽事的空拍申請。離任前，我把尚未完成的履約節點整理成交接資料。',
+  vids:{title:'各支影片與我的負責範圍', rows:[
+   ['WA 金標籤宣傳片（30 秒）','內容規劃、機關對接、製作 brief、PPM、腳本與版本送審；處理演員、臺北田徑場與辦公室場景、服裝與競品 Logo 露出、雨備。已在任內完成交付。'],
+   ['115 年短影音：小小北馬','規劃並啟動備案；第一場拍攝後判斷是否需要補拍。離任前已完成拍攝前 PPM。'],
+   ['早餐跑影片','先依現有腳本製作、確認片尾資訊與播放平台規格；已在任內完成交付，並依各平台播放需求延伸多個格式版本。'],
+   ['活動系列宣傳片','創意動線調整、道具到貨與拍攝時程；離任前已完成 PPM 與拍攝前置。'],
+   ['12 月賽事紀實與結案','離任前已完成空拍申請；正式拍攝與結案在離任後進行。']]},
+  wt:'處理細節',
   work:[
-   ['機關對接與意見轉譯','參與第一次工作會議並整理會議紀錄。把承辦在會議、LINE、現場提出的意見分成「要改腳本」「補送資料」「製作端注意」「待機關提供素材」幾類，避免一句回饋變成整支重做。'],
-   ['全年製作時程','多支影片時程互相重疊。依交付日反推機關確認、腳本定本、演員與場景道具、PPM、拍攝、A Copy 到 Final 的節點，外部條件一變就重排。'],
-   ['WA 金標籤宣傳片','跟著年度標語與敘事調整，處理演員、場景、服裝、競品 Logo 露出與雨備，拍攝後追 A Copy 到 Final 的修改與交付。'],
-   ['小小北馬備案','第二支短影音原本可能與其他單位合作。我先向承辦確認決策期限，同時預留小小北馬的腳本與檔期；合作確定不成立後，備案立刻啟動。'],
-   ['早餐跑影片','早餐市集資訊遲遲未齊，先依現有腳本啟動製作，把店家資訊集中到片尾字卡，避免字幕和畫面對不上。同時確認捷運電視等播放平台規格，一次規劃輸出版本。'],
-   ['行政與授權','空拍與公播申請、出演與音樂授權文件盤點、保險。影片 Final 不等於能結案，權利文件也要齊。']],
-  call:'活動識別素材、獎牌與號碼布延遲，正式拍攝排不進去。我先整理「補拍」「用既有素材」「剪輯替代」幾個方案，讓機關直接比較時程、成本與畫面效果，再決定怎麼走。',
-  out:'30 秒金標籤宣傳片發布於中華民國路跑協會官方頻道，約 14 萬次觀看。',
-  note:'影片由製作團隊拍攝與剪輯；我負責機關對接、專案管理與履約。',
+   ['把機關意見轉成製作指令','承辦在會議、LINE 與現場提出的意見，我先分成「改腳本」「補送資料」「製作端注意」「待機關提供素材」四類，再交給製作端，避免一句回饋變成整支重做。'],
+   ['全年製作時程','多支影片同時進行。我依交付日反推機關確認、腳本定本、演員與場景道具、PPM、拍攝、A Copy 到 Final 的節點；機關回覆延後或方案未定時，同步更新內部時程表與專案平台。'],
+   ['小小北馬的現場變數','8 月 30 日第一場拍攝時，現場沒有預期的大型活動 Banner，承辦希望下一場補拍。我先向承辦確認能否提供既有的靜態素材，再評估是否真的需要補拍，不直接增加拍攝成本。'],
+   ['早餐跑影片','早餐市集資訊一直沒有到齊。我確認先依現有腳本製作，把店家資訊集中到片尾字卡，避免字幕和畫面對不上；也主動確認除了捷運電視（MPEG-2、29.97fps）還有哪些播放平台，一次規劃輸出版本，不必在 Final 後反覆轉檔。'],
+   ['活動系列宣傳片','創意從景點拼貼，調整成「跑完臺北馬拉松，開始玩臺北」的動線。獎牌樣品最快 9 月 10 日到貨、號碼布還在打樣，我把道具到貨日排進拍攝時程，承辦也同意拍攝排在 9 月 11 日之後。'],
+   ['授權、空拍與交接','盤點出演、著作與音樂授權文件；年底賽事空拍要向民航局申請，部分管制區域另需申請，我依 12 月 19–20 日主要拍攝日前後預留補拍彈性。']],
   media:[{yt:'Rlip2Mwh1fQ',label:'臺北馬拉松宣傳影片（一）'},{yt:'nyKOPemOSBU',label:'臺北馬拉松宣傳影片（二）'}],
   links:[['臺北馬拉松官網','https://www.taipeicitymarathon.com/']]},
 
- {id:'baonifa', cat:'brand', title:'《包你發》× 晨間廚房 × Uber Eats', org:'包你發／晨間廚房／Uber Eats', co:'代表娛樂', year:'2025', role:'獨立負責至結案',
+ {id:'baonifa', cat:'brand', title:'《包你發》× 晨間廚房 × Uber Eats', org:'包你發／晨間廚房／Uber Eats', co:'代表娛樂', year:'2025', role:'企劃執行與專案協調，負責至結案', period:'2025 年 7 月籌備，活動 10 月 1–31 日',
   img:'bnf-kv', key:['10,563 筆','廣告成交訂單'], res:'113.9 萬曝光、CTR 4.25%、10,563 筆成交訂單',
-  sum:'一邊是博弈題材手遊，一邊是客群橫跨各年齡層的連鎖早餐品牌，再加上外送平台。兩個品牌在形象與視覺語言上差很多。活動期間 2025 年 10 月 1 日至 31 日，消費指定炒泡麵可得刮刮卡，抽 iPhone 17 等獎項。這個案子由我一人負責到結案。',
+  sum:'一邊是博弈題材手遊，一邊是客群橫跨各年齡層的連鎖早餐品牌，再加上外送平台，三方在形象與視覺語言上差很多。活動期間 2025 年 10 月 1 日至 31 日，消費指定炒泡麵可得刮刮卡，抽 iPhone 17 等獎項。這個案子由我一人負責到結案。',
+  call:'遊戲方擔心晨間寶寶的 3D 風格會和既有主視覺衝突。角色怎麼用屬於晨間廚房的品牌規範，所以我先向晨間廚房確認可用的角色版本、動作與 Logo 規範，再帶著明確條件回到設計，讓雙方討論的是可用選項，而不是各自的偏好。',
+  out:'聯名商家封面達 113.9 萬曝光、4.84 萬點擊、CTR 4.25%，帶來 10,563 筆廣告成交訂單（依平台結案數據）。',
   work:[
-   ['三方需求協調','遊戲方、晨間廚房與 Uber Eats 對主視覺、品牌露出各有要求。我把這些要求整理成設計端能直接執行的條件。'],
-   ['主視覺延伸設計','親自處理延伸設計：Uber Eats 封面與結帳後廣告、A5 雙面桌卡、杯身、刮刮卡、門市布條，讓同一套概念貫穿線上線下。'],
-   ['素材與規範管理','向遊戲方取得主視覺原檔、拆分素材與文案；確認 Logo、代言人與晨間寶寶 2D／3D 角色的使用規範。餐點還沒有正式商品照時，標示素材成熟度，避免暫時照片被當成正式素材。'],
-   ['活動機制落地','刮刮卡正面承接主視覺，背面放序號與兌獎流程；桌卡一面主視覺、一面說明活動與兌換方式，讓門市消費者一看就懂。']],
-  call:'遊戲方擔心晨間寶寶 3D 風格與既有主視覺衝突。我沒有自己決定，而是回頭向晨間廚房確認可用版本、角色動作與品牌規範，再把答案交給設計端。',
-  out:'聯名商家封面達 113.9 萬曝光、4.84 萬點擊、CTR 4.25%，帶來 10,563 筆廣告成交訂單。',
+   ['素材需求整理','先向《包你發》團隊確認 Uber Eats 封面與結帳後廣告的風格、尺寸和素材，索取主視覺原檔、拆分素材，以及 4 款結帳後廣告的文案。'],
+   ['主視覺延伸','依主視覺延伸 Uber Eats 封面、結帳後廣告、A5 雙面桌卡、杯身、刮刮卡與門市布條，讓同一套概念貫穿平台與門市。'],
+   ['杯身與角色規範','杯身在遊戲方與晨間廚房之間來回調整：三款代言人版本（安心亞、慈妹、王識賢）、晨間寶寶 2D／3D 圖像、Logo 規範、角色能否拆開使用，以及遊戲視覺和餐飲品牌元素怎麼融合。'],
+   ['區分暫用與正式素材','部分餐點還沒有正式商品照時，我標明哪些是暫用照片，避免設計端把它當成正式主視覺。'],
+   ['活動機制落地','刮刮卡正面承接主視覺、背面放序號與兌獎流程；桌卡一面放主視覺，一面讓門市消費者看懂活動內容與兌換方式。']],
   media:[{img:'bnf-kv',label:'聯名主視覺'},{img:'bnf-poster',label:'門市海報'},{img:'bnf-scratch',label:'刮刮卡正反面'},{img:'bnf-store',label:'門市布條實景'}],
   links:[['工商時報報導','https://www.ctee.com.tw/news/20251001701703-431207']]},
 
- {id:'nfs', cat:'content', title:'Need for Speed × ØZI × Maserati', org:'Garena《極速快感：集結》', co:'代表娛樂', year:'2024', role:'內容策略、英文提案、訪談與花絮',
+ {id:'nfs', cat:'content', title:'Need for Speed × ØZI × Maserati', org:'Garena《極速快感：集結》', co:'代表娛樂', year:'2024', role:'內容策略、MV 腳本初稿、英文品牌提案、訪談與花絮',
   img:'nfs-mv', yt:true, key:['6 輛','Maserati 支援拍攝'], res:'取得 6 輛 Maserati 支援拍攝，系列影音 17 萬+ 觀看',
-  sum:'遊戲上市宣傳，要讓賽車遊戲、藝人與豪華車品牌在同一支內容裡成立。ØZI 擔任音樂大使，主題曲〈HEAT〉MV 於 2024 年 11 月 28 日發布，Maserati 擔任贊助。',
+  sum:'《Need for Speed》準備在臺灣上市，客戶找代表娛樂規劃線上與線下宣傳，MV 提案由我所在的團隊主導。內容要讓賽車遊戲、饒舌藝人與豪華車品牌在同一支作品裡成立。ØZI 擔任音樂大使，主題曲〈HEAT〉MV 於 2024 年 11 月 28 日發布，Maserati 擔任贊助。',
+  call:'拍攝需要多台豪華車款，一般租借很難湊齊。合作由老闆的人脈啟動，英文提案由我負責：重點放在臺灣市場能交換什麼曝光，包括國際遊戲 IP、ØZI 與導演的組合，而不是單向請對方贊助。',
+  out:'取得 6 輛不同型號車款支援 MV 拍攝；系列影音累計 17 萬+ 觀看（MV、訪談、花絮與預告合計，屬團隊與合作方共同成果）。',
+  note:'ØZI 後來決定自行製作歌曲、使用自己的拍攝團隊，MV 正式劇本由導演重新提出；我負責的是前期提案與腳本初稿、品牌資源、訪談與花絮，以及拍攝與交付協調。',
   work:[
-   ['提案與選角','依賽車遊戲、Maserati 車款與 rap／trap 音樂調性，提出多位藝人人選，最後選定 ØZI。用現成素材剪出概念 demo，幫客戶理解提案方向。'],
-   ['內容策略與腳本初稿','參與合作切角與內容策略，撰寫 MV 腳本初稿與敘事主軸；協助 ØZI 團隊與 Garena 對接音樂與歌詞的詮釋方向。'],
-   ['品牌資源談判','以英文 PowerPoint 向 Maserati 海外總公司說明臺灣市場曝光價值，取得 6 輛不同型號車款支援拍攝。'],
-   ['訪談與幕後花絮','主導 ØZI 訪談與花絮的訪綱、團隊安排與 brief。後製遇到多輪修改時，先自己做剪輯方向示意或字卡給客戶確認，再交給剪輯師完成，減少返工。'],
+   ['藝人選項與概念 demo','提案時藝人還沒確定。我從賽車遊戲、遊戲內的 Maserati 車款與 rap／trap 調性出發提出幾位人選，客戶選定 ØZI。我用網路現成素材剪了一支概念 demo，讓客戶先看到 MV 的樣子。'],
+   ['內容策略與腳本初稿','參與合作切角與內容策略，寫 MV 腳本初稿與敘事主軸；也用自己的音樂背景，協助 ØZI 團隊與 Garena 對齊音樂和歌詞的詮釋方向。'],
+   ['Maserati 英文提案','撰寫英文 PowerPoint，向 Maserati 海外總公司說明臺灣市場的曝光價值，最後取得 6 輛不同型號車款支援拍攝。'],
+   ['訪談與幕後花絮','主導 ØZI 訪談與幕後花絮的訪綱、拍攝團隊安排與 brief。'],
+   ['後製修改','多輪修改中，我先自己做方向示意、字卡或初剪給客戶確認，方向定了再交剪輯師完成，減少剪輯端反覆重做。'],
    ['拍攝與交付','拍攝前溝通、現場進度控管，交付 MV、訪談、花絮與 30 秒預告等系列內容。']],
-  call:'拍攝要多台豪華車款，一般租借難以取得。英文提案談的是臺灣市場能交換什麼曝光資源：國際遊戲 IP、藝人、導演的組合，而不是單向請求贊助。',
-  out:'取得 6 輛不同型號車款支援 MV 拍攝；系列影音累計 17 萬+ 觀看。',
-  note:'ØZI 後來決定自行製作歌曲並使用自己的拍攝團隊，MV 正式劇本由導演重新提出。我負責的是前期提案、品牌資源，以及訪談與花絮內容。Maserati 合作由老闆人脈協助啟動。',
   media:[{yt:'hL6yW3AJ4Og',img:'nfs-mv',label:'HEAT (for 極速快感：集結)'},{yt:'lB7g4qYfvuk',img:'nfs-interview',label:'極速快感｜ØZI 訪談'},{yt:'iMjz3AbvyV8',img:'nfs-bts',label:'極速快感｜HEAT MV 花絮'}]},
 
- {id:'naraka', cat:'brand', title:'《永劫無間》× Uber Eats × 晨間廚房', org:'艾肯娛樂／Uber Eats／晨間廚房', co:'代表娛樂', year:'2024', role:'合作提案、跨方協調、上線交付',
-  ph:'NARAKA × UBER EATS', key:['379 家','門市如期上線'], res:'379 家門市如期上線，330 萬+ 曝光',
-  sum:'《永劫無間》三週年聯名。Uber Eats 指定餐點可得「密堡券」抽 MSI 電競主機，活動期間 7 月 27 日至 8 月 23 日，另有買一送一優惠。',
-  work:[
-   ['合作提案','前一檔《天諭》聯名完成後，同集團團隊希望延續 Uber Eats 異業合作。三週年要擴大受眾，我提出從手搖飲延伸到早餐店，參與晨間廚房的接洽、提案與合作模式設計。'],
-   ['線上導流線下','平台合作之外，另爭取 2 場店內實體活動（各 100 人）與 KOL、直播主、Coser 合作。'],
-   ['物料與上線','協調遊戲方、Uber Eats、餐飲品牌與供應商的視覺規格、印刷、物流與門市上線需求。']],
-  call:'颱風長時間影響臺東，晨間廚房總部數日無法正常作業，颱風一過活動就要開跑。我先與印刷商確認：只要把刮刮卡與包材交期提早約 2 天就能保住時程。接著向老闆提出兩個選項：維持成本、承擔延誤風險，或增加少量預算、換取趕工保障。公司選擇後者，活動沒有延期。',
-  out:'200 萬份包材、30 萬張刮刮卡、379 家門市如期上線（團隊共同完成）；依平台結案數據，330 萬+ 曝光、10 萬+ 點擊、CTR 約 3.1%。',
+ {id:'naraka', cat:'brand', title:'《永劫無間》× Uber Eats × 晨間廚房', org:'艾肯娛樂／Uber Eats／晨間廚房', co:'代表娛樂', year:'2024', role:'前端提案、三方協調、物料與上線', period:'2024 年 7–9 月',
+  ph:'NARAKA × UBER EATS', key:['379 家','門市上線'], res:'379 家門市上線，330 萬+ 曝光',
+  sum:'《永劫無間》三週年聯名。前一檔《天諭》× 迷客夏完成後，同集團的行銷團隊希望延續 Uber Eats 異業合作。三週年想擴大受眾，我建議不再只做手搖飲，改走早餐店，因此找上晨間廚房。活動期間 7 月 27 日至 8 月 23 日，Uber Eats 指定餐點可得「密堡券」抽 MSI 電競主機，另有買一送一優惠。',
+  call:'颱風長時間影響臺東，晨間廚房總部連續數日無法正常作業，颱風一過活動就要開跑。我先和印刷商確認，只要把刮刮卡與包材交期提早約兩天，就能保住上線時程；也先問晨間廚房，物料提早到位時能不能提前處理。接著把兩個選項交給老闆：維持成本、承擔延誤風險，或加少量預算換取趕工。我先在供應鏈端確認補救方案與追加成本，讓公司能在上線前做決定；公司選擇加預算，議價由我負責。',
+  out:'約 200 萬份包材、30 萬張刮刮卡送進 379 家門市上線（團隊共同完成）；依平台結案數據，330 萬+ 曝光、10 萬+ 點擊、CTR 約 3.1%。',
   note:'成本最終決策在公司；我負責議價、整理選項，並同步晨間廚房能提前處理的條件。',
+  work:[
+   ['合作提案','提出從手搖飲延伸到早餐店的方向，參與晨間廚房的接洽與提案。晨間廚房過去較少做這類聯名，我和對方高層逐步確認合作方式、雙方能交換的曝光資源，以及執行上的界線。'],
+   ['兩場店內實體活動','平台合作之外，爭取到 2 場在晨間廚房店內舉辦的實體活動（各 100 人），把 KOL、直播主與 Coser 的線上內容導到線下。活動由我負責：與晨間廚房洽談場地、規劃活動動線與流程、籌備與各方對接、現場布置，以及活動當天的現場工作。'],
+   ['物料與上線','協調遊戲方、Uber Eats、晨間廚房與供應商的視覺規格、印刷、物流與門市上線需求。']],
   media:[],
   links:[['艾肯娛樂新聞稿','https://www.icantw.com/news/news_ican/58115.html']]},
 
- {id:'oncehuman', cat:'content', pitch:true, title:'Once Human 廣告提案與 AI Demo', org:'《Once Human／七日世界》', co:'代表娛樂', year:'2024–2025', role:'創意切角、腳本、AI 預視覺',
-  img:'oh-1', yt:true, key:['3 支','AI 預視覺 Demo'], res:'用生成式 AI 把腳本先「拍」出來',
-  sum:'遊戲廣告提案。異變世界與笑點高度依賴畫面，單靠文字很難判斷哪條路線成立；正式拍攝前，又不可能每個方向都做完整製作。',
+ {id:'oncehuman', ai:true, cat:'content', pitch:true, title:'Once Human｜廣告創意提案與 AI 預視覺', org:'《Once Human／七日世界》', co:'代表娛樂', year:'2024–2025', role:'創意路線、劇本提案撰寫、AI 預視覺 Demo、執行拆解',
+  flag:'未獲採用的提案作品；影片為 AI 預視覺，不是正式廣告。',
+  img:'oh-1', yt:true, key:['3 支','AI 預視覺 Demo'], res:'多路線提案、分鏡圖與 3 支 AI 預視覺 Demo',
+  sum:'《Once Human／七日世界》的廣告拍攝提案。異變世界和笑點高度依賴畫面，只看文字很難判斷哪條路線成立；正式拍攝前，又不可能每個方向都完整製作。',
+  call:'AI 在這裡的用途，是把決策提前到低成本的原型階段：笑點在畫面上成不成立、異變世界看不看得懂、不同路線的調性差在哪，提案時就能看見。最後選哪條路、怎麼拍，仍是創意與製作端的判斷。',
+  out:'完成多路線廣告提案、《廢墟探險隊》劇本提案、分鏡圖素材與 3 支 AI 預視覺 Demo。提案未獲採用，沒有進入正式製作。',
+  wt:'從遊戲內容到 Demo',
   work:[
-   ['拆解世界觀','先整理遊戲賣點與異變世界觀，再找臺灣觀眾熟悉的文化與社群語境。'],
-   ['多條創意切角','《都是「變」說的？！台灣都市異變傳說》：讓 KOL 進入廢墟調查異變事件，用都市怪談、手機沒電、自拍多出異變體等在地笑點包裝。另一條是「末日後，AI 還是不放過你」的黑色幽默，以及代言人求生、實機混剪等切角，讓客戶比較不同廣告語言。'],
-   ['AI 預視覺','用生成式 AI 先把角色、場景、異變生物與鏡頭氣氛做成 Demo 影片。'],
-   ['執行拆解','把腳本轉成拍攝規格、素材需求與執行節點。']],
-  call:'AI 不用來取代創意判斷，而是把決策提前到低成本原型階段：笑點畫面成不成立、異變世界看不看得懂，提案時就能看見。',
-  out:'完成多路線提案與 3 支 AI Demo 影片。',
-  note:'提案階段作品，最終是否進入正式製作待補充。',
+   ['拆解遊戲賣點','先整理遊戲賣點與異變世界觀，再找臺灣觀眾熟悉的文化與社群語境，作為廣告切入點。'],
+   ['路線一：都市異變傳說','《都是「變」說的？！台灣都市異變傳說》：從都市怪談和「朋友的朋友」式傳聞切入，讓 KOL 進入廢墟調查異變事件，用新聞與 VLOG 語氣、手機沒電、自拍多出異變體等在地笑點，把世界觀轉成臺灣觀眾熟悉的網路敘事。'],
+   ['路線二：末日後的 AI','「末日後，AI 還是不放過你」：強迫推銷的販賣機、無限循環的客服滿意度調查、向人索取異變貨幣的巡邏機器人，用黑色幽默呈現末日世界。'],
+   ['其他切角','代言人末日求生、國際感的遊戲實機混剪等，讓客戶比較不同的廣告語言。'],
+   ['AI 預視覺','用生成式 AI 把角色、場景、異變生物與鏡頭氣氛先做成 Demo 影片，讓內部與客戶在正式製作前比較各路線。'],
+   ['執行拆解','把腳本轉成拍攝規格、素材需求與執行節點，讓選定的路線能直接進入製作評估。']],
   media:[{yt:'UsqQQvtP1Rg',img:'oh-1',label:'絕境求生：廢土重生'},{yt:'p6vV6d1w5Xc',img:'oh-2',label:'THE SURVIVOR'},{yt:'fAH-6AO8xh4',img:'oh-3',label:'異變體超愛美，逼我幫牠拍 IG 照！'}],
-  links:[['Once Human《廢墟探險隊》劇本提案（PDF）','https://drive.google.com/file/d/1fADyycJSTUyNAamozqleMGi_0JuV9Ghp/view?usp=sharing']]},
+  links:[['Once Human《廢墟探險隊》劇本提案（PDF，由我撰寫）','https://drive.google.com/file/d/1fADyycJSTUyNAamozqleMGi_0JuV9Ghp/view?usp=sharing']]},
 
- {id:'hayung', cat:'kol', title:'法國台客 × 電影《哈勇家》', org:'華映娛樂', co:'雄獅旅行社', year:'2022', role:'合作企劃、內容策略、製作協調',
-  img:'kol-hayung', yt:true, key:['18,000+','合作影片首週觀看'], res:'合作影片首週 18,000+ 觀看',
-  sum:'旗下 KOL 法國台客（馮韋元）為電影《哈勇家》製作宣傳影片，帶觀眾到部落體驗 24 小時。',
+ {id:'hayung', cat:'kol', title:'法國台客 × 電影《哈勇家》', org:'華映娛樂', co:'雄獅旅行社', year:'2022', role:'雙方需求 brief、拍攝協調、KOL 擴充提案', period:'2022 年 10–11 月',
+  img:'kol-hayung', yt:true, key:['1 → 7 位','參與宣傳的 KOL'], res:'合作從 1 位 KOL 擴大到 7 位',
+  sum:'華映娛樂為電影《哈勇家》宣傳，因為電影的文化差異題材，主動找上旗下的法國籍 KOL 法國台客（馮韋元）。合作影片帶觀眾到部落體驗 24 小時。',
+  call:'片商原本只找一位 KOL。我主動建議增加預算，再加入其他 KOL 做宣傳與試映擴散，合作最後從 1 位擴大到 7 位。',
+  out:'合作從 1 位 KOL 擴大到共 7 位；法國台客的合作影片上線首週 18,000+ 觀看（依平台數據）。',
   work:[
-   ['定義目標','承接合作邀約後主動定義合作目標與內容策略，鎖定跨文化受眾。'],
-   ['敘事主軸','把 key message 轉成影片敘事主軸，規劃影片結構與節奏。'],
-   ['發布與導流','規劃發布節點與 CTA，協調社群與媒體曝光排程。'],
-   ['製作控管','負責方案與預算規劃，統籌廠商與內容窗口，控管拍攝流程、時程與交付品質。']],
-  out:'合作影片上線首週 18,000+ 觀看（依平台數據）。',
+   ['雙方需求 brief','把片商的宣傳需求和 KOL 的頻道風格對齊，brief 雙方並協調拍攝方向。'],
+   ['擴大合作','提出增加預算、加入其他 KOL 與試映擴散的方案，並協調新增 KOL 的合作內容。'],
+   ['製作與排程','統籌廠商與內容窗口，控管拍攝時程與交付，安排合作內容的社群與媒體曝光排程。']],
   media:[{yt:'yeUqTDZsPhM',img:'kol-hayung',label:'24 小時在部落：第一次吃傳統的早餐'}]},
 
- {id:'lion', cat:'kol', title:'雄獅 KOL 商務化', org:'《老外在幹嘛》等旗下頻道', co:'雄獅旅行社', year:'2022–2023', role:'KOL 商務、頻道營運、品牌合作',
-  img:'kol-band', yt:true, key:['約 30%','雙週拍攝成本降幅'], res:'雙週拍攝成本約降 30%',
-  sum:'團隊原本約 5 人，主管離職後縮到 2 至 3 人。人手不足，還要同時維持頻道內容產出、創作者的合作機會與部門收入。',
+ {id:'lion', cat:'kol', title:'雄獅 KOL 商務化', org:'《老外在幹嘛》等旗下頻道', co:'雄獅旅行社', year:'2022–2023', role:'KOL 商務、合作流程、頻道內容方案', period:'2022 年 7 月至 2023 年 1 月',
+  img:'kol-band', yt:true, key:['30+ 位','簽約 KOL 的商務合作'], res:'管理 30+ 位簽約 KOL 的商務合作',
+  sum:'管理旗下 30+ 位簽約 KOL 的商務合作。原本約 5 人的團隊，在主管離職後縮到 2 至 3 人，後期主要只剩我和一位同事；人手不足，還要同時維持頻道內容產出、創作者的合作機會與部門收入。',
+  call:'人手縮編後，自製節目很難每一兩週就產出一集。旅行社本來就有大量踩線團，我提出把踩線團交給 KOL 拍攝，用行程資源交換內容產出，再透過 KOL 個人平台與公司平台一起曝光，包裝成可以對外銷售的合作方案。',
+  out:'依部門入職前後周報，半年內合作案數約翻倍、部門毛利約成長 50%；踩線團方案導入後，雙週拍攝成本約降低 30%。這些是部門整體數字，同期還有其他商務調整，不全歸因於單一措施。',
   work:[
-   ['KOL 資源整理','整理 30+ 位簽約 KOL 的定位、受眾與商務條件，重整原本不完整的 Sales Kit。'],
-   ['合作流程','建立從需求配對、報價審核、內容 brief、製作到結案的合作流程。'],
-   ['踩線團合作方案','提出把旅行社既有的踩線團交給 KOL 製作內容，透過 KOL 個人平台與公司平台雙重曝光，包裝成可對外銷售的合作方案。'],
-   ['品牌合作執行','國際管樂節、原民會、Roots 等品牌與單位合作內容。']],
-  out:'導入後雙週拍攝成本約降 30%；依入職前後部門周報，半年內合作案數約翻倍、部門毛利約成長 50%。',
+   ['Sales Kit 重整','原本的 Sales Kit 不完整。我整理每位 KOL 的定位、受眾與商務條件，讓業務能直接拿去和客戶溝通。'],
+   ['合作流程','建立從需求配對、報價審核、內容 brief、製作到結案的合作流程；人手不足時，也直接承接客戶需求、談條件與寫 brief。'],
+   ['踩線團合作方案','內容能持續產出，不必每一兩週重新發想節目；自製成本降低，公司多了可銷售的方案，KOL 也多了工作與曝光機會。'],
+   ['品牌合作與提案','國際管樂節、原住民族委員會、Roots 等合作內容；並參與香港旅遊發展局「香港 FUN 城市」提案的內容整合與撰寫。']],
   media:[{yt:'G5qQKRJuEc4',img:'kol-band',label:'國際管樂節合作案'},{yt:'645eXpjrH_E',img:'kol-indigenous',label:'原民會合作案'},{href:'https://www.instagram.com/p/ChrvkXEP0BW/',img:'kol-roots',label:'Roots 品牌合作案（Instagram）'}]},
 
- {id:'lai', cat:'music', title:'黎曉陽：從比賽參賽者到創作歌手', org:'Frenzi Music', co:'Frenzi Music', year:'2013–2015', role:'A&R、宣傳、跨界合作',
-  img:'lai-cd', key:['最佳粵語新人','華語音樂傳媒大獎'], res:'獲華語音樂傳媒大獎最佳粵語新人',
-  sum:'黎曉陽原是 Backstage 主辦 Battlestage 歌唱比賽的參賽者，簽約 Frenzi Music 後，以「街頭自彈自唱到正式發片」的成長路線建立創作歌手定位。',
+ {id:'lai', cat:'music', title:'黎曉陽：從比賽參賽者到創作歌手', org:'Frenzi Music', co:'Frenzi Music', year:'2013–2015', role:'A&R、宣傳、媒體準備、跨界合作',
+  img:'lai-cd', key:['《撐著》','改派為電台主打'], res:'建議改派自創曲《撐著》為電台主打',
+  sum:'黎曉陽是 Battlestage 歌唱比賽的亞軍，我在比賽時已經認識他。他會自彈自唱，有在香港街頭 busking 的經驗；簽約 Frenzi Music 後，我負責他的 A&R 與宣傳。他的首支主打歌不是自己寫的，和市場對「創作歌手」的期待出現落差。',
+  call:'首支主打並非他本人創作，引起部分負面觀感。2014 年他寫下《撐著》，我判斷這首歌更能回應當時的社會氣氛，也更符合創作歌手的定位，因此建議改派為電台主打，2014 年 10 月派台。',
+  out:'我參與的部分：《撐著》改派為電台主打、兩張作品的 A&R、微電影洽談與拍攝協調。藝人與作品的成果：專輯《上上下下左右左右 BA Start》獲第十六屆華語音樂傳媒大獎最佳粵語新人；微電影獲「創+作」支援計劃最佳微電影製作大獎銅獎。',
   work:[
-   ['藝人定位','不把他包裝成一開始就成熟的明星，而是讓市場看見一個街頭表演者如何一步步成為能正式發片的創作歌手。'],
-   ['A&R','擔任 EP《天行者》與專輯《上上下下左右左右 BA Start》A&R，參與創作方向討論，協助 Demo 歌詞與 MV 拍攝溝通。'],
-   ['社群與媒體','他當時不熟悉社群經營，協助規劃發文方向；電台宣傳前與他準備訪問內容。'],
-   ['跨界合作','洽談並協調他主演的微電影《女神·搖滾·珍寶珠》。']],
-  call:'首支主打並非他本人創作，與創作歌手定位出現落差。判斷他自己寫的《撐著》更能回應當時的社會情緒，建議改派為電台主打（2014 年 10 月）。',
-  out:'專輯獲第十六屆華語音樂傳媒大獎最佳粵語新人；微電影獲「創+作」支援計劃最佳微電影製作大獎銅獎。',
-  note:'獎項屬藝人與作品成果；我的貢獻在 A&R、宣傳與合作洽談。',
+   ['藝人定位','和老闆形成共識：不把他包裝成一開始就成熟的明星，而是呈現一個街頭表演者一步步成為能正式發片的創作歌手。'],
+   ['A&R','擔任 EP《天行者》與專輯《上上下下左右左右 BA Start》的 A&R；自己也寫歌，會透過討論啟發他的創作方向，有時協助撰寫 Demo 歌詞，也參與 MV 拍攝溝通。'],
+   ['社群與媒體準備','他當時不熟悉社群經營，我協助規劃發文方向；電台宣傳前，先和他準備訪問時哪些可以說、哪些不適合說。'],
+   ['跨界合作','洽談並協調他主演的微電影《女神‧搖滾‧珍寶珠》（第二屆微電影「創+作」支援計劃音樂篇）。']],
   media:[{img:'lai-cd',label:'《Cope With Life》內頁 credits'}]},
 
  {id:'demo', cat:'music', title:'《DEMO SAMPLER》原創合輯', org:'Backstage／Green Coffee', co:'Backstage Live Restaurant', year:'2009', role:'協助統籌、A&R 與宣傳',
@@ -798,7 +970,7 @@ const CASES = [
    ['收錄作品《冷宮》','除了統籌工作，我也以創作人身分參與：《冷宮》的作曲、作詞、編曲與監製都由我負責。'],
    ['發佈音樂會','大碟附入場券，2009 年 5 月 14 日於 Backstage 舉辦「Real People．Raw Music Talk」，由資深音樂人解構 Demo 創作；200+ 人到場。']],
   call:'出版前約兩天才發現歌詞與部分 credit 印刷錯誤，已來不及重印。因為原本的視覺偏 raw，我提出把修正用的貼紙做成設計的一部分，讓補救和原設計共存。',
-  out:'首批 10,000 張 3 個月內售罄，追加 10,000 張亦完售；Yahoo Hong Kong 累積 1,000 萬+ impressions。',
+  out:'首批 10,000 張 3 個月內售罄，追加 10,000 張亦完售（依通路與內部回報彙整）；Yahoo Hong Kong 累積 1,000 萬+ impressions（依平台數據）。',
   media:[{img:'demo-poster',fit:true,label:'合輯宣傳海報'},{img:'demo-credits',fit:true,label:'內頁 credits：Marketing & Promotion／A&R Coordination'},{img:'demo-cd',label:'合輯實體 CD'}]},
 
  {id:'battlestage', cat:'music', title:'《海港城 BATTLESTAGE 歌唱大賽》', org:'海港城 × Backstage × 東亞唱片', co:'Backstage Live Restaurant', year:'2009', role:'專案主責',
@@ -814,7 +986,7 @@ const CASES = [
    ['綵排與現場控場','編寫決賽 rundown 與新聞稿，統籌綵排，當天負責現場控場。'],
    ['賽後銜接','比賽後為得獎者安排唱片公司試音（最後未推出單曲）。亞軍黎曉陽在比賽中認識，賽後安排他進修，之後在 Frenzi Music 正式出道，由我擔任 A&R。']],
   call:'從報名表、參賽者查詢、多輪賽事到決賽綵排，每個環節都有變數，而 Live 沒有 second take。我會先把後備方案準備好：音檔一律備多份，參賽者遲到就即時調整流程，讓節目照常進行。',
-  out:'前三名其後都正式出道：冠軍黃劍文於 2016 年以個人名義出道；亞軍黎曉陽經賽後進修，於 2014 年以創作歌手身分在 Frenzi Music 出道，推出首張 CD Single《天行者》；季軍許靖韻於 2013 年簽約英皇娛樂。',
+  out:'1,000+ 人報名，選出 12 個決賽單位，2009 年 9 月 9 日完成總決賽。得獎者後續（屬個人發展）：冠軍黃劍文於 2016 年以個人名義出道；亞軍黎曉陽經賽後進修，之後在 Frenzi Music 以創作歌手身分出道；季軍許靖韻於 2013 年簽約英皇娛樂。',
   media:[{img:'bs-poster',fit:true,label:'比賽海報'},{yt:'b9S0U3HwyvE',img:'ev-battlestage',label:'《Battlestage》宣傳影片'},{img:'bs-winners',label:'09.09.09 決賽得獎者'},{img:'bs-final-group',label:'決賽大合照'},{img:'bs-presscon',label:'發布記者會'},{img:'bs-backdrop',fit:true,label:'決賽背板設計（16 × 8 呎）'},{img:'bs-stage',fit:true,label:'記者會舞台與背板規劃（16 × 10 呎）'},{img:'bs-news-0714',fit:true,label:'報章報導（2009.07.14）'},{img:'bs-takemehome',fit:true,label:'《Take me Home》報導（2009.07.10）'},{img:'bs-pd',fit:true,label:'《Pd!》活動報導'},{img:'bs-shoot05',fit:true,label:'雜誌專題報導'}],
   links:[['Backstage Live HK YouTube 頻道：比賽紀錄影片','https://www.youtube.com/@BackstageLiveHK/videos']]},
 
@@ -840,7 +1012,7 @@ const CASES = [
    ['宣傳影片','從規劃、擬定訪綱、拍攝到後製，獨力完成比賽宣傳影片。'],
    ['平台曝光','爭取 Yahoo Hong Kong 首頁 Banner 免付費曝光，並向香港網上論壇平台 Uwants.com 爭取 Banner 版位。'],
    ['參賽者溝通','處理報名、作品提交與參賽者查詢。']],
-  out:'收到 1,500+ 份參賽作品，累計 1,000 萬+ 平台曝光（依平台數據）。歌曲組冠軍作品《比愛情簡單》（作曲：覃嘉健／作詞：江威）如獎項承諾由吳雨霏演唱，並成為她專輯《Simpler Than Love》（新歌＋精選）的同名歌曲。歌詞組季軍曾紀諾憑《安息禮拜》與伍樂城簽下 5 年詞曲版權約，其後成為職業填詞人，為容祖兒、Twins、陳柏宇等歌手填詞；澳門樂團 Real-Us 以英文原創《Drive》入圍歌曲組決賽，後改寫為中文版《界限》，收錄於合輯《回問》。歌詞組的初選工作讓馮穎琪看到我在創作以外的處理方式與邏輯，之後主動邀請我加入 Backstage。',
+  out:'收到 1,500+ 份參賽作品，累計 1,000 萬+ 平台曝光（依平台數據）。獎項承諾兌現：歌曲組冠軍作品《比愛情簡單》（作曲：覃嘉健／作詞：江威）由吳雨霏演唱，成為她專輯《Simpler Than Love》（新歌＋精選）的同名歌曲。得獎者後續（屬個人發展）：歌詞組季軍曾紀諾與伍樂城簽下 5 年詞曲版權約，其後成為職業填詞人；澳門樂團 Real-Us 以英文原創《Drive》入圍歌曲組決賽，後改寫為中文版《界限》，收錄於合輯《回問》。對我個人：歌詞組的初選工作讓馮穎琪看到我在創作以外的處理方式，之後主動邀請我加入 Backstage。',
   media:[{img:'composer-poster',fit:true,label:'比賽海報'},{yt:'mB0m-7RMEow',img:'ev-composer',label:'《尋找音樂人大賽》宣傳影片（規劃、訪綱、拍攝與後製）'},{yt:'0PsxFhbzGvo',label:'《尋找音樂人創作大賽》頒獎禮：吳雨霏演唱冠軍作品《比愛情簡單》'}],
   links:[['Uwants 論壇活動公告（2008.05.08）','https://www.uwants.com/viewthread.php?tid=6228188&nomobile=1'],['粵語協會論壇參賽辦法轉貼（2008.06.07）','https://bbs.cantonese.asia/thread-10539-1-1.html']]}
 ];
@@ -934,17 +1106,18 @@ if (document.fonts) document.fonts.ready.then(layout);
 layout();
 
 /* ===== 作品地圖 ===== */
-const ORDER = ['composer','demo','battlestage','lai','hayung','lion','naraka','nfs','oncehuman','baonifa','marathon'];
+const ORDER = ['composer','demo','battlestage','lai','hayung','lion','naraka','nfs','baonifa','marathon'];
 CASES.sort((a,b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
+const LIST = CASES.filter(c => ORDER.includes(c.id));
 const POS = {composer:[34,60],battlestage:[40,47],demo:[48,63],lai:[56,41],hayung:[66,60],lion:[70,46],naraka:[75,32],nfs:[83,40],oncehuman:[87,57],baonifa:[94,45],marathon:[92,27]};
 const SHORT = {composer:'尋找音樂人創作大賽',battlestage:'海港城 BATTLESTAGE',demo:'DEMO SAMPLER',lai:'黎曉陽新人發展',hayung:'法國台客 × 哈勇家',lion:'雄獅 KOL 商務化',naraka:'永劫無間 × Uber Eats',nfs:'NFS × ØZI × Maserati',oncehuman:'Once Human 提案',baonifa:'包你發 × 晨間廚房',marathon:'2026 臺北馬拉松'};
 const CITY_OF = id => ORDER.indexOf(id) < 4 ? 'HONG KONG' : 'TAIPEI';
 const NUM = id => String(ORDER.indexOf(id) + 1).padStart(2, '0');
 const CIRC = '①②③④⑤⑥⑦⑧';
 const mapEl = $('#map'), stage = $('#stage'), drawer = $('#drawer');
-$('#pins').innerHTML = CASES.map(c => `<button class="pin" type="button" data-id="${c.id}" style="--i:${ORDER.indexOf(c.id)};left:${POS[c.id][0]}%;top:${POS[c.id][1]}%" aria-label="${NUM(c.id)} ${esc(c.title)}"><span class="n">${NUM(c.id)}</span><span class="lb">${esc(SHORT[c.id])}</span></button>`).join('');
+$('#pins').innerHTML = LIST.map(c => `<button class="pin" type="button" data-id="${c.id}" style="--i:${ORDER.indexOf(c.id)};left:${POS[c.id][0]}%;top:${POS[c.id][1]}%" aria-label="${NUM(c.id)} ${esc(c.title)}"><span class="n">${NUM(c.id)}</span><span class="lb">${esc(SHORT[c.id])}</span></button>`).join('');
 let lastCity = '';
-$('#rows').innerHTML = CASES.map(c => {
+$('#rows').innerHTML = LIST.map(c => {
   const city = CITY_OF(c.id); const sep = city !== lastCity ? `<li class="city-sep">${city}</li>` : ''; lastCity = city;
   return `${sep}<li><button class="row" type="button" data-id="${c.id}"><span class="rn">${NUM(c.id)}</span><span class="rt">${esc(c.title)}</span><span class="ra">↗</span><span class="rm">${esc(c.co)}・${esc(c.year)}・${CATS[c.cat]}${c.pitch ? '・提案' : ''}</span></button></li>`;
 }).join('');
@@ -989,23 +1162,24 @@ addEventListener('keydown', e => { if (e.key === 'Escape' && !drawer.hidden) clo
 const pv = $('#project');
 const BASE_TITLE = document.title;
 function mediaHTML(m){
-  const inner = m.img ? `<img src="assets/${m.img}.jpg" alt="" loading="lazy"${m.fit ? ' style="object-fit:contain"' : ''}>` : `<div class="ph dots"><div><b>VIDEO</b><small>封面待補</small></div></div>`;
+  const inner = m.img ? `<img src="assets/${m.img}.jpg" alt="" loading="lazy"${m.fit ? ' style="object-fit:contain"' : ''}>` : `<div class="ph dots"><div><b>VIDEO</b><small>在 YouTube 觀看</small></div></div>${m.yt ? `<img class="ytth" src="https://i.ytimg.com/vi/${m.yt}/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">` : ''}`;
   const href = m.yt ? YT(m.yt) : m.href;
   const play = m.yt ? '<span class="play" aria-hidden="true"></span>' : '';
-  return href ? `<a href="${href}" target="_blank" rel="noopener"><div class="mi">${inner}${play}</div><span>${esc(m.label)} ↗</span></a>`
+  return href ? `<a href="${href}" target="_blank" rel="noopener"${m.yt ? ` data-yt="${m.yt}" data-title="${esc(m.label)}"` : ''}><div class="mi">${inner}${play}</div><span>${esc(m.label)} ↗</span></a>`
               : `<figure><button class="mi zoom" type="button" data-src="assets/${m.img}.jpg" aria-label="放大檢視：${esc(m.label)}">${inner}</button><figcaption>${esc(m.label)}</figcaption></figure>`;
 }
 function showProject(id){
-  const i = CASES.findIndex(x => x.id === id), c = CASES[i];
-  const prev = CASES[(i - 1 + CASES.length) % CASES.length], next = CASES[(i + 1) % CASES.length];
-  const cover = c.img ? `<img src="assets/${c.img}.jpg" alt="${esc(c.title)} 主視覺">` : `<div class="ph dots"><div><b>${esc(c.ph)}</b><small>影像素材待補</small></div></div>`;
+  const c = CASES.find(x => x.id === id), i = LIST.indexOf(c);
+  const prev = i < 0 ? null : LIST[(i - 1 + LIST.length) % LIST.length], next = i < 0 ? null : LIST[(i + 1) % LIST.length];
+  const back = c.ai ? '#ai' : '#work', backT = c.ai ? 'AI in Practice' : '作品集', backB = c.ai ? '返回 AI in Practice' : '返回作品集';
+  const cover = c.img ? `<img src="assets/${c.img}.jpg" alt="${esc(c.title)} 主視覺">` : `<div class="ph dots"><div><b>${esc(c.ph)}</b><small>${esc(c.org)}</small></div></div>`;
   pv.innerHTML = `
   <div class="wrap">
-    <nav class="crumb" aria-label="麵包屑"><a href="#work">← 作品集</a><span>/</span><span>${CATS[c.cat]}${c.pitch ? '・提案' : ''}</span></nav>
+    <nav class="crumb" aria-label="麵包屑"><a href="${back}">← ${backT}</a><span>/</span><span>${CATS[c.cat]}${c.pitch ? '・提案' : ''}</span></nav>
     <header class="p-head">
       <p class="eyebrow">${esc(c.co)}・${esc(c.year)}</p>
       <h1>${esc(c.title)}</h1>
-      <p class="p-role">${esc(c.role)}</p>
+      <p class="p-role">${esc(c.role)}</p>${c.flag ? `<p class="p-flag">${esc(c.flag)}</p>` : ''}
     </header>
     <div class="p-cover">${cover}</div>
     <dl class="p-meta">
@@ -1017,25 +1191,26 @@ function showProject(id){
     <div class="p-body">
       <article class="p-main">
         <section class="p-sec"><h2>專案背景</h2><p>${esc(c.sum)}</p></section>
-        ${c.table ? `<section class="p-sec"><h2>${esc(c.table.title)}</h2><dl class="ftable">${c.table.rows.map(([k,v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></section>` : ''}
-        <section class="p-sec"><h2>我做了什麼</h2>
-          <div class="work">${c.work.map(([t,d]) => `<div class="w"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
-        </section>
+        <section class="p-sec"><h2>我的角色</h2><p class="p-rl"><b>${esc(c.role)}</b>${c.period ? `<span>參與期間：${esc(c.period)}</span>` : ''}</p>${c.scope ? `<dl class="p-scope">${c.scope.map(([k,v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}${c.note ? `<p class="note">${esc(c.note)}</p>` : ''}</section>
         ${c.call ? `<section class="p-sec"><h2>關鍵判斷</h2><blockquote class="call">${esc(c.call)}</blockquote></section>` : ''}
         <section class="p-sec"><h2>成果</h2><p>${esc(c.out)}</p></section>
+        ${c.vids ? `<section class="p-sec"><h2>${esc(c.vids.title)}</h2><dl class="ftable">${c.vids.rows.map(([k,v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></section>` : ''}
+        <section class="p-sec"><h2>${esc(c.wt || '我做了什麼')}</h2>
+          <div class="work">${c.work.map(([t,d]) => `<div class="w"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
+        </section>
+        ${c.table ? `<details class="p-sec p-more"><summary><h2>${esc(c.table.title)}</h2><span>展開細節</span></summary><dl class="ftable">${c.table.rows.map(([k,v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></details>` : ''}
         ${c.media.length ? `<section class="p-sec"><h2>${c.media.some(m => m.yt) ? '影片與素材' : '作品素材'}</h2><div class="media">${c.media.map(mediaHTML).join('')}</div></section>` : ''}
-        ${c.note ? `<p class="note">${esc(c.note)}</p>` : ''}
       </article>
       <aside class="p-side">
         <div class="kpi"><b>${esc(c.key[0])}</b><span>${esc(c.key[1])}</span></div>
         ${c.links ? `<div class="p-links"><h2>延伸閱讀</h2>${c.links.map(([t,u]) => `<a href="${u}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div>` : ''}
-        <a class="btn" href="#work">返回作品集</a>
+        <a class="btn" href="${back}">${backB}</a>
       </aside>
     </div>
-    <nav class="pn" aria-label="其他專案">
+    ${prev ? `<nav class="pn" aria-label="其他專案">
       <a href="#p-${prev.id}"><small>← 上一個專案</small><span>${esc(prev.title)}</span></a>
       <a href="#p-${next.id}" class="nx"><small>下一個專案 →</small><span>${esc(next.title)}</span></a>
-    </nav>
+    </nav>` : ''}
   </div>`; countUp(pv);
   document.body.dataset.view = 'project';
   pv.hidden = false;
@@ -1103,19 +1278,61 @@ cf.addEventListener('wheel', e => { if (Math.abs(e.deltaX) > Math.abs(e.deltaY) 
 cfGo(cfCur);
 
 
-/* AI 協作 MV：放在自己的網域（https）時改為頁內播放；預覽頁與本機檔案維持外連 */
-(function(){
-  const host = location.hostname;
-  const canEmbed = location.protocol === 'https:' && !/claude|anthropic|claudeusercontent/.test(host);
-  if (!canEmbed) return;
+/* 影片：放在自己的網域（https）時頁內播放；預覽頁與本機檔案維持外連 */
+const CAN_EMBED = location.protocol === 'https:' && !/claude|anthropic|claudeusercontent/.test(location.hostname);
+function ytFrame(id, title, cls){
   const f = document.createElement('iframe');
-  f.src = 'https://www.youtube-nocookie.com/embed/3v3X4XvAKmM?rel=0';
-  f.title = 'AI 協作 MV';
-  f.loading = 'lazy';
+  f.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0`; f.title = title; f.loading = 'lazy'; if (cls) f.className = cls;
   f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-  f.allowFullscreen = true;
-  f.referrerPolicy = 'strict-origin-when-cross-origin';
-  $('#aimvMedia').replaceWith(f);
+  f.allowFullscreen = true; f.referrerPolicy = 'strict-origin-when-cross-origin'; return f;
+}
+if (CAN_EMBED){
+  $('#aimvMedia').replaceWith(ytFrame('3v3X4XvAKmM', '《血》MV', 'mv'));
+}
+
+/* 影片播放視窗：自己的網域時在頁內放大播放，其餘環境維持外連 YouTube */
+(() => {
+  const vp = document.createElement('div');
+  vp.className = 'vp'; vp.id = 'vp'; vp.hidden = true;
+  vp.setAttribute('role', 'dialog'); vp.setAttribute('aria-modal', 'true'); vp.setAttribute('aria-label', '影片播放');
+  vp.innerHTML = '<div class="vp-box"><button type="button" class="vp-x" aria-label="關閉影片">✕</button><div class="vp-frame"></div><div class="vp-foot"><span class="vp-t"></span><a class="vp-yt" target="_blank" rel="noopener">在 YouTube 觀看 ↗</a></div></div>';
+  document.body.appendChild(vp);
+  let last = null;
+  const close = () => { if (vp.hidden) return; vp.hidden = true; vp.querySelector('.vp-frame').innerHTML = ''; document.documentElement.classList.remove('vp-open'); if (last) last.focus(); };
+  const open = (id, title, trigger) => {
+    last = trigger;
+    vp.querySelector('.vp-frame').replaceChildren(ytFrame(id, title || '影片'));
+    vp.querySelector('iframe').src += '&autoplay=1';
+    vp.querySelector('.vp-t').textContent = title || '';
+    vp.querySelector('.vp-yt').href = 'https://www.youtube.com/watch?v=' + id;
+    vp.hidden = false; document.documentElement.classList.add('vp-open');
+    vp.querySelector('.vp-x').focus();
+  };
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[data-yt]');
+    if (!a || !CAN_EMBED) return;
+    e.preventDefault();
+    open(a.dataset.yt, a.dataset.title || a.textContent.replace('↗', '').trim(), a);
+  });
+  vp.addEventListener('click', e => { if (e.target === vp || e.target.closest('.vp-x')) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  window.addEventListener('hashchange', close);
+})();
+
+/* 代表作品：照片緩慢切換、手機左右切換 */
+(() => {
+  const feat = $('#feat'); if (!feat) return;
+  const RMf = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let timer = null;
+  const fade = feat.querySelector('.fx-fade');
+  const step = () => { const imgs = [...fade.querySelectorAll('img')], k = imgs.findIndex(x => x.classList.contains('on')); imgs[k].classList.remove('on'); imgs[(k + 1) % imgs.length].classList.add('on'); };
+  if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => {
+    feat.classList.toggle('in', e.isIntersecting && !RMf);
+    clearInterval(timer); if (e.isIntersecting && !RMf && fade) timer = setInterval(step, 5000);
+  }), {threshold:.3}).observe(feat);
+  const by = d => { const card = feat.querySelector('.fp'); feat.scrollBy({left: d * (card.offsetWidth + 12), behavior: RMf ? 'auto' : 'smooth'}); };
+  $('#featPrev').addEventListener('click', () => by(-1));
+  $('#featNext').addEventListener('click', () => by(1));
 })();
 
 /* ===== 複製 Email ===== */
@@ -1130,7 +1347,7 @@ const links = [...document.querySelectorAll('.nav a.l')];
 const io = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id));
 }), {rootMargin:'-45% 0px -50% 0px'});
-['about','method','journey','music','work','artists','brands','contact'].forEach(id => io.observe(document.getElementById(id)));
+['about','method','journey','music','work','ai','artists','brands','contact'].forEach(id => io.observe(document.getElementById(id)));
 /* ---------- 捲動動態 ---------- */
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 function countUp(scope){
@@ -1146,7 +1363,8 @@ function countUp(scope){
 }
 if (!RM && 'IntersectionObserver' in window){
   document.documentElement.classList.add('rv-on');
-  ['#about .eyebrow,#about .h2,#about .h2-zh','#about .facts > div','#about .about > p,#about .chips',
+  ['#ai .eyebrow,#ai .h2,#ai .h2-zh,#ai .lead','#ai .ap','#ai .ap-tools',
+   '#about .eyebrow,#about .h2,#about .h2-zh','#about .facts > div','#about .about > p,#about .chips',
    '#method .eyebrow,#method .h2,#method .h2-zh',
    '#music .eyebrow,#music .h2,#music .h2-zh','#work .eyebrow,#work .h2,#work .h2-zh',
    '#artists .eyebrow,#artists .h2,#artists .h2-zh','#artists .wrap > :not(.eyebrow):not(.h2):not(.h2-zh)',
@@ -1160,7 +1378,7 @@ if (!RM && 'IntersectionObserver' in window){
   wo.observe($('#map') || $('#work'));
 }
 /* ---------- 像素小人彩蛋 ---------- */
-const WLINES = [[2003,'在 UBC 讀經濟，課餘寫歌、做舞台劇。'],[2005,'《熱戀，之後》拿到最感動歌曲，簽約 Green Coffee！'],[2007,'白天寫課程，晚上寫歌。'],[2008,'1,500+ 份參賽作品，正在逐份初選……'],[2009,'Battlestage 籌備中，電話響不停。'],[2012,'今晚 Backstage 有演出，先去控場。'],[2014,'黎曉陽的新歌，準備派台了。'],[2019,'在廠裡盯產線，也在畫自家品牌的衣服。'],[2021,'月底帳做成模板，就不用每次重算。'],[2022,'搬到臺北了！先從 KOL 商務開始。'],[2025,'Uber Eats × 遊戲聯名，又一檔要上線。'],[2099,'臺北馬拉松影片準備交付。下一站：你們團隊？']];
+const WLINES = [[2003,'在 UBC 讀經濟，課餘寫歌、做舞台劇。'],[2005,'《熱戀，之後》拿到最感動歌曲，簽約 Green Coffee！'],[2007,'白天寫課程，晚上寫歌。'],[2008,'1,500+ 份參賽作品，正在逐份初選……'],[2009,'Battlestage 籌備中，電話響不停。'],[2012,'今晚 Backstage 有演出，先去控場。'],[2014,'黎曉陽的新歌，準備派台了。'],[2019,'在廠裡盯產線，也在畫自家品牌的衣服。'],[2021,'月底帳做成模板，就不用每次重算。'],[2022,'搬到臺北了！先從 KOL 商務開始。'],[2025,'Uber Eats × 遊戲聯名，又一檔要上線。'],[2099,'把機關意見整理成修改清單。下一站：你們團隊？']];
 (() => {
   const wk = $('#jWalker'), bub = $('#wBub'); if (!wk || !bub) return;
   let t;
