@@ -117,6 +117,7 @@ section{position:relative}
 .method{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
 .m{background:var(--night);padding:clamp(22px,3vw,34px);display:grid;gap:10px;align-content:start;transition:background .3s}
 .m:hover{background:var(--navy)}
+.m.wide{grid-column:1/-1}
 .m h3{margin:0;font-size:clamp(19px,2vw,22px);font-weight:700;line-height:1.4}
 .m .k{font-family:var(--f-display);font-size:12px;letter-spacing:.2em;color:var(--signal)}
 .m p{margin:0;color:var(--mute)}
@@ -595,9 +596,9 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
       <p class="q">我做決定有一個原則：沒有任何選項能保證最好。先把不能承受的結果逐一排除，再從可控的選項裡做決定。</p>
       <p>我在加拿大 UBC 讀經濟，回到香港後成為 CASH 作家會員，替楊千嬅、周慧敏、鄭希怡等歌手作曲填詞。之後在 Backstage Live Restaurant 管過 400 多場演出，在 Frenzi Music 負責唱片發行與 A&amp;R，也在服裝廠管過產線、在琴行管過門市。</p>
       <p>2022 年搬到臺北，從雄獅旅行社的 KOL 商務，走到代表娛樂的遊戲 × 餐飲 × 平台聯名，再走進方成事的政府標案與影音專案。</p>
-      <p>行業換了幾次，做的其實是同一件事：理解需求、找到解法，把想法一路推到能交付、能驗收。我能和創作者談內容、和品牌談條件、和製作團隊談做法；需要時，文字、視覺與影音也能自己處理。</p>
+      <p>行業換了幾次，做的其實是同一件事：理解需求、找到解法，把想法一路推到能交付、能驗收。我能和創作者談內容、和品牌談條件、和製作團隊談做法，也會留意大家當下在討論什麼，替藝人和品牌找到參與話題的方式。從發佈活動、電台宣傳到 YouTube 頻道經營，我都做過；需要時，文字、視覺與影音也能自己處理。</p>
       <ul class="chips" aria-label="專長">
-        <li>整合行銷與跨品牌合作</li><li>影音內容與製作統籌</li><li>KOL 商務化</li><li>政府標案履約與合約授權</li><li>音樂創作與發行</li><li>AI 研究與查核工作流</li>
+        <li>整合行銷與跨品牌合作</li><li>影音內容與製作統籌</li><li>KOL 商務與頻道營運</li><li>藝人宣傳與發佈活動</li><li>政府標案履約與合約授權</li><li>音樂創作與發行</li><li>AI 研究與查核工作流</li>
       </ul>
     </div>
   </div>
@@ -632,6 +633,12 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
         <h3>把做過的事變成流程</h3>
         <p>一次性的工作，整理成下一次可以直接用的流程、模板和工具，讓團隊交接不必從頭來。</p>
         <p class="ex">雄獅的 KOL Sales Kit、青苗琴行的管理模板、代表娛樂的 Uber Eats 合作公版。</p>
+      </article>
+      <article class="m wide">
+        <span class="k">CONTEXT</span>
+        <h3>留意身邊正在發生的事</h3>
+        <p>大家當下在討論什麼、社會氣氛往哪裡走，都會影響內容怎麼被接收。我會先看清楚這些，再判斷藝人或品牌能用什麼方式參與，而不是只照原本的宣傳計畫走。</p>
+        <p class="ex">黎曉陽以音樂回應 ALS 冰桶挑戰，並改派《撐著》回應當時的社會氣氛；《哈勇家》從部落體驗延伸到外國人的觀影討論。</p>
       </article>
     </div>
   </div>
@@ -938,7 +945,7 @@ const CASES = [
   media:[{yt:'yeUqTDZsPhM',img:'kol-hayung',label:'24 小時在部落：第一次吃傳統的早餐'},{yt:'mgE_B_svsl0',label:'法國台客：外國人看台灣原住民電影《哈勇家》'}]},
 
  {id:'lion', cat:'kol', title:'雄獅 KOL 商務與頻道營運：把創作者與旅遊資源變成合作方案', org:'《老外在幹嘛》等旗下頻道', co:'雄獅旅行社', year:'2022–2023', role:'KOL 商務、合作流程、協助頻道經營、品牌提案與執行協調', period:'2022 年 7 月至 2023 年 1 月',
-  img:'kol-band', yt:true, key:['約 30%','雙週拍攝成本下降'], res:'踩線團結合 KOL 內容，雙週拍攝成本約降 30%',
+  img:'kol-indigenous', yt:true, key:['約 30%','雙週拍攝成本下降'], res:'踩線團結合 KOL 內容，雙週拍攝成本約降 30%',
   sum:'在雄獅旅行社擔任網紅經紀副理，負責旗下 30+ 位簽約 KOL 的商務合作，並協助經營《老外在幹嘛》YouTube 頻道，工作橫跨創作者媒合、客戶提案、內容 brief、製作協調與結案。原本約 5 人的團隊，在主管離職後縮到 2 至 3 人，後期主要由我和一位同事承接；人手減少，頻道仍要持續更新，客戶合作與部門收入也要維持。',
   call:'人手縮編後，自製節目很難每一兩週就產出一集。旅行社本來就有大量踩線團，我提出把踩線團交給 KOL 拍攝，用行程資源交換內容產出，再透過 KOL 個人平台與公司平台一起曝光，包裝成可以對外銷售的合作方案。團隊不必每次從零籌備節目，創作者也多了工作與曝光機會。',
   out:'踩線團方案導入後，雙週拍攝成本約降低 30%；30+ 位簽約 KOL 的商務資料與合作流程完成重整。依部門入職前後周報，半年內合作案數約翻倍、部門毛利約成長 50%；這是部門整體數字，同期還有其他商務調整，不全歸因於單一措施。',
