@@ -729,7 +729,7 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
         </div>
       </article>
       <article class="ap ap-wide">
-        <div class="ap-vids1"><a class="aimv-ph dots" id="aimvMedia" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener" aria-label="在 YouTube 觀看《血》MV"><b>《血》</b><span class="play" aria-hidden="true"></span></a></div>
+        <div class="ap-vids1"><a class="aimv-ph dots" id="aimvMedia" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener" data-yt="3v3X4XvAKmM" data-title="《血》MV" aria-label="播放《血》MV"><b>《血》</b><span class="play" aria-hidden="true"></span></a></div>
         <div class="ap-t">
         <p class="ap-k">個人創作・音樂與影像</p>
         <h3>《血》｜音樂與 AI 影像創作</h3>
@@ -743,7 +743,6 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
             <p class="lyr-c">Lyrics by Dennis<br>Music Produced with Suno<br>Vocal Editing, Re-arrangement, Mixing &amp; Mastering by Dennis<br>Concept, Screenplay &amp; Visual Direction by Dennis<br>AI Visual Assets Generated with Nano Banana 2 and Veo 3.1<br>Edited &amp; Post-Produced by Dennis</p>
           </div>
         </details>
-        <a class="ap-go" href="https://youtu.be/3v3X4XvAKmM" target="_blank" rel="noopener">在 YouTube 觀看 ↗</a>
         </div>
       </article>
       <article class="ap">
@@ -1162,10 +1161,10 @@ addEventListener('keydown', e => { if (e.key === 'Escape' && !drawer.hidden) clo
 const pv = $('#project');
 const BASE_TITLE = document.title;
 function mediaHTML(m){
-  const inner = m.img ? `<img src="assets/${m.img}.jpg" alt="" loading="lazy"${m.fit ? ' style="object-fit:contain"' : ''}>` : `<div class="ph dots"><div><b>VIDEO</b><small>在 YouTube 觀看</small></div></div>${m.yt ? `<img class="ytth" src="https://i.ytimg.com/vi/${m.yt}/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">` : ''}`;
+  const inner = m.img ? `<img src="assets/${m.img}.jpg" alt="" loading="lazy"${m.fit ? ' style="object-fit:contain"' : ''}>` : `<div class="ph dots"><div><b>VIDEO</b><small>點擊播放</small></div></div>${m.yt ? `<img class="ytth" src="https://i.ytimg.com/vi/${m.yt}/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">` : ''}`;
   const href = m.yt ? YT(m.yt) : m.href;
   const play = m.yt ? '<span class="play" aria-hidden="true"></span>' : '';
-  return href ? `<a href="${href}" target="_blank" rel="noopener"${m.yt ? ` data-yt="${m.yt}" data-title="${esc(m.label)}"` : ''}><div class="mi">${inner}${play}</div><span>${esc(m.label)} ↗</span></a>`
+  return href ? `<a href="${href}" target="_blank" rel="noopener"${m.yt ? ` data-yt="${m.yt}" data-title="${esc(m.label)}"` : ''}><div class="mi">${inner}${play}</div><span>${esc(m.label)}${m.yt ? '' : ' ↗'}</span></a>`
               : `<figure><button class="mi zoom" type="button" data-src="assets/${m.img}.jpg" aria-label="放大檢視：${esc(m.label)}">${inner}</button><figcaption>${esc(m.label)}</figcaption></figure>`;
 }
 function showProject(id){
@@ -1287,7 +1286,6 @@ function ytFrame(id, title, cls){
   f.allowFullscreen = true; f.referrerPolicy = 'strict-origin-when-cross-origin'; return f;
 }
 if (CAN_EMBED){
-  $('#aimvMedia').replaceWith(ytFrame('3v3X4XvAKmM', '《血》MV', 'mv'));
 }
 
 /* 影片播放視窗：自己的網域時在頁內放大播放，其餘環境維持外連 YouTube */
@@ -1295,7 +1293,7 @@ if (CAN_EMBED){
   const vp = document.createElement('div');
   vp.className = 'vp'; vp.id = 'vp'; vp.hidden = true;
   vp.setAttribute('role', 'dialog'); vp.setAttribute('aria-modal', 'true'); vp.setAttribute('aria-label', '影片播放');
-  vp.innerHTML = '<div class="vp-box"><button type="button" class="vp-x" aria-label="關閉影片">✕</button><div class="vp-frame"></div><div class="vp-foot"><span class="vp-t"></span><a class="vp-yt" target="_blank" rel="noopener">在 YouTube 觀看 ↗</a></div></div>';
+  vp.innerHTML = '<div class="vp-box"><button type="button" class="vp-x" aria-label="關閉影片">✕</button><div class="vp-frame"></div><div class="vp-foot"><span class="vp-t"></span></div></div>';
   document.body.appendChild(vp);
   let last = null;
   const close = () => { if (vp.hidden) return; vp.hidden = true; vp.querySelector('.vp-frame').innerHTML = ''; document.documentElement.classList.remove('vp-open'); if (last) last.focus(); };
@@ -1304,7 +1302,6 @@ if (CAN_EMBED){
     vp.querySelector('.vp-frame').replaceChildren(ytFrame(id, title || '影片'));
     vp.querySelector('iframe').src += '&autoplay=1';
     vp.querySelector('.vp-t').textContent = title || '';
-    vp.querySelector('.vp-yt').href = 'https://www.youtube.com/watch?v=' + id;
     vp.hidden = false; document.documentElement.classList.add('vp-open');
     vp.querySelector('.vp-x').focus();
   };
