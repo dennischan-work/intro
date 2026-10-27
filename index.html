@@ -1244,7 +1244,7 @@ addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden) lb.hidd
 /* ===== 音樂 ===== */
 /* Cover Flow */
 const cf = $('#cf'), cfRange = $('#cfRange');
-let cfCur = 4;
+let cfCur = Math.floor((SONGS.length - 1) / 2);
 const COVERS = ['2004','2006','2008','2010','2011','2012','2014'];
 cf.innerHTML = SONGS.map(([y,t,a], i) => COVERS.includes(y)
   ? `<button class="cov has-img" type="button" data-i="${i}" aria-label="${y}《${esc(t)}》${esc(a)}"><img src="assets/covers/${y}.jpg" alt="" draggable="false"><span class="cy">${y}</span></button>`
