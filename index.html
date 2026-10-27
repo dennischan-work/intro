@@ -505,6 +505,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .vp{position:fixed;inset:0;z-index:200;background:rgba(3,8,15,.88);display:grid;place-items:center;padding:16px}
 .vp[hidden]{display:none}
 .vp-box{position:relative;width:min(1100px,100%);display:grid;gap:10px}
+.vp-frame video{width:100%;aspect-ratio:16/9;max-height:calc(100svh - 120px);border-radius:8px;background:#000;display:block}
 .vp-frame iframe{width:100%;aspect-ratio:16/9;max-height:calc(100svh - 120px);border:0;border-radius:8px;background:#000;display:block}
 .vp-x{position:absolute;right:0;top:-46px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--navy);color:var(--ink);font-size:16px;cursor:pointer}
 .vp-x:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
@@ -825,7 +826,7 @@ const STOPS = [
  {city:'HONG KONG', y:2006, when:'2006 起・持續至今', org:'CASH 作家會員', role:'流行音樂創作人（作曲／填詞）', pts:['為楊千嬅、周慧敏、糖兄妹等歌手創作','《宅女》填詞獲第 22 屆 CASH 流行曲創作大賽季軍','共同填詞作品《埋頭苦愛》為電影《喜愛夜蒲 3》點題曲，獲 2014 年新城勁爆合唱歌曲獎'], tags:['創作']},
  {city:'HONG KONG', y:2006, when:'2006/11–2008/7', org:'伯樂音樂學院', role:'課程發展專員', pts:['與香港公開大學合辦《音樂市場及管理學專業文憑》','撰寫的 3 類課程一次通過香港持續進修基金（CEF）審核','親自完成 1,500+ 份創作比賽作品初選'], tags:['課程制度','活動']},
  {city:'HONG KONG', y:2008, when:'2008/8–2012/12', org:'Backstage Live Restaurant', role:'項目及專案經理', pts:['統籌 400+ 場小型、10+ 場大型音樂活動','G.E.M. 鄧紫棋、韋禮安、郭采潔等歌手香港演出窗口','主責 Battlestage 歌唱比賽；負責《DEMO SAMPLER》合輯的 A&R、授權與發行宣傳'], tags:['活動','營運','發行']},
- {city:'HONG KONG', y:2013, when:'2013/3–2015/5', org:'Frenzi Music Ltd.', role:'市場營銷經理', pts:['統籌約 50 檔單曲、4 檔專輯的發行與宣傳','25 場實體音樂會，累計 10,000+ 人次','黎曉陽、鄧小巧等藝人 A&R 與宣傳'], tags:['發行行銷','A&R']},
+ {city:'HONG KONG', y:2013, when:'2013/3–2015/5', org:'Frenzi Music Ltd.', role:'市場營銷經理', pts:['統籌約 50 檔單曲、4 檔專輯的發行與宣傳','25 場實體音樂會，累計 10,000+ 人次','黎曉陽、鄧小巧等藝人的行銷宣傳'], tags:['發行行銷','藝人宣傳']},
  {city:'HONG KONG', y:2015, when:'2015/6–2020/7', org:'四海發展有限公司', role:'營運經理／國外業務主管', pts:['推進自有品牌，親自做服裝設計與官網設計','建立官網、ZALORA、天貓與社群通路','因應中美關稅變動，參與開拓歐洲客戶','直接管理 25 人團隊，依工序難度調整計價'], tags:['營運管理','品牌設計','跨境業務']},
  {city:'HONG KONG', y:2020, when:'2020/8–2022/5', org:'青苗琴行', role:'業務管理｜分店營運與銷售', pts:['疫情期間營業額進入集團 40+ 分店前 5 名','建立簽到、學費、師資薪酬等管理模板，其他分店沿用'], tags:['門市營運','流程']},
  {k:'gate', city:'TAIPEI', zh:'臺北', note:'2022 起｜品牌、影音、標案'},
@@ -947,17 +948,21 @@ const CASES = [
    ['品牌合作與提案','國際管樂節、原住民族委員會、Roots 等合作內容；並參與香港旅遊發展局「香港 FUN 城市」提案的內容整合與撰寫。']],
   media:[{yt:'G5qQKRJuEc4',img:'kol-band',label:'國際管樂節合作案'},{yt:'645eXpjrH_E',img:'kol-indigenous',label:'原民會合作案'},{href:'https://www.instagram.com/p/ChrvkXEP0BW/',img:'kol-roots',label:'Roots 品牌合作案（Instagram）'}]},
 
- {id:'lai', cat:'music', title:'黎曉陽：從比賽參賽者到創作歌手', org:'Frenzi Music', co:'Frenzi Music', year:'2013–2015', role:'A&R、宣傳、媒體準備、跨界合作',
-  img:'lai-cd', key:['《撐著》','改派為電台主打'], res:'建議改派自創曲《撐著》為電台主打',
-  sum:'黎曉陽是 Battlestage 歌唱比賽的亞軍，我在比賽時已經認識他。他會自彈自唱，有在香港街頭 busking 的經驗；簽約 Frenzi Music 後，我負責他的 A&R 與宣傳。他的首支主打歌不是自己寫的，和市場對「創作歌手」的期待出現落差。',
-  call:'首支主打並非他本人創作，引起部分負面觀感。2014 年他寫下《撐著》，我判斷這首歌更能回應當時的社會氣氛，也更符合創作歌手的定位，因此建議改派為電台主打，2014 年 10 月派台。',
-  out:'我參與的部分：《撐著》改派為電台主打、兩張作品的 A&R、微電影洽談與拍攝協調。藝人與作品的成果：專輯《上上下下左右左右 BA Start》獲第十六屆華語音樂傳媒大獎最佳粵語新人；微電影獲「創+作」支援計劃最佳微電影製作大獎銅獎。',
+ {id:'lai', cat:'music', title:'黎曉陽新人發展：從街頭表演到發片與內容經營', org:'Frenzi Music', co:'Frenzi Music', year:'2013–2015', role:'新人定位、行銷宣傳、YouTube 頻道經營',
+  img:'lai-hmv', yt:true, key:['《撐著》','改派為電台主打'], res:'建議改派自創曲《撐著》為電台主打',
+  sum:'我在 Battlestage 歌唱比賽認識黎曉陽，他是那屆亞軍，會自彈自唱，有在香港街頭 busking 的經驗。簽約 Frenzi Music 後，我與老闆共同討論他的新人定位：從街頭自彈自唱的普通人出發，讓觀眾看見他一步步走上舞台、正式發片。我負責他的行銷宣傳，建立並經營他的 YouTube 頻道，也參與創作方向的討論。',
+  call:'他的首支主打並非本人創作，和市場對「創作歌手」的期待出現落差，引起部分負面觀感。2014 年，我判斷由他作曲的《撐著》更能回應當時的社會氣氛，也更符合創作歌手的定位，因此建議改派為電台主打，2014 年 10 月派台。',
+  out:'《天行者》CD Single 的唱片正式署名為「Marketing / Promotion in Charge: Dennis Chan」；《撐著》改派為電台主打；2014 年 10 月 16 日在 HMV ideal 舉行 CD Single 發佈及簽唱會。藝人與作品的成果：專輯《上上下下左右左右 BA Start》獲第十六屆華語音樂傳媒大獎最佳粵語新人；微電影《女神‧搖滾‧珍寶珠》獲第二屆微電影「創+作」支援計劃（音樂篇）「最佳微電影製作大獎」銅獎。',
   work:[
-   ['藝人定位','和老闆形成共識：不把他包裝成一開始就成熟的明星，而是呈現一個街頭表演者一步步成為能正式發片的創作歌手。'],
-   ['A&R','擔任 EP《天行者》與專輯《上上下下左右左右 BA Start》的 A&R；自己也寫歌，會透過討論啟發他的創作方向，有時協助撰寫 Demo 歌詞，也參與 MV 拍攝溝通。'],
-   ['社群與媒體準備','他當時不熟悉社群經營，我協助規劃發文方向；電台宣傳前，先和他準備訪問時哪些可以說、哪些不適合說。'],
+   ['新人定位','和老闆形成共識：不把他包裝成一開始就成熟的明星，而是呈現一個街頭表演者一步步成為能正式發片的創作歌手。'],
+   ['《天行者》發行宣傳','負責《天行者》CD Single 的行銷與宣傳。策劃並製作 CD Single 宣傳短片；統籌 2014 年 10 月 16 日在 HMV ideal 舉行的發佈及簽唱會；透過與 MOOV 的長期合作關係，爭取平台宣傳版位。'],
+   ['YouTube 頻道建立與經營','建立並經營他的 YouTube 頻道「Michael Makes Music」，作為作品發布與藝人內容的長期入口，配合發片與宣傳安排更新內容。'],
+   ['話題內容企劃｜用音樂回應 ALS 冰桶挑戰','ALS 冰桶挑戰成為熱門話題時，我建議他以音樂回應，把當時的社群熱潮轉成符合創作歌手定位的內容，並協助填詞。這次合作把話題企劃、藝人特色與歌曲創作結合，讓他的音樂能力成為參與話題的方式。'],
+   ['電台宣傳與媒體準備','安排商業電台「探子音樂現場」等電台宣傳；訪問前先和他準備哪些可以說、哪些不適合說。他當時不熟悉社群經營，我也協助規劃發文方向。'],
+   ['創作討論','我自己也寫歌，會透過討論啟發他的創作方向，有時協助撰寫 Demo 歌詞，也參與 MV 拍攝溝通。'],
    ['跨界合作','洽談並協調他主演的微電影《女神‧搖滾‧珍寶珠》（第二屆微電影「創+作」支援計劃音樂篇）。']],
-  media:[{img:'lai-cd',label:'《Cope With Life》內頁 credits'}]},
+  media:[{mp4:'lai-skywalker',label:'《天行者》CD Single 宣傳短片（我策劃及製作）'},{yt:'yBesEzS1f7o',label:'用音樂回應 ALS 冰桶挑戰'},{yt:'DM5bGHy1D8s',label:'商台探子音樂現場《快樂很慢》'},{yt:'PQRLMY0Oy-c',label:'微電影《女神‧搖滾‧珍寶珠》'},{img:'lai-credits',fit:true,label:'《天行者》內頁 credits：Marketing / Promotion in Charge'},{img:'lai-banner',fit:true,label:'HMV ideal 發佈＋簽唱會宣傳圖（2014.10.16）'},{img:'lai-moov',fit:true,label:'MOOV 平台宣傳版位'},{img:'lai-cd',fit:true,label:'《天行者》CD Single 實體與內頁'}],
+  links:[['黎曉陽 YouTube 頻道：Michael Makes Music','https://www.youtube.com/channel/UCWbaIvbpwD_jrzSHSwf9_Og']]},
 
  {id:'demo', cat:'music', title:'《DEMO SAMPLER》原創合輯', org:'Backstage／Green Coffee', co:'Backstage Live Restaurant', year:'2009', role:'A&R、授權與發行宣傳',
   img:'demo-cover-wide', key:['20,000 張','首批及追加完售'], res:'首批及追加共 20,000 張完售',
@@ -985,7 +990,7 @@ const CASES = [
    ['宣傳規劃','規劃線上線下宣傳與宣傳物；活動獲報章資訊版、《Take me Home》、《Pd!》等報導。'],
    ['決賽者培訓','主動洽談到決賽者造型照拍攝資源；安排 12 個決賽單位的網台訪談、造型拍攝與賽前訓練，並向參賽者 brief 決賽流程。'],
    ['綵排與現場控場','編寫決賽 rundown 與新聞稿，統籌綵排，當天負責現場控場。'],
-   ['賽後銜接','比賽後為得獎者安排唱片公司試音（最後未推出單曲）。亞軍黎曉陽在比賽中認識，賽後安排他進修，之後在 Frenzi Music 正式出道，由我擔任 A&R。']],
+   ['賽後銜接','比賽後為得獎者安排唱片公司試音（最後未推出單曲）。亞軍黎曉陽在比賽中認識，賽後安排他進修，之後在 Frenzi Music 正式出道，由我負責他的行銷宣傳。']],
   call:'從報名表、參賽者查詢、多輪賽事到決賽綵排，每個環節都有變數，而 Live 沒有 second take。我會先把後備方案準備好：音檔一律備多份，參賽者遲到就即時調整流程，讓節目照常進行。',
   out:'1,000+ 人報名，選出 12 個決賽單位，2009 年 9 月 9 日完成總決賽。得獎者後續（屬個人發展）：冠軍黃劍文於 2016 年以個人名義出道；亞軍黎曉陽經賽後進修，之後在 Frenzi Music 以創作歌手身分出道；季軍許靖韻於 2013 年簽約英皇娛樂。',
   media:[{img:'bs-poster',fit:true,label:'比賽海報'},{yt:'b9S0U3HwyvE',img:'ev-battlestage',label:'《Battlestage》宣傳影片'},{img:'bs-winners',label:'09.09.09 決賽得獎者'},{img:'bs-final-group',label:'決賽大合照'},{img:'bs-presscon',label:'發布記者會'},{img:'bs-backdrop',fit:true,label:'決賽背板設計（16 × 8 呎）'},{img:'bs-stage',fit:true,label:'記者會舞台與背板規劃（16 × 10 呎）'},{img:'bs-news-0714',fit:true,label:'報章報導（2009.07.14）'},{img:'bs-takemehome',fit:true,label:'《Take me Home》報導（2009.07.10）'},{img:'bs-pd',fit:true,label:'《Pd!》活動報導'},{img:'bs-shoot05',fit:true,label:'雜誌專題報導'}],
@@ -1163,6 +1168,7 @@ addEventListener('keydown', e => { if (e.key === 'Escape' && !drawer.hidden) clo
 const pv = $('#project');
 const BASE_TITLE = document.title;
 function mediaHTML(m){
+  if (m.mp4) return `<a href="assets/${m.mp4}.mp4" target="_blank" rel="noopener" data-mp4="assets/${m.mp4}.mp4" data-title="${esc(m.label)}"><div class="mi"><img src="assets/${m.mp4}.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></div><span>${esc(m.label)}</span></a>`;
   const inner = m.img ? `<img src="assets/${m.img}.jpg" alt="" loading="lazy"${m.fit ? ' style="object-fit:contain"' : ''}>` : `<div class="ph dots"><div><b>VIDEO</b><small>點擊播放</small></div></div>${m.yt ? `<img class="ytth" src="https://i.ytimg.com/vi/${m.yt}/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">` : ''}`;
   const href = m.yt ? YT(m.yt) : m.href;
   const play = m.yt ? '<span class="play" aria-hidden="true"></span>' : '';
@@ -1200,7 +1206,7 @@ function showProject(id){
           <div class="work">${c.work.map(([t,d]) => `<div class="w"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
         </section>
         ${c.table ? `<details class="p-sec p-more"><summary><h2>${esc(c.table.title)}</h2><span>展開細節</span></summary><dl class="ftable">${c.table.rows.map(([k,v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></details>` : ''}
-        ${c.media.length ? `<section class="p-sec"><h2>${c.media.some(m => m.yt) ? '影片與素材' : '作品素材'}</h2><div class="media">${c.media.map(mediaHTML).join('')}</div></section>` : ''}
+        ${c.media.length ? `<section class="p-sec"><h2>${c.media.some(m => m.yt || m.mp4) ? '影片與素材' : '作品素材'}</h2><div class="media">${c.media.map(mediaHTML).join('')}</div></section>` : ''}
       </article>
       <aside class="p-side">
         <div class="kpi"><b>${esc(c.key[0])}</b><span>${esc(c.key[1])}</span></div>
@@ -1308,6 +1314,16 @@ if (CAN_EMBED){
     vp.querySelector('.vp-x').focus();
   };
   document.addEventListener('click', e => {
+    const v = e.target.closest('a[data-mp4]');
+    if (v){
+      e.preventDefault(); last = v;
+      const el = document.createElement('video');
+      el.src = v.dataset.mp4; el.controls = true; el.autoplay = true; el.playsInline = true;
+      vp.querySelector('.vp-frame').replaceChildren(el);
+      vp.querySelector('.vp-t').textContent = v.dataset.title || '';
+      vp.hidden = false; document.documentElement.classList.add('vp-open');
+      vp.querySelector('.vp-x').focus(); return;
+    }
     const a = e.target.closest('a[data-yt]');
     if (!a || !CAN_EMBED) return;
     e.preventDefault();
