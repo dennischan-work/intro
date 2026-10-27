@@ -1406,5 +1406,11 @@ const WLINES = [[2003,'主修經濟，課餘寫歌。興趣還沒打算放過我
     co.observe($('#contact'));
   } else $('#contact').classList.add('arrive');
 })();
+/* 重新整理時一律從首頁開始（專案內頁連結 #p-… 除外） */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash.startsWith('#p-')){
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  scrollTo(0, 0);
+}
 route();
 </script>
