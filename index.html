@@ -631,7 +631,7 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
     <p class="thesis rise d2"><b>創作者出身，把複雜需求轉成可交付成果。</b>從音樂創作、演出與唱片發行，走到品牌聯名、影音製作與政府標案。我能和創作者討論內容、和品牌談合作條件，再和製作團隊把執行方式確認清楚，推進到交付。</p>
     <p class="hand rise d3">創新，總在熟悉之外誕生<small>New ideas begin beyond the familiar.</small></p>
     <div class="cta rise d4">
-      <a class="btn solid" href="#work">看作品集 <span aria-hidden="true">→</span></a>
+      <a class="btn solid" href="#work">看實績 <span aria-hidden="true">→</span></a>
       <a class="btn" href="#journey">走一趟三城歷程</a>
       <a class="btn" href="#ai">看 AI 實際應用</a>
     </div>
@@ -659,7 +659,7 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
         <div class="dt-bub" id="dtBub" role="status" aria-live="polite"></div>
       </figure>
       <p>這套做法來自不同工作現場的累積。我在加拿大 UBC 讀經濟，回到香港後成為 CASH 作家會員，替楊千嬅、周慧敏等歌手作曲填詞，之後走進演出統籌、唱片發行與營運管理；2022 年搬到臺北，再延伸到 KOL 商務、品牌聯名，以及政府標案與影音專案。</p>
-      <p>從一首歌、一位新人，到一場跨品牌合作，下面的<a class="in-link" href="#journey">三城歷程</a>與<a class="in-link" href="#work">作品</a>，記錄了我如何判斷方向、串接資源，並處理執行中的變數。</p>
+      <p>從一首歌、一位新人，到一場跨品牌合作，下面的<a class="in-link" href="#journey">三城歷程</a>與<a class="in-link" href="#work">實績</a>，記錄了我如何判斷方向、串接資源，並處理執行中的變數。</p>
       <ul class="chips" aria-label="專長">
         <li>整合行銷與跨品牌合作</li><li>影音內容與製作統籌</li><li>KOL 商務與頻道營運</li><li>藝人宣傳與發佈活動</li><li>政府標案履約與合約授權</li><li>音樂創作與發行</li><li>AI 研究與查核工作流</li>
       </ul>
@@ -1251,7 +1251,7 @@ function mediaHTML(m){
 function showProject(id){
   const c = CASES.find(x => x.id === id), i = LIST.indexOf(c);
   const prev = i < 0 ? null : LIST[(i - 1 + LIST.length) % LIST.length], next = i < 0 ? null : LIST[(i + 1) % LIST.length];
-  const back = c.ai ? '#ai' : '#work', backT = c.ai ? 'AI in Practice' : '作品集', backB = c.ai ? '返回 AI in Practice' : '返回作品集';
+  const back = c.ai ? '#ai' : '#work', backT = c.ai ? 'AI in Practice' : '實績', backB = c.ai ? '返回 AI in Practice' : '返回實績';
   const cover = c.img ? `<img src="assets/${c.img}.jpg" alt="${esc(c.title)} 主視覺"${c.pos ? ` style="object-position:${c.pos}"` : ''}>` : `<div class="ph dots"><div><b>${esc(c.ph)}</b><small>${esc(c.org)}</small></div></div>`;
   pv.innerHTML = `
   <div class="wrap">
