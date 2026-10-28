@@ -556,6 +556,47 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
 @keyframes pinfade{from{opacity:0}to{opacity:1}}
 @keyframes pindrop{from{transform:translateY(-28px)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* ===== 決策樹 ===== */
+.dtree{margin:0 0 34px;max-width:940px;border:1px solid var(--line);border-radius:10px;background:
+  radial-gradient(rgba(232,238,243,.06) 1px,transparent 1.2px) 0 0/14px 14px,var(--navy);padding:14px 10px 12px}
+.dtree{position:relative}
+.dtree svg{display:block;width:100%;height:auto;overflow:visible}
+.dtree figcaption{font-size:14px;color:var(--mute);text-align:center;margin-top:6px;letter-spacing:.04em}
+.dt-tier{fill:rgba(47,166,209,.05);stroke:rgba(232,238,243,.08)}
+.dt-tag{font:600 11px var(--f-display);fill:var(--mute);letter-spacing:.12em;opacity:.7}
+.dt-edge{fill:none;stroke:var(--mute);stroke-width:1.4;stroke-dasharray:4 4;opacity:.75;transition:opacity .4s,stroke .4s}
+.dt-edge.draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:dtdraw .45s ease-out forwards}
+@keyframes dtdraw{to{stroke-dashoffset:0}}
+.dt-edge.keep{stroke:var(--ink);stroke-dasharray:none;opacity:.6}
+.dt-edge.cut{opacity:.16}
+.dt-edge.path{stroke:var(--signal);stroke-width:3.2;opacity:1;stroke-dasharray:none;filter:drop-shadow(0 0 4px rgba(47,166,209,.6))}
+.dt-node{transition:opacity .45s}
+.dt-node rect{fill:#0b1a2b;stroke:var(--mute);stroke-width:1.3;stroke-dasharray:3 3;transition:fill .4s,stroke .4s}
+.dt-node text{font:600 var(--fs,14px) var(--f-display);fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.dt-node .dt-mk{font-size:calc(var(--fs,14px) - 2px);opacity:0;transition:opacity .3s}
+.dt-node.pop{animation:dtpop .35s ease-out both}
+@keyframes dtpop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.dt-node.cut{opacity:.4}
+.dt-node.cut .dt-lb{text-decoration:line-through}
+.dt-node.cut .dt-x{opacity:1;fill:var(--mute)}
+.dt-node.keep rect{stroke:var(--ink);stroke-dasharray:none}
+.dt-node.keep .dt-ok{opacity:1;fill:var(--signal)}
+.dt-node.root rect{stroke:var(--ink);stroke-dasharray:none;fill:#13304d}
+.dt-node.final rect{fill:var(--signal);stroke:var(--ink);stroke-dasharray:none}
+.dt-node.final .dt-lb{fill:var(--night)}
+.dt-node.final .dt-ok{opacity:0}
+.dt-final-tag{font:700 var(--fs,14px) var(--f-body);fill:var(--signal);text-anchor:middle;opacity:0;transition:opacity .4s}
+.dt-final-tag.on{opacity:1}
+.dt-legend text{font:500 11px var(--f-body);fill:var(--mute)}
+.dt-wk .fb{opacity:0}
+.dt-wk.walking .fa{animation:legA .3s steps(1) infinite}
+.dt-wk.walking .fb{animation:legB .3s steps(1) infinite}
+.dt-wk.walking .wb{animation:bob .3s steps(2) infinite}
+.dt-bub{position:absolute;left:0;top:0;transform:translate(-50%,calc(-100% - 10px)) translateY(6px);background:var(--ink);color:var(--night);font-size:14px;font-weight:700;line-height:1.5;padding:8px 12px;border-radius:4px;border:2px solid var(--night);box-shadow:3px 3px 0 var(--signal);width:max-content;max-width:min(300px,78vw);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:4}
+.dt-bub::after{content:"";position:absolute;left:var(--ax,50%);bottom:-8px;width:10px;height:10px;background:var(--ink);border-right:2px solid var(--night);border-bottom:2px solid var(--night);transform:translateX(-50%) rotate(45deg)}
+.dt-bub.show{opacity:1;transform:translate(-50%,calc(-100% - 10px))}
+@media (max-width:620px){.dt-bub{font-size:13px;padding:6px 10px}}
+@media (prefers-reduced-motion:reduce){.dt-node.pop,.dt-edge.draw{animation:none}.dt-edge.draw{stroke-dashoffset:0}}
 </style>
 
 <nav class="nav" aria-label="主要導覽">
@@ -607,7 +648,12 @@ html.rv-on #work:not(.pins-in) .pin{opacity:0}
       <div><dt>生活城市</dt><dd>溫哥華・香港・臺北</dd></div>
     </dl>
     <div class="about">
-      <p class="q">我做決定有一個原則：沒有任何選項能保證最好。先把不能承受的結果逐一排除，再從可控的選項裡做決定。</p>
+      <p class="q">我做決定有一個原則：不急著找最好的答案，先排除最不想要的結果。再把剩下的選項往後推演，看看各自會帶來什麼，逐層比較、反覆排除，直到選出值得往前走的方向。最後未必完美，但每一步都有取捨的依據。</p>
+      <figure class="dtree" id="dtree" aria-label="五層決策樹：從一個問題出發，逐層排除不想要的選項，保留的方向才繼續展開，最後收斂到目前的選擇。">
+        <svg id="dtSvg" role="img" aria-hidden="true"></svg>
+        <div class="dt-bub" id="dtBub" role="status" aria-live="polite"></div>
+        <figcaption>先排除，再推演，逐步收斂到目前的選擇。</figcaption>
+      </figure>
       <p>我在加拿大 UBC 讀經濟，回到香港後成為 CASH 作家會員，替楊千嬅、周慧敏、鄭希怡等歌手作曲填詞。之後在 Backstage Live Restaurant 統籌 400 多場演出，在 Frenzi Music 負責唱片發行與 A&amp;R，也在服裝廠管過產線、在琴行管過門市。</p>
       <p>2022 年搬到臺北，從雄獅旅行社的 KOL 商務，走到代表娛樂的遊戲 × 餐飲 × 平台聯名，再走進方成事的政府標案與影音專案。</p>
       <p>行業換了幾次，我一直在做的，是理解需求、提出做法，再協調資源完成交付。我能和創作者談內容、和品牌談合作條件、和製作團隊確認執行方式；也會留意當下話題，判斷藝人或品牌適合怎麼參與。需要時，文案、視覺延伸與影音製作，我也能親自處理。</p>
@@ -1452,4 +1498,109 @@ if (!location.hash.startsWith('#p-')){
   scrollTo(0, 0);
 }
 route();
+
+/* 決策樹：About 方法論 */
+(() => {
+const NS='http://www.w3.org/2000/svg';
+const L={
+ d:{W:960,H:650,ys:[112,225,338,451,564],nw:64,nh:28,fs:14,qw:76,sc:2,tags:true,
+  x:{Q:480,A:240,B:360,C:480,D:600,E:720,B1:200,B2:300,B3:400,E1:560,E2:660,E3:760,B21:170,B22:300,B23:430,E21:530,E22:660,E23:790,B211:80,B212:180,B213:280,E231:690,E232:790,E233:890}},
+ m:{W:360,H:600,ys:[118,212,306,400,494],nw:40,nh:24,fs:11,qw:52,sc:1.5,tags:false,
+  x:{Q:180,A:80,B:130,C:180,D:230,E:280,B1:55,B2:105,B3:155,E1:205,E2:255,E3:305,B21:45,B22:95,B23:145,E21:215,E22:265,E23:315,B211:24,B212:68,B213:112,E231:248,E232:292,E233:336}}
+};
+const PARENT={A:'Q',B:'Q',C:'Q',D:'Q',E:'Q',B1:'B',B2:'B',B3:'B',E1:'E',E2:'E',E3:'E',B21:'B2',B22:'B2',B23:'B2',E21:'E2',E22:'E2',E23:'E2',B211:'B21',B212:'B21',B213:'B21',E231:'E23',E232:'E23',E233:'E23'};
+const LAYER={Q:0};Object.keys(PARENT).forEach(k=>LAYER[k]=LAYER[PARENT[k]]+1);
+const STEPS=[
+ {nodes:['A','B','C','D','E'],cut:['A','C','D'],keep:['B','E']},
+ {nodes:['B1','B2','B3','E1','E2','E3'],cut:['B1','E3','B3','E1'],keep:['B2','E2']},
+ {nodes:['B21','B22','B23','E21','E22','E23'],cut:['B22','E21','B23','E22'],keep:['B21','E23']},
+ {nodes:['B211','B212','B213','E231','E232','E233'],cut:['B213','E233','B211','B212','E231'],keep:[],final:'E232'}];
+const PATH=['Q','E','E2','E23','E232'];
+const svg=document.getElementById('dtSvg'), fig=document.getElementById('dtree');
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let mode=null, cfg, token=0, done=false, started=false;
+const el=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const N={},E={};let wk,wkFlip,finalTag;
+function build(){
+  cfg=L[mode];const {W,H,ys,nw,nh,fs,qw,sc}=cfg;
+  svg.innerHTML='';svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.style.setProperty('--fs',fs+'px');
+  // 金字塔層帶
+  const top=ys[0]-nh/2-14, bot=ys[4]+nh/2+16, hw0=cfg.qw*0.9, hw1=W/2-4;
+  const hw=y=>hw0+(y-top)/(bot-top)*(hw1-hw0), c=W/2;
+  el('polygon',{class:'dt-tier',points:`${c-hw0},${top} ${c+hw0},${top} ${c+hw1},${bot} ${c-hw1},${bot}`},svg);
+  for(let i=0;i<4;i++){const y=(ys[i]+ys[i+1])/2;el('line',{x1:c-hw(y),x2:c+hw(y),y1:y,y2:y,stroke:'rgba(232,238,243,.08)'},svg)}
+  if(cfg.tags) ys.forEach((y,i)=>{const t=el('text',{class:'dt-tag',x:8,y:y+4},svg);t.textContent='L'+(i+1)});
+  // 圖例
+  const lg=el('g',{class:'dt-legend'},svg);
+  const lgx=mode==='d'?W-196:W/2-150, lgy=H-14;
+  [['path','保留路徑',0],['dash','比較中',78],['x','已排除',140]].forEach(([k,t,dx])=>{
+    const x=lgx+dx;
+    if(k==='path')el('line',{x1:x,x2:x+18,y1:lgy,y2:lgy,stroke:'#2fa6d1','stroke-width':3},lg);
+    if(k==='dash')el('line',{x1:x,x2:x+18,y1:lgy,y2:lgy,stroke:'#93a7b8','stroke-width':1.4,'stroke-dasharray':'4 4'},lg);
+    if(k==='x'){const tx=el('text',{x:x+9,y:lgy+4,'text-anchor':'middle'},lg);tx.textContent='✕'}
+    const tt=el('text',{x:x+22,y:lgy+4},lg);tt.textContent=t});
+  const ge=el('g',{},svg), gn=el('g',{},svg);
+  const pos=k=>({x:cfg.x[k],y:ys[LAYER[k]]});
+  Object.keys(PARENT).forEach(k=>{const p=pos(PARENT[k]),q=pos(k),my=(p.y+q.y)/2;
+    E[k]=el('path',{class:'dt-edge',d:`M${p.x},${p.y+nh/2} L${q.x},${q.y-nh/2}`,visibility:'hidden'},ge)});
+  ['Q',...Object.keys(PARENT)].forEach(k=>{const {x,y}=pos(k),w=k==='Q'?qw:nw;
+    const g=el('g',{class:'dt-node'+(k==='Q'?' root':''),visibility:k==='Q'?'visible':'hidden'},gn);
+    el('rect',{x:x-w/2,y:y-nh/2,width:w,height:nh,rx:6},g);
+    const t=el('text',{class:'dt-lb',x,y},g);t.textContent=k==='Q'?'問題':k;
+    const m1=el('text',{class:'dt-mk dt-x',x:x+w/2+(mode==='d'?9:6),y:y-nh/2+2},g);m1.textContent='✕';
+    const m2=el('text',{class:'dt-mk dt-ok',x:x+w/2+(mode==='d'?9:6),y:y-nh/2+2},g);m2.textContent='●';
+    N[k]=g});
+  const f=pos(STEPS[3].final);
+  finalTag=el('text',{class:'dt-final-tag',x:f.x,y:f.y+nh/2+(mode==='d'?22:17)},svg);finalTag.textContent='目前選擇';
+  wk=el('g',{class:'dt-wk'},svg);wkFlip=el('g',{},wk);[...document.getElementById('jWalker').querySelectorAll(':scope > g')].forEach(c=>wkFlip.appendChild(c.cloneNode(true)));
+  placeWalker('Q');
+}
+const wkPos=k=>{const {nh,sc}=cfg;return {x:cfg.x[k]-6*sc,y:cfg.ys[LAYER[k]]-nh/2-15*sc-1}};
+let wx=0,wy=0;function setWk(x,y,flip){wx=x;wy=y;wk.setAttribute('transform',`translate(${x},${y}) scale(${cfg.sc})`);wkFlip.setAttribute('transform',flip?'translate(12,0) scale(-1,1)':'');posBub()}
+const bub=document.getElementById('dtBub');
+function posBub(){if(!bub.classList.contains('show'))return;const sr=svg.getBoundingClientRect(),fr=fig.getBoundingClientRect(),r=sr.width/cfg.W,cx=(wx+6*cfg.sc)*r+sr.left-fr.left,ty=wy*r+sr.top-fr.top;const bw=bub.offsetWidth,fw=fig.clientWidth,pad=8;let left=Math.min(Math.max(cx,bw/2+pad),fw-bw/2-pad);bub.style.left=left+'px';bub.style.top=ty+'px';bub.style.setProperty('--ax',(bw/2+cx-left)+'px')}
+function say(t){bub.textContent=t;bub.classList.add('show');posBub()}
+function hush(){bub.classList.remove('show')}
+function placeWalker(k){const p=wkPos(k);setWk(p.x,p.y,false)}
+function show(k){N[k].setAttribute('visibility','visible');N[k].classList.add('pop');const e=E[k];if(e){const len=e.getTotalLength();e.style.setProperty('--len',len);e.setAttribute('visibility','visible');e.classList.add('draw');setTimeout(()=>e.classList.remove('draw'),470)}}
+function cut(k){N[k].classList.add('cut');E[k].classList.remove('draw');E[k].style.strokeDasharray='';E[k].classList.add('cut')}
+function keep(k){N[k].classList.add('keep');E[k].classList.remove('draw');E[k].classList.add('keep')}
+function finish(){
+  STEPS.forEach(s=>{s.nodes.forEach(k=>{N[k].setAttribute('visibility','visible');E[k].setAttribute('visibility','visible')});s.cut.forEach(cut);s.keep.forEach(keep)});
+  const f=STEPS[3].final;keep(f);N[f].classList.add('final');finalTag.classList.add('on');
+  PATH.slice(1).forEach(k=>E[k].classList.add('path'));placeWalker(f);wk.classList.remove('walking');done=true;
+}
+const LINES=[['五個選項，哪個最好？現在還不知道。','先排除最不想要的：A、C、D。','B 和 E 還不能決定，再往下推一層。'],['B、E 各自會帶來什麼結果？','比較後，留下 B2 和 E2。','還沒收斂，繼續推演。'],['再展開一層，繼續比較。','剩下 B21 和 E23，兩邊都還有可能。','進入最後一輪。'],['把最後一輪的結果放在一起比。','明顯不適合的，都先排除。','E232 是目前最適合的方向。']];
+async function play(){
+  const my=++token;const ok=()=>my===token;
+  say('沒有選項保證最好。先看看有哪些路。');await sleep(1600);if(!ok())return;
+  for(const [i,s] of STEPS.entries()){
+    for(const k of s.nodes){show(k);await sleep(110);if(!ok())return}
+    say(LINES[i][0]);await sleep(1300);if(!ok())return;
+    say(LINES[i][1]);for(const k of s.cut){cut(k);await sleep(480);if(!ok())return}
+    for(const k of s.keep){keep(k)}
+    await sleep(700);if(!ok())return;
+    if(i<3){say(LINES[i][2]);await sleep(1300);if(!ok())return}
+  }
+  const f=STEPS[3].final;keep(f);N[f].classList.add('final');finalTag.classList.add('on');say(LINES[3][2]);
+  for(const k of PATH.slice(1)){E[k].classList.add('path');await sleep(160);if(!ok())return}
+  await sleep(1300);if(!ok())return;say('方向收斂了，現在出發。');await sleep(500);
+  wk.classList.add('walking');
+  for(let i=1;i<PATH.length;i++){
+    const a=wkPos(PATH[i-1]),b=wkPos(PATH[i]),dist=Math.hypot(b.x-a.x,b.y-a.y),dur=Math.max(520,dist*(mode==='d'?6:9)),flip=b.x<a.x-1;
+    const t0=performance.now();
+    await new Promise(r=>{const step=t=>{if(!ok())return r();const p=Math.min(1,(t-t0)/dur);setWk(a.x+(b.x-a.x)*p,a.y+(b.y-a.y)*p,flip);p<1?requestAnimationFrame(step):r()};requestAnimationFrame(step)});
+    if(!ok())return;
+  }
+  wk.classList.remove('walking');setWk(wkPos(f).x,wkPos(f).y,false);done=true;
+  say('未必完美，但每一步都有取捨的依據。');await sleep(3800);if(!ok())return;hush();
+}
+function setup(){hush();const m=fig.clientWidth<620?'m':'d';if(m===mode)return;const was=started;mode=m;token++;build();if(was||RM){finish()}}
+setup();
+addEventListener('resize',()=>{setup();posBub()});
+const start=()=>{if(started)return;started=true;if(RM){finish();return}play()};
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();start()}},{threshold:.35});io.observe(fig)}else start();
+})();
+
 </script>
